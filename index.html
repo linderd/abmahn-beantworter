@@ -7,68 +7,85 @@
     <script src="pdfmake.min.js"></script>
     <script src="vfs_fonts.js"></script>
     <script src="abmahn.js"></script>
+    <script src="js/uikit.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="css/uikit.min.css">
+
   </head>
   <body>
-    <h1>Automatischer Abmahnbeantworter</h1>
-    <div>
-      <p>Wenn Sie eine Abahnung für einen angeblichen Urheberrechtsverstoß erhalten haben und sich sicher sind, dass Sie diese Urheberrechtsverletzung nicht begangen haben, können Sie mit diesem Schriftsatz-Generator ein Antwortschreiben erzeugen, das die abmahnenden Kanzlei über die Unrechtmäßigkeit der Abmahnung in Kenntnis setzt. Nimmt diese daraufhin die Forderung nicht innerhalb der gesetzten Frist (von 14 Tagen) zurück, steht Ihnen eine gerichtliche Klärung zu.</p>
-      <p>Für diese gerichtliche Klärung können Sie – im Gegensatz zur ersten Antwort auf die Abmahnung – Ihre Auslagen vom Abmahner zurückfordern. Dazu gehören auch die Anwaltskosten.</p>
-      <p>Bitte benutzen Sie diesen Vordruck nur, wenn Sie tatsächlich nicht für die abgemahnte Verletzung verantwortlich sind. Sollte dies doch der Fall sein, oder wenn Sie sich <b>nicht</b> sicher sind, dann suchen Sie bitte einen Anwalt auf. Zudem können Ihnen unrichtige Angaben zum Sachverhalt vor Gericht belastend ausgelegt werden.</p>
-      <p><b>Wählen Sie daher auf jeden Fall nur die Häkchen aus, die den Tatsachen entsprechen.</b></p>
-      <p>Datenschutzhinweis: Das Dokument wird in Ihrem Browser generiert, es werden keine Daten zum Server übertragen und können daher auch dort nicht gespeichert werden. Der Webserver speichert zudem keine persönlichen Informationen über Zugriffe auf diese Webseite, sondern zählt einzig die Besucher.</p>
+      <div class="uk-grid">
+          <div class="uk-container-center uk-width-1-2">
+            <h1>Automatischer Abmahnbeantworter</h1>
+            <div>
+              <p>Wenn Sie eine Abahnung für einen angeblichen Urheberrechtsverstoß erhalten haben und sich sicher sind, dass Sie diese Urheberrechtsverletzung nicht begangen haben, können Sie mit diesem Schriftsatz-Generator ein Antwortschreiben erzeugen, das die abmahnenden Kanzlei über die Unrechtmäßigkeit der Abmahnung in Kenntnis setzt. Nimmt diese daraufhin die Forderung nicht innerhalb der gesetzten Frist (von 14 Tagen) zurück, steht Ihnen eine gerichtliche Klärung zu.</p>
+              <p>Für diese gerichtliche Klärung können Sie – im Gegensatz zur ersten Antwort auf die Abmahnung – Ihre Auslagen vom Abmahner zurückfordern. Dazu gehören auch die Anwaltskosten.</p>
+              <p>Bitte benutzen Sie diesen Vordruck nur, wenn Sie tatsächlich nicht für die abgemahnte Verletzung verantwortlich sind. Sollte dies doch der Fall sein, oder wenn Sie sich <b>nicht</b> sicher sind, dann suchen Sie bitte einen Anwalt auf. Zudem können Ihnen unrichtige Angaben zum Sachverhalt vor Gericht belastend ausgelegt werden.</p>
+              <p><b>Wählen Sie daher auf jeden Fall nur die Häkchen aus, die den Tatsachen entsprechen.</b></p>
+              <p>Datenschutzhinweis: Das Dokument wird in Ihrem Browser generiert, es werden keine Daten zum Server übertragen und können daher auch dort nicht gespeichert werden. Der Webserver speichert zudem keine persönlichen Informationen über Zugriffe auf diese Webseite, sondern zählt einzig die Besucher.</p>
+            </div>
+            <div><a href="javascript:ausfuellen()" class="button">Debug: pre-fill</a></div>
+
+            <div class="uk-progress">
+                <div class="uk-progress-bar" style="width: 33%;">33%</div>
+            </div>
+
+            <div class="block abgemahnter">
+              <h2 class="block_titel">Abgemahnter</h2>
+
+                <form class="uk-form">
+                <fieldset data-uk-margin>
+                    <input id="abgemahnter_vorname" type="text" name="vorname" placeholder="Vorname"/>
+                    <input id="abgemahnter_nachname" type="text" name="nachname" placeholder="Nachname"/>
+                    <input id="abgemahnter_zusatz" type="text" name="zusatz" placeholder="Zusatz (optional)"/>
+                    <input id="abgemahnter_strasse" type="text" name="strasse" placeholder="Strasse und Hausnummer"/>
+                    <input id="abgemahnter_plz" type="text" name="plz" placeholder="Postleitzahl"/>
+                    <input id="abgemahnter_ort" type="text" name="ort" placeholder="Wohnort"/>
+                </fieldset>
+                </form>
+
+            </div>
+            <div class="block abmahnender">
+              <h2 class="block_titel">Abmahnender</h2>
+              <ul>
+              <li><input id="abmahnender_kanzlei" type="text" name="kanzlei" placeholder="Kanzlei"/></li>
+              <li><input id="abmahnender_bearbeiter" type="text" name="bearbeiter" placeholder="Bearbeiter (optional)"/></li>
+              <li><input id="abmahnender_strasse" type="text" name="strasse" placeholder="Strasse und Hausnummer"/></li>
+              <li><input id="abmahnender_plz" type="text" name="plz" placeholder="Postleitzahl"/></li>
+              <li><input id="abmahnender_ort" type="text" name="ort" placeholder="Ort"/></li>
+              <li><input id="abmahnender_fax" type="text" name="fax" placeholder="Fax"/></li>
+              </ul>
+              Bekannte Kanzlei?
+              <button class="w3-btn" onclick="waldorff()">Waldorff &amp; Frommer</button>
+              <button class="w3-btn" onclick="sasse()">Sasse &amp; Partner</button>
+              <button class="w3-btn" onclick="fareds()">Fareds Rechtsanwaltsgesellschaft mbH</button>
+              <button class="w3-btn" onclick="schutt()">Schutt, Waetke Rechtsanwälte</button>
+              <button class="w3-btn" onclick="sebastian()">Daniel Sebastian Rechtsanwalt</button>
+            </div>
+            <div class="block vorgang">
+              <h2 class="block_title">Vorgang</h2>
+              <ul>
+              <li><input id="vorgang_aktenzeichen" type="text" name="aktenzeichen" placeholder="(Akten)-Zeichen"/></li>
+              <li><input id="vorgang_detail" type="text" name="detail" placeholder="Beschreibung (optional)"/></li>
+              <li><input id="vorgang_datum" type="date" name="datum" placeholder="Datum der Abmahnung"/></li>
+              </ul>
+            </div>
+            <div class="clear">
+              <h2 class="block_title">Alibis</h2>
+              <ul>
+              <li><input id="alibi_urlaub" type="checkbox">Ich war nachweislich im Urlaub.</input></li>
+              <li><input id="alibi_ausserhalb" type="checkbox">Ich war nachweislich außerhalb Deutschlands.</input></li>
+              <li><input id="alibi_nichtzuhause" type="checkbox">Ich war nachweislich nicht zuhause.</input></li>
+              <li><input id="alibi_freifunk" type="checkbox">Ich betreibe ein Freifunk-Netzwerk.</input></li>
+              <li><input id="alibi_tornode" type="checkbox">Ich betreibe nachweislich einen Tor-Exit-Node.</input></li>
+              <li><input id="alibi_offeneswifi" type="checkbox">Ich betreibe ein offenes Netzwerk.</input></li>
+              <li><input id="alibi_vorschaltwifi" type="checkbox">Ich betreibe ein offenes Netzwerk mit Vorschaltseite.</input></li>
+              <li><input id="alibi_famile" type="checkbox">Neben mir benutzen mehrere Familienmitglieder mein Funknetzwerk.</input></li>
+              <li><input id="alibi_nachbarn" type="checkbox">Neben mir benutzen mehrere Nachbarn mein Funknetzwerk.</input></li>
+            </ul>
+            <div>
+            <!--a href="javascript:abmahnbeantworter()" class="button">fire!</a -->
+            <button class="w3-btn w3-hover-red" onclick="abmahnbeantworter()">Abmahnung beantworten</button>
+        </div>
     </div>
-    <div><a href="javascript:ausfuellen()" class="button">Debug: pre-fill</a></div>
-    <div class="block abgemahnter">
-      <h2 class="block_titel">Abgemahnter</h2>
-      <ul>
-      <li><input id="abgemahnter_vorname" type="text" name="vorname" placeholder="Vorname"/></li>
-      <li><input id="abgemahnter_nachname" type="text" name="nachname" placeholder="Nachname"/></li>
-      <li><input id="abgemahnter_zusatz" type="text" name="zusatz" placeholder="Zusatz (optional)"/></li>
-      <li><input id="abgemahnter_strasse" type="text" name="strasse" placeholder="Strasse und Hausnummer"/></li>
-      <li><input id="abgemahnter_plz" type="text" name="plz" placeholder="Postleitzahl"/></li>
-      <li><input id="abgemahnter_ort" type="text" name="ort" placeholder="Wohnort"/></li>
-      </ul>
-    </div>
-    <div class="block abmahnender">
-      <h2 class="block_titel">Abmahnender</h2>
-      <ul>
-      <li><input id="abmahnender_kanzlei" type="text" name="kanzlei" placeholder="Kanzlei"/></li>
-      <li><input id="abmahnender_bearbeiter" type="text" name="bearbeiter" placeholder="Bearbeiter (optional)"/></li>
-      <li><input id="abmahnender_strasse" type="text" name="strasse" placeholder="Strasse und Hausnummer"/></li>
-      <li><input id="abmahnender_plz" type="text" name="plz" placeholder="Postleitzahl"/></li>
-      <li><input id="abmahnender_ort" type="text" name="ort" placeholder="Ort"/></li>
-      <li><input id="abmahnender_fax" type="text" name="fax" placeholder="Fax"/></li>
-      </ul>
-      Bekannte Kanzlei?
-      <button class="w3-btn" onclick="waldorff()">Waldorff &amp; Frommer</button>
-      <button class="w3-btn" onclick="sasse()">Sasse &amp; Partner</button>
-      <button class="w3-btn" onclick="fareds()">Fareds Rechtsanwaltsgesellschaft mbH</button>
-      <button class="w3-btn" onclick="schutt()">Schutt, Waetke Rechtsanwälte</button>
-      <button class="w3-btn" onclick="sebastian()">Daniel Sebastian Rechtsanwalt</button>
-    </div>
-    <div class="block vorgang">
-      <h2 class="block_title">Vorgang</h2>
-      <ul>
-      <li><input id="vorgang_aktenzeichen" type="text" name="aktenzeichen" placeholder="(Akten)-Zeichen"/></li>
-      <li><input id="vorgang_detail" type="text" name="detail" placeholder="Beschreibung (optional)"/></li>
-      <li><input id="vorgang_datum" type="date" name="datum" placeholder="Datum der Abmahnung"/></li>
-      </ul>
-    </div>
-    <div class="clear">
-      <h2 class="block_title">Alibis</h2>
-      <ul>
-      <li><input id="alibi_urlaub" type="checkbox">Ich war nachweislich im Urlaub.</input></li>
-      <li><input id="alibi_ausserhalb" type="checkbox">Ich war nachweislich außerhalb Deutschlands.</input></li>
-      <li><input id="alibi_nichtzuhause" type="checkbox">Ich war nachweislich nicht zuhause.</input></li>
-      <li><input id="alibi_freifunk" type="checkbox">Ich betreibe ein Freifunk-Netzwerk.</input></li>
-      <li><input id="alibi_tornode" type="checkbox">Ich betreibe nachweislich einen Tor-Exit-Node.</input></li>
-      <li><input id="alibi_offeneswifi" type="checkbox">Ich betreibe ein offenes Netzwerk.</input></li>
-      <li><input id="alibi_vorschaltwifi" type="checkbox">Ich betreibe ein offenes Netzwerk mit Vorschaltseite.</input></li>
-      <li><input id="alibi_famile" type="checkbox">Neben mir benutzen mehrere Familienmitglieder mein Funknetzwerk.</input></li>
-      <li><input id="alibi_nachbarn" type="checkbox">Neben mir benutzen mehrere Nachbarn mein Funknetzwerk.</input></li>
-    </ul>
-    <div>
-    <!--a href="javascript:abmahnbeantworter()" class="button">fire!</a -->
-    <button class="w3-btn w3-hover-red" onclick="abmahnbeantworter()">Abmahnung beantworten</button>
   </body>
 </html>
