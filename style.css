@@ -1,0 +1,19 @@
+ul {
+  list-style-type: none;
+  padding-left:0;
+}
+
+.block {
+  float: left;
+  min-width: 20em;
+  width: 33%;
+}
+
+.clear {
+  clear: both;
+  width: 100%;
+}
+
+input[type="text"] {
+  width: 90%;
+}
