@@ -39,6 +39,24 @@ function fareds() {
   setText('abmahnender_fax', '040 / 43 20 84 710');
 }
 
+function rasch() {
+  setText('abmahnender_kanzlei', 'Rasch Rechtsanwälte');
+  setText('abmahnender_bearbeiter', '');
+  setText('abmahnender_strasse', 'An der Alster 6');
+  setText('abmahnender_plz', '20099');
+  setText('abmahnender_ort', 'Hamburg');
+  setText('abmahnender_fax', '040/244 297-20');
+}
+
+function wesave() {
+  setText('abmahnender_kanzlei', 'WeSaveYourCopyrights Rechtsanwaltsgesellschaft mbH');
+  setText('abmahnender_bearbeiter', '');
+  setText('abmahnender_strasse', 'Walter-Kolb-Straße 9-11');
+  setText('abmahnender_plz', '60594');
+  setText('abmahnender_ort', 'Frankfurt am Main');
+  setText('abmahnender_fax', '069/663 68 41 - 222');
+}
+
 function schutt() {
   setText('abmahnender_kanzlei', 'Schutt, Waetke Rechtsanwälte');
   setText('abmahnender_bearbeiter', '');
@@ -46,6 +64,15 @@ function schutt() {
   setText('abmahnender_plz', '76133');
   setText('abmahnender_ort', 'Karlsruhe');
   setText('abmahnender_fax', '0721/12 05 05');
+}
+
+function schulenberg() {
+  setText('abmahnender_kanzlei', 'Schulenberg & Schenk Rechtsanwälte');
+  setText('abmahnender_bearbeiter', '');
+  setText('abmahnender_strasse', 'Alsterchaussee 25');
+  setText('abmahnender_plz', '20149');
+  setText('abmahnender_ort', 'Hamburg');
+  setText('abmahnender_fax', '040/73440860');
 }
 
 function sebastian() {
@@ -79,10 +106,14 @@ function ausfuellen() {
 function abmahnbeantworter() {
   var today = new Date();
   var absender = getText('abgemahnter_vorname') + ' ' + getText('abgemahnter_nachname') + ', ' + getText('abgemahnter_strasse') + ' in ' + getText('abgemahnter_plz') + ' ' + getText('abgemahnter_ort');
+  var land = getText('abgemahnter_land');
+  if(land) {
+    absender +=', ' + land;
+  }
 
   var bearbeiter = getText('abmahnender_bearbeiter');
   var empfaenger = getText('abmahnender_kanzlei');
-  if( bearbeiter ) {
+  if(bearbeiter) {
     empfaenger += '\nz. H. ' + bearbeiter;
   }
   empfaenger += '\n' + getText('abmahnender_strasse');
@@ -90,6 +121,7 @@ function abmahnbeantworter() {
   var fax = getText('abmahnender_fax');
   if(fax) {
     empfaenger += '\n\n\nPer Fax an: ' + fax;
+    document.getElementById('faxempfaenger').innerHTML = 'an ' + fax + ' '
   }
 
   var datums_feld = getText('abgemahnter_ort') + ', ' + today.toLocaleDateString();
@@ -150,6 +182,6 @@ function abmahnbeantworter() {
       fontSize: 12,
     }
   }
-  pdfMake.createPdf(docDefinition).download('Abmahn.pdf');
+  pdfMake.createPdf(docDefinition).download('Abmahnung-' + getText('vorgang_aktenzeichen') + '.pdf');
 
 }
