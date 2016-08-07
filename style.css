@@ -1,17 +1,225 @@
+@font-face {
+    font-family: SourceSansPro;
+    src: url('fonts/SourceSansPro-Regular.otf');
+}
+@font-face {
+    font-family: SourceSansPro;
+    src: url('fonts/SourceSansPro-Bold.otf');
+    font-weight: bold;
+}
+@font-face {
+    font-family: SourceSansPro;
+    src: url('fonts/SourceSansPro-It.otf');
+    font-style: italic;
+}
+@font-face {
+    font-family: SourceSansPro;
+    src: url('fonts/SourceSansPro-BoldIt.otf');
+    font-weight: bold;
+    font-style: italic;
+}
+@font-face {
+    font-family: SourceSansPro;
+    src: url('fonts/SourceSansPro-Light.otf');
+    font-weight: 300;
+}
+@font-face {
+    font-family: SourceSansPro;
+    src: url('fonts/SourceSansPro-LightIt.otf');
+    font-style: italic;
+    font-weight: 300;
+}
+
+body {
+  font-family: 'SourceSansPro', sans-serif;
+}
+
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -4em;
+}
+
+h1 {
+  font-size: 30pt;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 18pt;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+h1, h2, h3, .juice {
+  min-width: 480px;
+  width: 50%;
+  margin: 0.5em auto 0 auto;
+  transition: visibility 0s linear 0.5s, display 0s linear 0.5s;
+}
+
+.hint {
+  font-style: italic;
+  font-weight: 300;
+}
+
+.juice {
+  font-size: 14pt;
+  font-weight: 300;
+  visibility: hidden;
+  display: none;
+}
+
+.hidden, #unsicher {
+  visibility: hidden;
+  display: none;
+}
+
+.wrapper.stepcancel h2 {
+  visibility: hidden;
+  display: none;
+}
+
+.block-step1 {
+  background-color: #F1F2E3;
+  color: black !important;
+}
+
+#unsicher {
+  background-color: #B77662;
+}
+
+.block-step2 {
+  background-color: #70B5A9;
+}
+
+.block-step3 {
+  background-color: #7CA8D7;
+}
+
+.block-step4 {
+  background-color: #6A59A4;
+}
+
+.block-step5 {
+  background-color: #564073;
+}
+
+.block-step6 {
+  background-color: #403040;
+}
+
+.block-step7 {
+  background-color: #F1F2E3;
+  color: black !important;
+}
+
+.greyed .block-step2 {
+  background-color: #ccc;
+}
+
+.greyed .block-step3 {
+  background-color: #aaa;
+}
+
+.greyed .block-step4 {
+  background-color: #888;
+}
+
+.greyed .block-step5 {
+  background-color: #666;
+}
+
+.greyed .block-step6 {
+  background-color: #444;
+}
+
+.collapsable {
+  width: 100%;
+  min-width: 480px;
+  color: white;
+  padding: 0.4em 0 0.4em 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.block-step2, .block-step3, .block-step4, .block-step5, .block-step6 {
+  box-shadow: inset 0px 7px 3px -3px rgba(50, 50, 50, 0.75);
+}
+
+.two-buttons,
+.one-button {
+  height: 3em;
+}
+
+.button {
+  width: 33%;
+  height: 2em;
+  padding-top: 0.7em;
+  padding-bottom: 0;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 10px;
+  text-transform: uppercase;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button-red:hover {
+  background-color: white;
+  color: #E65946;
+}
+
+.button-red {
+  float: right;
+  border: 2px solid #E65946;
+  background-color: #E65946;
+}
+
+.button-green:hover {
+  background-color: white;
+  color: #8ECA63;
+}
+
+.two-buttons .button-green {
+  float: left;
+}
+
+.button-green {
+  float: right;
+  border: 2px solid #8ECA63;
+  background-color: #8ECA63;
+}
+
+body {
+  margin: 0px !important;
+}
+
 ul {
   list-style-type: none;
   padding-left:0;
 }
 
-h2 {
-  padding-top: 1em;
-}
-
 .footer {
+  background-color: #4A5D67;
   font-size: 0.8em;
   margin-top: 2em;
-  border-top: 1px solid black;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0.4em 0 0.4em 0;
+  border-top: 8px solid white;
   text-align: center;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+}
+
+.footer, .push {
+  height: 4em;
 }
 
 .footer p {
@@ -26,4 +234,18 @@ h2 {
 
 input[type="text"] {
   width: 90%;
+}
+
+.wrapper.step1 .block-step1 .juice,
+.wrapper.step2 .block-step2 .juice,
+.wrapper.step3 .block-step3 .juice,
+.wrapper.step4 .block-step4 .juice,
+.wrapper.step5 .block-step5 .juice,
+.wrapper.step6 .block-step6 .juice,
+.wrapper.step7 .block-step7 .juice,
+.wrapper.step7 .block-step7,
+.wrapper.stepcancel .block-stepcancel.juice,
+.wrapper.stepcancel #unsicher {
+  display: block !important;
+  visibility: visible !important;
 }
