@@ -12,8 +12,23 @@ function setText(input, text) {
   document.getElementById(input).value = text;
 }
 
+function scrollTo(element, to, duration) {
+  if (duration <= 0) return;
+  var difference = to - element.scrollTop;
+  var perTick = difference / duration * 2;
+
+  setTimeout(function() {
+    element.scrollTop = element.scrollTop + perTick;
+    scrollTo(element, to, duration - 2);
+  }, 10);
+}
+
 function scroll(id) {
-   document.getElementById(id).scrollIntoView();
+   // document.getElementById(id).scrollIntoView();
+   var el = document.getElementById(id);
+   var rect = el.getBoundingClientRect();
+   var top = rect.bottom + window.pageYOffset - el.ownerDocument.documentElement.clientTop;
+   scrollTo( document.body, top, 100 );
 }
 
 function setClass(id, classes) {
@@ -21,7 +36,7 @@ function setClass(id, classes) {
 }
 
 function step0_cancel() { setClass('wrapper', 'stepcancel'); }
-function step0_done()   { setClass('wrapper', 'step1'); scroll('head1'); }
+function step0_done()   { setClass('wrapper', 'step1'); scrollTo(document.body, 0, 100); }
 function step1_done()   { setClass('wrapper', 'step2'); scroll('head1'); }
 function step2_done()   { setClass('wrapper', 'step3'); scroll('head2'); }
 function step3_done()   { setClass('wrapper', 'step4'); scroll('head3'); }
