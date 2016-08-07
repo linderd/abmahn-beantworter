@@ -43,7 +43,7 @@ html {
   overflow-y: scroll;
 }
 
-.wrapper {
+#wrapper {
   min-height: 100%;
   height: auto !important;
   height: 100%;
@@ -69,7 +69,12 @@ h2 {
   margin: 0.5em auto 0 auto;
 }
 
-.wrapper.step1 .block-header {
+.juice {
+  font-size: 14pt;
+  font-weight: 300;
+}
+
+#wrapper.step1 .block-header {
   pointer-events: none;
 }
 
@@ -78,27 +83,24 @@ h2 {
   font-weight: 300;
 }
 
-.juice {
-  font-size: 14pt;
-  font-weight: 300;
-
-  overflow: hidden;
-  max-height: 0px;
-  transition: max-height 0.25s ease-in;
-}
-
-.hidden,
-#unsicher {
-  visibility: hidden;
-  transition: visibility 0.25s ease-in;
-}
-
-.hidden,
 #unsicher,
-.wrapper.stepcancel h2 {
+.block-step7 {
+  padding: 0;
+}
+#wrapper.stepcancel #unsicher,
+#wrapper-step7 .block-step7 {
+  padding: auto;
+}
+
+.block-step7,
+.juice,
+#wrapper.stepcancel h2 {
   overflow: hidden;
   max-height: 0px;
-  transition: max-height 0.25s ease-in;
+  transition: max-height, height;
+  transition-timing-function: ease;
+  transition-duration: 0.5s;
+  transition-delay: 0s;
 }
 
 .block-step1 {
@@ -257,44 +259,49 @@ ul {
   float: right;
   font-size: 24pt;
   margin-top: -0.2em;
-  display: none;
   visibility: hidden;
+}
+
+#wrapper.step3 .block-step2 .done,
+#wrapper.step4 .block-step2 .done,
+#wrapper.step5 .block-step2 .done,
+#wrapper.step6 .block-step2 .done,
+#wrapper.step7 .block-step2 .done,
+#wrapper.step4 .block-step3 .done,
+#wrapper.step5 .block-step3 .done,
+#wrapper.step6 .block-step3 .done,
+#wrapper.step7 .block-step3 .done,
+#wrapper.step5 .block-step4 .done,
+#wrapper.step6 .block-step4 .done,
+#wrapper.step7 .block-step4 .done,
+#wrapper.step6 .block-step5 .done,
+#wrapper.step7 .block-step5 .done,
+#wrapper.step7 .block-step6 .done {
+  visibility: visible;
 }
 
 input[type="text"] {
   width: 90%;
 }
 
-.wrapper.step1 .block-step1 .juice,
-.wrapper.step2 .block-step2 .juice,
-.wrapper.step3 .block-step3 .juice,
-.wrapper.step4 .block-step4 .juice,
-.wrapper.step5 .block-step5 .juice,
-.wrapper.step6 .block-step6 .juice,
-.wrapper.step7 .block-step7 .juice,
-.wrapper.step7 .block-step7,
+#wrapper.step1 .block-step1 .juice,
+#wrapper.stepcancel .block-stepcancel .juice {
+  max-height: 350px;
+  transition: max-height 0.5s ease;
+}
 
-.wrapper.stepcancel .block-stepcancel.juice,
-.wrapper.stepcancel #unsicher,
+#wrapper.step5 .block-step5 .juice {
+  max-height: 500px;
+  transition: max-height 0.5s ease;
+}
 
-.wrapper.step3 .block-step2 .done,
-.wrapper.step4 .block-step2 .done,
-.wrapper.step5 .block-step2 .done,
-.wrapper.step6 .block-step2 .done,
-.wrapper.step7 .block-step2 .done,
-.wrapper.step4 .block-step3 .done,
-.wrapper.step5 .block-step3 .done,
-.wrapper.step6 .block-step3 .done,
-.wrapper.step7 .block-step3 .done,
-.wrapper.step5 .block-step4 .done,
-.wrapper.step6 .block-step4 .done,
-.wrapper.step7 .block-step4 .done,
-.wrapper.step6 .block-step5 .done,
-.wrapper.step7 .block-step5 .done,
-.wrapper.step7 .block-step6 .done
-
+#wrapper.step2 .block-step2 .juice,
+#wrapper.step3 .block-step3 .juice,
+#wrapper.step4 .block-step4 .juice,
+#wrapper.step6 .block-step6 .juice,
+#wrapper.step7 .block-step7 .juice,
+#wrapper.step7 .block-step7
 {
-  display: block !important;
-  visibility: visible !important;
-  max-height: 9999px;
+  max-height: 900px;
+  transition: max-height 0.5s ease;
 }

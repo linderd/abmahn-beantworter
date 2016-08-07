@@ -12,14 +12,22 @@ function setText(input, text) {
   document.getElementById(input).value = text;
 }
 
-function step0_done()   { document.getElementById('wrapper').className = 'wrapper step1'; }
-function step1_cancel() { document.getElementById('wrapper').className = 'wrapper stepcancel'; }
-function step1_done()   { document.getElementById('wrapper').className = 'wrapper step2'; }
-function step2_done()   { document.getElementById('wrapper').className = 'wrapper step3'; }
-function step3_done()   { document.getElementById('wrapper').className = 'wrapper step4'; }
-function step4_done()   { document.getElementById('wrapper').className = 'wrapper step5'; }
-function step5_done()   { document.getElementById('wrapper').className = 'wrapper step6'; }
-function step6_done()   { document.getElementById('wrapper').className = 'wrapper step7'; }
+function scroll(id) {
+   document.getElementById(id).scrollIntoView();
+}
+
+function setClass(id, classes) {
+  document.getElementById(id).className = classes;
+}
+
+function step0_cancel() { setClass('wrapper', 'stepcancel'); }
+function step0_done()   { setClass('wrapper', 'step1'); scroll('head1'); }
+function step1_done()   { setClass('wrapper', 'step2'); scroll('head1'); }
+function step2_done()   { setClass('wrapper', 'step3'); scroll('head2'); }
+function step3_done()   { setClass('wrapper', 'step4'); scroll('head3'); }
+function step4_done()   { setClass('wrapper', 'step5'); scroll('head4'); }
+function step5_done()   { setClass('wrapper', 'step6'); scroll('head5'); }
+function step6_done()   { setClass('wrapper', 'step7'); scroll('head6'); }
 
 function waldorff() {
   setText('abmahnender_kanzlei', 'Waldorff & Frommer RAe');
