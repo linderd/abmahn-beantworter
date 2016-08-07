@@ -220,6 +220,7 @@ ul {
 
 .footer {
   background-color: #4A5D67;
+  color: #8E99A0;
   font-size: 0.8em;
   margin-left: 0;
   margin-right: 0;
@@ -235,6 +236,11 @@ ul {
 .footer p {
   margin-bottom: 0px;
   margin-top: 0px;
+}
+
+.footer a:link,
+.footer a:visited {
+  color: #8E99A0;
 }
 
 .clear {
