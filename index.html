@@ -11,7 +11,9 @@
   <body>
     <div id="wrapper" class="wrapper step1">
       <div class="collapsable block-step1">
-        <h1>Abmahnbeantworter</h1>
+        <div onclick="step0_done()" class="block-header">
+          <h1>Abmahnbeantworter</h1>
+        </div>
         <div class="juice">
           <p>Sie haben eine Abmahnung für einen Urheberrechtsverstoß erhalten?</p>
           <p>Erzeugen Sie mit diesem Schriftsatz-Generator in fünf Schritten ein Antwortschreiben, das die abmahnende Kanzlei über die Unrechtmäßigkeit der Abmahnung in Kenntnis setzt.</p>
@@ -26,10 +28,18 @@
         <div class="juice block-stepcancel">
           <p>Bitte benutzen Sie diesen Vordruck nur, wenn Sie tatsächlich nicht für die abgemahnte Verletzung verantwortlich sind. Sollte dies doch der Fall sein, oder wenn Sie sich <b>nicht</b> sicher sind, dann suchen Sie bitte einen Anwalt auf.</p>
           <p>Unrichtige Angaben zum Sachverhalt können Ihnen vor Gericht belastend ausgelegt werden. Dadurch können erhebliche Kosten entstehen.</p>
+          <div class="one-button">
+            <a href="https://duckduckgo.com/?q=anwalt+urheberrecht">
+              <div class="button button-green">Anwalt suchen</div>
+            </a>
+          </div>
         </div>
       </div>
       <div class="collapsable block-step2">
-        <h2>Entlastendes aus dem Sachverhalt</h2>
+        <div onclick="step1_done()" class="block-header">
+          <div class="done">&#x2713;</div>
+          <h2>Entlastendes aus dem Sachverhalt</h2>
+        </div>
         <div class="juice">
           <p>Bevor wir loslegen, sammeln wir alle Informationen ein, die der abmahnenden Kanzlei verdeutlichen, warum die Abmahnung unberechtigt ist.</p>
 
@@ -62,7 +72,10 @@
         </div>
       </div>
       <div class="collapsable block-step3">
-        <h2>Abgemahnter</h2>
+        <div onclick="step2_done()" class="block-header">
+          <div class="done">&#x2713;</div>
+          <h2>Abgemahnter</h2>
+        </div>
         <div class="juice">
            <div><a href="javascript:ausfuellen()" class="button">Debug: pre-fill</a></div>
           <p>Hier benötigen wir Ihre Informationen, um das Anschreiben mit einem Absender zu versehen. Bitte fügen Sie Namen und Adresse wie auf der Abmahnung ein.</p>
@@ -85,7 +98,10 @@
         </div>
       </div>
       <div class="collapsable block-step4">
-        <h2>Abmahnender</h2>
+        <div onclick="step3_done()" class="block-header">
+          <div class="done">&#x2713;</div>
+          <h2>Abmahnender</h2>
+        </div>
         <div class="juice">
           <p>Ist der Abmahner eine der folgenden Kanzleien? Dann können wir die Adresse gleich per Click übernehmen.</p>
           <button class="w3-btn" onclick="sebastian()">Daniel Sebastian Rechtsanwalt</button>
@@ -112,7 +128,10 @@
         </div>
       </div>
       <div class="collapsable block-step5">
-        <h2>Vorgang</h2>
+        <div onclick="step4_done()" class="block-header">
+          <div class="done">&#x2713;</div>
+          <h2>Vorgang</h2>
+        </div>
         <div class="juice">
           <p>Der Abmahner hat Ihnen ein Aktenzeichen zugeordnet. Dies muss im Schreiben auftauchen, um die Antwort der Abmahnung zuordnen zu können.</p>
           <p>Das Datum der Abmahnung hilft Ihnen später, die Einhaltung der Fristen nachvollziehen zu können. Wir geben es in der Antwort mit an.</p>
@@ -129,17 +148,22 @@
         </div>
       </div>
       <div class="collapsable block-step6">
-        <h2 class="block_titel">Erzeugen</h2>
+        <div onclick="step5_done()" class="block-header">
+          <div class="done">&#x2713;</div>
+          <h2>Erzeugen</h2>
+        </div>
         <div class="juice">
           <p>Wir haben nun alle Informationen, um das Antwortschreiben erzeugen zu können:</p>
           <div class="one-button">
-            <div class="button button-green" onclick="abmahnbeantworter()">Abmahnung beantworten</div>
+            <div class="button button-green" onclick="abmahnbeantworter()">Antworten</div>
           </div>
           <p class="hint">Drucken Sie das Schreiben aus und schicken Sie es per Post an die abmahnende Kanzlei. Optional können Sie zur Wahrung der Frist das Schreiben auch vorab <span id="faxempfaenger"></span>faxen.</p>
         </div>
       </div>
       <div class="hidden collapsable block-step7">
-        <h2 class="block_titel">Und jetzt?</h2>
+        <div class="block-header">
+          <h2>Und jetzt?</h2>
+        </div>
         <div class="juice">
           <p>Nimmt die abmahnende Kanzlei ihre Forderung nicht innerhalb unserer Frist (14 Tage) zurück, steht Ihnen eine gerichtliche Klärung zu.</p>
           <p>Die Auslagen hierfür können Sie – im Gegensatz zur ersten Antwort auf die Abmahnung – vom Abmahner zurückfordern. Dazu gehören auch die Anwaltskosten.</p>

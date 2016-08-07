@@ -12,6 +12,7 @@ function setText(input, text) {
   document.getElementById(input).value = text;
 }
 
+function step0_done()   { document.getElementById('wrapper').className = 'wrapper step1'; }
 function step1_cancel() { document.getElementById('wrapper').className = 'wrapper stepcancel'; }
 function step1_done()   { document.getElementById('wrapper').className = 'wrapper step2'; }
 function step2_done()   { document.getElementById('wrapper').className = 'wrapper step3'; }
