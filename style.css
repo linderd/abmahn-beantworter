@@ -67,7 +67,6 @@ h2 {
   min-width: 480px;
   width: 50%;
   margin: 0.5em auto 0 auto;
-  transition: visibility 0s linear 0.5s, display 0s linear 0.5s;
 }
 
 .wrapper.step1 .block-header {
@@ -82,18 +81,24 @@ h2 {
 .juice {
   font-size: 14pt;
   font-weight: 300;
-  visibility: hidden;
-  display: none;
+
+  overflow: hidden;
+  max-height: 0px;
+  transition: max-height 0.25s ease-in;
 }
 
-.hidden, #unsicher {
+.hidden,
+#unsicher {
   visibility: hidden;
-  display: none;
+  transition: visibility 0.25s ease-in;
 }
 
+.hidden,
+#unsicher,
 .wrapper.stepcancel h2 {
-  visibility: hidden;
-  display: none;
+  overflow: hidden;
+  max-height: 0px;
+  transition: max-height 0.25s ease-in;
 }
 
 .block-step1 {
@@ -291,4 +296,5 @@ input[type="text"] {
 {
   display: block !important;
   visibility: visible !important;
+  max-height: 9999px;
 }
