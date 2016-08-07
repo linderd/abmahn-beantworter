@@ -70,6 +70,10 @@ h2 {
   transition: visibility 0s linear 0.5s, display 0s linear 0.5s;
 }
 
+.wrapper.step1 .block-header {
+  pointer-events: none;
+}
+
 .hint {
   font-style: italic;
   font-weight: 300;
