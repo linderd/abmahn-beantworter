@@ -58,7 +58,7 @@ h1 {
 }
 
 h2 {
-  font-size: 18pt;
+  font-size: 24pt;
   font-weight: 300;
   cursor: pointer;
 }
@@ -221,10 +221,10 @@ ul {
 .footer {
   background-color: #4A5D67;
   color: #8E99A0;
-  font-size: 0.8em;
+  font-size: 11pt;
   margin-left: 0;
   margin-right: 0;
-  padding: 0.4em 0 0.4em 0;
+  padding: 0.2em 0 0 0;
   text-align: center;
   width: 100%;
 }
