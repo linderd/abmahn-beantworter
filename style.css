@@ -66,6 +66,7 @@ h2 {
 .block-header, .juice {
   min-width: 480px;
   width: 50%;
+  max-width: 32em;
   margin: 0.5em auto 0 auto;
 }
 
@@ -186,34 +187,30 @@ h2 {
   text-align: center;
   border-radius: 10px;
   text-transform: uppercase;
-  transition-duration: 0.4s;
+  transition-duration: 0.2s;
   cursor: pointer;
-}
-
-.button-red:hover {
-  background-color: white;
-  color: #E65946;
 }
 
 .button-red {
   float: right;
-  border: 2px solid #E65946;
   background-color: #E65946;
-}
-
-.button-green:hover {
-  background-color: white;
-  color: #8ECA63;
-}
-
-.two-buttons .button-green {
-  float: left;
 }
 
 .button-green {
   float: right;
-  border: 2px solid #8ECA63;
   background-color: #8ECA63;
+}
+
+.button-green:hover {
+  background-color: #c2ca63;
+}
+
+.button-red:hover {
+  background-color: #E646D3;
+}
+
+.two-buttons .button-green {
+  float: left;
 }
 
 body {
@@ -258,7 +255,6 @@ ul {
 .done {
   float: right;
   font-size: 24pt;
-  margin-top: -0.2em;
   visibility: hidden;
 }
 
