@@ -12,23 +12,26 @@ function setText(input, text) {
   document.getElementById(input).value = text;
 }
 
-function scrollTo(element, to, duration) {
-  if (duration <= 0) return;
-  var difference = to - element.scrollTop;
-  var perTick = difference / duration * 2;
-
-  setTimeout(function() {
-    element.scrollTop = element.scrollTop + perTick;
-    scrollTo(element, to, duration - 2);
-  }, 10);
+function scrollTo(to, duration) {
+    if (document.body.scrollTop == to) return;
+    var diff = to - document.body.scrollTop;
+    var scrollStep = Math.PI / (duration / 10);
+    var count = 0, currPos;
+    start = document.body.scrollTop;
+    scrollInterval = setInterval(function(){
+        if (document.body.scrollTop != to) {
+            count = count + 1;
+            currPos = start + diff * (0.5 - 0.5 * Math.cos(count * scrollStep));
+            document.body.scrollTop = currPos;
+        }
+        else { clearInterval(scrollInterval); }
+    },10);
 }
 
+
 function scroll(id) {
-   // document.getElementById(id).scrollIntoView();
-   var el = document.getElementById(id);
-   var rect = el.getBoundingClientRect();
-   var top = rect.bottom + window.pageYOffset - el.ownerDocument.documentElement.clientTop;
-   scrollTo( document.body, top, 100 );
+//   document.getElementById(id).scrollIntoView();
+   scrollTo( document.getElementById(id).offsetTop, 500 );
 }
 
 function setClass(id, classes) {
