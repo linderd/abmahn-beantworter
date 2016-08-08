@@ -304,12 +304,11 @@ select.zeit {
 }
 
 select {
-  height: 2em;
+  height: 4em;
   text-align: center;
   font-size: 13pt;
   font-weight: 300;
   border-radius: 4px;
-  padding: 16px 32px;
 }
 
 #wrapper.step1 .block-step1 .juice,
