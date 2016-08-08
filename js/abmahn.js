@@ -12,40 +12,49 @@ function setText(input, text) {
   document.getElementById(input).value = text;
 }
 
-function scrollTo(to, duration) {
-    if (document.body.scrollTop == to) return;
-    var diff = to - document.body.scrollTop;
-    var scrollStep = Math.PI / (duration / 10);
-    var count = 0, currPos;
-    start = document.body.scrollTop;
-    scrollInterval = setInterval(function(){
-        if (document.body.scrollTop != to) {
-            count = count + 1;
-            currPos = start + diff * (0.5 - 0.5 * Math.cos(count * scrollStep));
-            document.body.scrollTop = currPos;
-        }
-        else { clearInterval(scrollInterval); }
-    },10);
-}
-
-
-function scroll(id) {
-//   document.getElementById(id).scrollIntoView();
-   scrollTo( document.getElementById(id).offsetTop, 500 );
-}
-
 function setClass(id, classes) {
   document.getElementById(id).className = classes;
 }
 
+function scrollTo(el) {
+    if(document.querySelectorAll === void 0 || window.pageYOffset === void 0 || history.pushState === void 0) {
+     el.scrollIntoView();
+     return;
+    }
+    var duration = 500;
+    var start = window.pageYOffset;
+    var end = document.getElementById(el).getBoundingClientRect().top + window.pageYOffset;
+
+    var clock = Date.now();
+    var requestAnimationFrame = window.requestAnimationFrame ||
+        window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame ||
+        function(fn){window.setTimeout(fn, 15);};
+
+    var step = function(){
+        var elapsed = Date.now() - clock;
+        var t = elapsed / duration;
+        if (elapsed > duration)
+           var pos =end;
+        else
+           var pos = start + (end - start) * (t<.5 ? 4*t*t*t : (t-1)*(2*t-2)*(2*t-2)+1);
+
+        window.scroll(window.pageXOffset, pos);
+
+        if (elapsed <= duration) {
+            requestAnimationFrame(step);
+        }
+    }
+    step();
+}
+
 function step0_cancel() { setClass('wrapper', 'stepcancel'); }
-function step0_done()   { setClass('wrapper', 'step1'); scrollTo(document.body, 0, 100); }
-function step1_done()   { setClass('wrapper', 'step2'); scroll('head1'); }
-function step2_done()   { setClass('wrapper', 'step3'); scroll('head2'); }
-function step3_done()   { setClass('wrapper', 'step4'); scroll('head3'); }
-function step4_done()   { setClass('wrapper', 'step5'); scroll('head4'); }
-function step5_done()   { setClass('wrapper', 'step6'); scroll('head5'); }
-function step6_done()   { setClass('wrapper', 'step7'); scroll('head6'); }
+function step0_done()   { setClass('wrapper', 'step1'); scrollTo('head1'); }
+function step1_done()   { setClass('wrapper', 'step2'); scrollTo('head1'); }
+function step2_done()   { setClass('wrapper', 'step3'); scrollTo('head2'); }
+function step3_done()   { setClass('wrapper', 'step4'); scrollTo('head3'); }
+function step4_done()   { setClass('wrapper', 'step5'); scrollTo('head4'); }
+function step5_done()   { setClass('wrapper', 'step6'); scrollTo('head5'); }
+function step6_done()   { setClass('wrapper', 'step7'); scrollTo('head6'); }
 
 function waldorff() {
   setText('abmahnender_kanzlei', 'Waldorff & Frommer RAe');
