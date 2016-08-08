@@ -16,6 +16,10 @@ function setClass(id, classes) {
   document.getElementById(id).className = classes;
 }
 
+function setSelection(id, selection) {
+  document.getElementById(id).value = selection;
+}
+
 function scrollTo(el) {
     if(document.querySelectorAll === void 0 || window.pageYOffset === void 0 || history.pushState === void 0) {
      el.scrollIntoView();
@@ -143,8 +147,15 @@ function ausfuellen() {
   setText('abmahnender_ort', 'München');
 
   setText('vorgang_aktenzeichen', '16P99964sShA');
-  setText('vorgang_datum', '10. 6. 2016');
 
+  setSelection('vorgang_datum_tag', '23' );
+  setSelection('vorgang_datum_monat', '5' );
+  setSelection('vorgang_datum_jahr', '2016' );
+
+  setSelection('tat_datum_tag', '17' );
+  setSelection('tat_datum_monat', '1' );
+  setSelection('tat_datum_jahr', '2016' );
+  setSelection('tat_datum_zeit', '20:45' );
 }
 
 function abmahnbeantworter() {
