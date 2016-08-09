@@ -337,7 +337,7 @@ label input {
 }
 
 #wrapper.step2 .block-step2 .juice {
-  max-height: 1000px;
+  max-height: 1200px;
   transition: max-height 0.5s ease;
 }
 
