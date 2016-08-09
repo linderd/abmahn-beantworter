@@ -2,10 +2,9 @@ function getText(input) {
   return document.getElementById(input).value || '';
 }
 
-function getDate(input) {
-  var date = Date.parse(document.getElementById(input));
-  if( !date ) return 'von letzter Woche';
-  return 'vom ' + date.toLocaleDateString();
+function getValue(el) {
+  var e = document.getElementById(el);
+  return e.options[e.selectedIndex].value;
 }
 
 function setText(input, text) {
@@ -18,6 +17,10 @@ function setClass(id, classes) {
 
 function setSelection(id, selection) {
   document.getElementById(id).value = selection;
+}
+
+function getCheck(id) {
+  return document.getElementById(id).checked;
 }
 
 function scrollTo(el) {
@@ -155,13 +158,16 @@ function ausfuellen() {
   setSelection('tat_datum_tag', '17' );
   setSelection('tat_datum_monat', '1' );
   setSelection('tat_datum_jahr', '2016' );
-  setSelection('tat_datum_zeit', '20:45' );
+  setSelection('tat_uhrzeit', '20:45' );
 }
 
 function abmahnbeantworter() {
-  step6_done();
-
+  // collect all date Time info
   var today = new Date();
+  var vorgang = new Date(getValue('vorgang_datum_jahr'), getValue('vorgang_datum_monat'), getValue('vorgang_datum_tag'));
+  var t = getValue('tat_uhrzeit').split(':');
+  var tatzeit = new Date(getValue('tat_datum_jahr'), getValue('tat_datum_monat'), getValue('tat_datum_tag'), t[0], t[1] );
+
   var absender = getText('abgemahnter_vorname') + ' ' + getText('abgemahnter_nachname') + ', ' + getText('abgemahnter_strasse') + ' in ' + getText('abgemahnter_plz') + ' ' + getText('abgemahnter_ort');
   var land = getText('abgemahnter_land');
   if(land) {
@@ -181,19 +187,88 @@ function abmahnbeantworter() {
     document.getElementById('faxempfaenger').innerHTML = 'an ' + fax + ' '
   }
 
-  var datums_feld = getText('abgemahnter_ort') + ', ' + today.toLocaleDateString();
+  var datums_feld = getText('abgemahnter_ort') + ', ' + today.toLocaleDateString('de-DE');
   var zeichen = 'Ihr Zeichen ' + getText('vorgang_aktenzeichen');
 
   var fliesstext = 'Sehr geehrte Damen und Herren,\n\n';
 
-  fliesstext += 'ich nehme Bezug auf Ihr Schreiben vom ' + getText('vorgang_datum') + '. Hierzu muss ich Ihnen mitteilen, dass ich den angeblichen Verstoß nicht begangen habe.\n\n';
+  fliesstext += 'vielen Dank für den außergerichtlichen Hinweis vom ' + vorgang.toLocaleDateString('de-DE') + ', dass mir eine urheberrechtliche Rechtsverletzung vorgeworfen wird.\n\n';
 
-  fliesstext += 'Vorsorglich weise ich darauf hin, dass ich ein offenes W-Lan mit einer Vorschaltseite betreibe, das von meinen Nachbarn und meiner Familie mitbenutzt wird.\n\n';
+  fliesstext += 'Nach Prüfung des Sachverhaltes kann ich Ihnen jedoch erleichtert mitteilen, dass ich die angebliche Urheberrechtsverletzung vom ' + tatzeit.toLocaleDateString('de-DE') + ' nicht begangen habe. In diesem von Ihnen geschilderten Zusammenhang komme ich weder als Täter noch als Störer in Betracht.\n\n'
 
-  fliesstext += 'Ich komme weder als Täter noch als Störer in Betracht.\n\n';
+  var zudem = 0;
+  if(getCheck('alibi_urlaub')) {
+    fliesstext += 'Ich befand mich zum angeblichen Tatzeitpunkt am ' + tatzeit.toLocaleDateString('de-DE') + ' um ' + tatzeit.toLocaleTimeString('de-DE') + ' nachweislich im Urlaub.';
+    zudem = 1;
+  }
+  if(getCheck('alibi_ausserhalb')) {
+    fliesstext += zudem ? ' Zudem befand ich' : 'Ich befand';
+    fliesstext += ' mich zum angeblichen Tatzeitpunkt am ' + tatzeit.toLocaleDateString('de-DE') + ' um ' + tatzeit.toLocaleTimeString('de-DE') + ' beruflich im Ausland.';
+    zudem = 1;
+  }
+  if(getCheck('alibi_arbeit')) {
+    fliesstext += zudem ? ' Zudem befand ich' : 'Ich befand';
+    fliesstext += ' mich zum angeblichen Tatzeitpunkt am ' + tatzeit.toLocaleDateString('de-DE') + ' um ' + tatzeit.toLocaleTimeString('de-DE') + ' nachweislich an meinem Arbeitsplatz, dies kann durch meine Kollegen bezeugt werden.';
+    zudem = 1;
+  }
+  if(getCheck('alibi_besuch')) {
+    fliesstext += zudem ? ' Zudem hatte ich' : 'Ich hatte';
+    fliesstext += ' zum angegebenen Tatzeitpunkt am ' + tatzeit.toLocaleDateString('de-DE') + ' um ' + tatzeit.toLocaleTimeString('de-DE') + ' nachweislich Besuch und dieser kann bezeugen, dass ich zu diesem Zeitpunkt meinen Rechner nicht benutzte.';
+    zudem = 1;
+  }
+  if(getCheck('alibi_nichtzuhause')) {
+    fliesstext += zudem ? ' Zudem befand ich' : 'Ich befand';
+    fliesstext += ' mich zum angeblichen Tatzeitpunkt am ' + tatzeit.toLocaleDateString('de-DE') + ' um ' + tatzeit.toLocaleTimeString('de-DE') + ' nachweislich nicht zuhause. Dafür gibt es Zeugen.';
+    zudem = 1;
+  }
+  if(getCheck('alibi_keinendgeraet')) {
+    fliesstext += zudem ? ' Zudem bin ich nicht in Besitz eines internetfähigen Computers.' : 'Ich besitze keinen internetfähigen Computer.';
+    zudem = 1;
+  }
+  if(getCheck('alibi_nichtwohnhaft')) {
+    fliesstext += zudem ? ' Zudem habe ich' : 'Ich habe';
+    fliesstext += ' zum angeblichen Tatzeitpunkt am ' + tatzeit.toLocaleDateString('de-DE') + ' nicht an der angegebenen Adresse gewohnt.';
+    zudem = 1;
+  }
+  if(zudem) {
+    fliesstext += '\n\n';
+    zudem = 0;
+  }
+
+  if(getCheck('alibi_familie')) {
+    fliesstext += 'Ich teile meinen Internatanschluss mit meiner Familie, wobei jeder eigenverantwortlich das Internet nutzt. Es gab keine Hinweise darauf, dass ein Familienmitglied Rechtsverletzungen begeht.';
+    zudem = 1;
+  }
+  if(getCheck('alibi_wg')) {
+    fliesstext += zudem ? ' Zudem teile ich' : 'Ich teile';
+    fliesstext += ' meinen Internetanschluss mit meiner Wohngemeinschaft, wobei jeder Mitbewohner das Internet eigenverantwortlich nutzt.';
+    zudem = 1;
+  }
+  if(getCheck('alibi_offeneswifi')) {
+    fliesstext += zudem ? ' Zudem betreibe ich' : 'Ich betreibe';
+    fliesstext += ' ein offenes W-LAN für das gesamte Haus, in dem ich lebe. Daraus folgt, dass ich unter die Haftungsprivilegierung des § 8 TMG n. F. falle.';    zudem = 1;
+  }
+  if(getCheck('alibi_tornode')) {
+    fliesstext += zudem ? ' Zudem betrieb ich' : 'Ich betrieb';
+    fliesstext += ' zum angeblichen Tatzeitpunkt am ' + tatzeit.toLocaleDateString('de-DE') + ' um ' + tatzeit.toLocaleTimeString('de-DE') + ' nachweislich einen Tor-Exit-Node. Demzufolge falle ich unter die Haftungsprivilegierung des § 8 TMG n. F.';
+    zudem = 1;
+  }
+  if(getCheck('alibi_freifunk')) {
+    fliesstext += zudem ? 'Zudem betreibe ich' : 'Ich betreibe';
+    fliesstext += ' einen Freifunk-Knoten und werde von § 8 TMG n. F. haftungsprivilegiert.';
+    zudem = 1;
+  }
+  if(getCheck('alibi_fluechtlingshilfe')) {
+    fliesstext += zudem ? 'Zudem stelle ich' : 'Ich stelle';
+    fliesstext += ' meinen Anschluss Flüchtlingsheimen zur Verfügung.';
+    zudem = 1;
+  }
+  if(zudem) {
+    fliesstext += '\n\n';
+  }
 
   var frist = new Date(today.getTime() + 1209600000);
-  fliesstext += 'Ich fordere Sie daher auf, die Abmahnung umgehend zurückzunehmen. Sollte ich bis zum ' + frist.toLocaleDateString() + ' keine diesbezügliche Nachricht von Ihnen erhalten haben, werde ich mit anwaltlicher Hilfe das Nichtbestehen der Forderung gerichtlich bestätigen lassen.\n\n';
+  fliesstext += 'Aufgrund des von mir nun dargelegten Sachverhaltes müssen Sie erkennen, dass die Abmahnung vom ' + vorgang.toLocaleDateString('de-DE') + ' gegen mich unrechtmäßig ergangen ist. Ich fordere Sie deshalb auf, bis zum ' + frist.toLocaleDateString('de-DE') + ' die geltend gemachten Forderungen zurückzunehmen. Sollten Sie diese Frist fruchtlos verstreichen lassen, behalte ich mir ausdrücklich vor, Hilfe eines Rechtsanwaltes in Anspruch zu nehmen und Ihnen die dadurch entstandenen Kosten aufzuerlegen oder/und eine negative Feststellungsklage bei Gericht einzureichen, mit dem Ziel, die Unrechtmäßigkeit der Abmahnung feststellen zu lassen.\n\n';
 
   fliesstext += 'Mit freundlichen Grüßen';
   var signatur = getText('abgemahnter_nachname');
@@ -236,9 +311,11 @@ function abmahnbeantworter() {
     pageSize: 'A4',
     defaultStyle: {
       font: 'Gentium Book Basic',
-      fontSize: 12,
+      fontSize: 11,
     }
   }
   pdfMake.createPdf(docDefinition).download('Abmahnung-' + getText('vorgang_aktenzeichen') + '.pdf');
 
+  // advance view
+  step6_done();
 }
