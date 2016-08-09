@@ -47,7 +47,7 @@ html {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  margin: 0 auto -4em;
+  margin: 0 auto -160px;
 }
 
 h1 {
@@ -244,7 +244,7 @@ ul {
 }
 
 .footer, .push {
-  height: 4em;
+  height: 160px;
 }
 
 .footer p {
@@ -359,4 +359,22 @@ label input {
 {
   max-height: 900px;
   transition: max-height 0.5s ease;
+}
+
+.credits {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.partner img {
+  opacity: 0.5;
+}
+
+.partner {
+  display: inline-block;
+  margin: 1em 0em 1em 0;
+}
+
+.partner.ccc, .partner.freifunk {
+  margin-right: 10%;
 }
