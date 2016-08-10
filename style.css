@@ -156,7 +156,7 @@ h2 {
 }
 
 .footer {
-  box-shadow: -3px 0px 3px 6px rgba(50, 50, 50, 0.75);
+  box-shadow: 0px 0px 3px 3px rgba(50, 50, 50, 0.75);
 }
 
 .two-buttons,
@@ -177,6 +177,20 @@ h2 {
   text-transform: uppercase;
   transition-duration: 0.2s;
   cursor: pointer;
+}
+
+.button-small {
+  background-color: white;
+  color: black;
+  font-weight: normal;
+  font-size: 13pt;
+  display: inline-block;
+  border-radius: 4px;
+  padding: 0.1em 0.3em 0.1em 0.3em;
+  margin: 0 0.4em 1em 0;
+  cursor: pointer;
+  transition-duration: 0.2s;
+  box-shadow: 0px 7px 3px 0px rgba(50, 50, 50, 0.75);
 }
 
 .one-button a:link,
@@ -200,6 +214,11 @@ h2 {
 
 .button-red:hover {
   background-color: #E646D3;
+}
+
+.button-small:hover {
+  /* background-color: #F1F2E3; */
+  background-color: #D0B66B;
 }
 
 .one-button .button-green {
