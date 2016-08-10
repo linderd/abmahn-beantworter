@@ -38,68 +38,11 @@
       <div class="collapsable block-step2">
         <div onclick="step1_done()" class="block-header">
           <div class="done">&#x2713;</div>
-          <h2 id="head2">Schritt 1: Fakten sammeln</h2>
+          <h2 id="head2">Schritt 1: Wer mahnt ab?</h2>
         </div>
         <div class="juice">
-          <p>Bevor wir loslegen, sammeln wir alle Informationen ein, die der abmahnenden Kanzlei verdeutlichen, warum die Abmahnung unberechtigt ist.</p>
-
-          <p>Der Anschlussinhaber wird in der Abmahnung als Täter angenommen. Dies ist meist inkorrekt. Gibt es Beweise, dass Sie nicht der Täter sind, wählen Sie das entsprechende Häkchen:</p>
-
-          <label><input id="alibi_urlaub" type="checkbox"/>Ich war nachweislich im Urlaub.</label>
-          <label><input id="alibi_ausserhalb" type="checkbox"/>Ich war nachweislich beruflich außerhalb Deutschlands.</label>
-          <label><input id="alibi_nichtzuhause" type="checkbox"/>Ich war nachweislich nicht zuhause.</label>
-          <label><input id="alibi_arbeit" type="checkbox"/>Ich war nachweislich auf Arbeit.</label>
-          <label><input id="alibi_besuch" type="checkbox"/>Ich hatte Besuch. Dieser kann bezeugen, dass ich meinen Computer nicht benutzt habe.</label>
-          <label><input id="alibi_keinendgeraet" type="checkbox"/>Ich besitze keinen internetfähigen Computer.</label>
-          <label><input id="alibi_nichtwohnhaft" type="checkbox"/>Zum angegebenen Zeitpunkt habe ich an der ermittelten Adresse nicht (mehr) gewohnt.</label>
-
-          <p>Um nicht als Störer in Haftung genommen zu werden, sind Hinweise hilfreich, aus welchem Grund auch eine Störerhaftung nicht in Betracht kommt. Bitte wählen Sie die entsprechenden Häkchen.</p>
-          <label><input id="alibi_freifunk" type="checkbox"/>Ich betreibe ein Freifunk-Netzwerk.</label>
-          <label><input id="alibi_tornode" type="checkbox"/>Ich betreibe nachweislich einen Tor-Exit-Node.</label>
-          <label><input id="alibi_offeneswifi" type="checkbox"/>Ich betreibe ein offenes Netzwerk für das Haus.</label>
-          <label><input id="alibi_familie" type="checkbox"/>Neben mir benutzen mehrere Familienmitglieder mein Netzwerk.</label>
-          <label><input id="alibi_wg" type="checkbox"/>Neben mir benutzen mehrere Mitbewohner mein Netzwerk.</label>
-          <label><input id="alibi_nachbarn" type="checkbox"/>Neben mir benutzen mehrere Nachbarn mein Netzwerk.</label>
-          <label><input id="alibi_fluechtlingshilfe" type="checkbox"/>Ich stelle mein Netzwerk einem Flüchtlingsheim zur Verfügung.</label>
-          <p></p>
-          <div class="hint">Achtung: Unrichtige Angaben zum Sachverhalt können Ihnen vor Gericht belastend ausgelegt werden. <b>Wählen Sie daher auf jeden Fall nur die Häkchen aus, die den Tatsachen entsprechen.</b></div>
-          <div class="one-button">
-            <div class="button button-green" onclick="step2_done()">Weiter</div>
-          </div>
-        </div>
-      </div>
-      <div class="collapsable block-step3">
-        <div onclick="step2_done()" class="block-header">
-          <div class="done">&#x2713;</div>
-          <h2 id="head3">Schritt 2: Daten des Abgemahnten</h2>
-        </div>
-        <div class="juice">
-           <div><a href="javascript:ausfuellen()" class="button">Debug: pre-fill</a></div>
-          <p>Hier benötigen wir Ihre Informationen, um das Anschreiben mit einem Absender zu versehen. Bitte fügen Sie Namen und Adresse wie auf der Abmahnung ein.</p>
-          <ul>
-            <li><input id="abgemahnter_vorname" type="text" name="vorname" placeholder="Vorname"/></li>
-            <li><input id="abgemahnter_nachname" type="text" name="nachname" placeholder="Nachname"/></li>
-            <li><input id="abgemahnter_zusatz" type="text" name="zusatz" placeholder="Zusatz (optional)"/></li>
-            <li><input id="abgemahnter_strasse" type="text" name="strasse" placeholder="Straße und Hausnummer"/></li>
-            <li><input id="abgemahnter_plz" type="text" name="plz" placeholder="Postleitzahl"/></li>
-            <li><input id="abgemahnter_ort" type="text" name="ort" placeholder="Wohnort"/></li>
-            <li><input id="abgemahnter_land" type="text" name="land" placeholder="Land (optional)"/></li>
-          </ul>
-          <div class="hint">
-            <p>Datenschutzhinweis: Wir übertragen Ihre Daten nicht ins Internet. Das Antwortschreiben wird auf Ihrem Computer erstellt.</p>
-            <p>Wir zählen ausschließlich die Abrufe dieser Webseite und speichern keinerlei Details über die Besucher.</p>
-          </div>
-          <div class="one-button">
-            <div class="button button-green" onclick="step3_done()">Weiter</div>
-          </div>
-        </div>
-      </div>
-      <div class="collapsable block-step4">
-        <div onclick="step3_done()" class="block-header">
-          <div class="done">&#x2713;</div>
-          <h2 id="head4">Schritt 3: Daten der Abmahner</h2>
-        </div>
-        <div class="juice">
+          <div><a href="javascript:ausfuellen()" class="button">Debug: pre-fill</a></div>
+          <p>Zuerst brauchen wir Namen und Anschrift der Kanzlei, gegen die Sie sich verteiden müssen.</p>
           <p>Ist der Abmahner eine der folgenden Kanzleien? Dann können wir die Adresse gleich per Click übernehmen.</p>
           <button class="w3-btn" onclick="sebastian()">Daniel Sebastian Rechtsanwalt</button>
           <button class="w3-btn" onclick="fareds()">Fareds Rechtsanwaltsgesellschaft mbH</button>
@@ -120,17 +63,17 @@
             <li><input id="abmahnender_fax" type="text" name="fax" placeholder="Fax"/></li>
           </ul>
           <div class="one-button">
-            <div class="button button-green" onclick="step4_done()">Weiter</div>
+            <div class="button button-green" onclick="step2_done()">Weiter</div>
           </div>
         </div>
       </div>
-      <div class="collapsable block-step5">
-        <div onclick="step4_done()" class="block-header">
+      <div class="collapsable block-step3">
+        <div onclick="step2_done()" class="block-header">
           <div class="done">&#x2713;</div>
-          <h2 id="head5">Schritt 4: Aktenzeichen und Daten</h2>
+          <h2 id="head3">Schritt 2: Aktenzeichen und Daten</h2>
         </div>
         <div class="juice">
-          <p>Der Abmahner hat Ihnen ein Aktenzeichen zugeordnet. Dies muss im Schreiben auftauchen, um die Antwort der Abmahnung zuordnen zu können.</p>
+          <p>Der Abmahner hat Ihnen ein Aktenzeichen zugeordnet. Dies muss im Schreiben auftauchen, damit die Kanzlei Ihre Antwort der Abmahnung zuordnen zu können.</p>
           <ul>
             <li><input id="vorgang_aktenzeichen" type="text" name="aktenzeichen" placeholder="(Akten)-Zeichen"/></li>
             <li><input id="vorgang_detail" type="text" name="detail" placeholder="Beschreibung (optional)"/></li>
@@ -148,7 +91,7 @@
           </select>
           <select class="monat" required id="tat_datum_monat" name="tat_datum_monat">
             <option value="0">Januar</option> <option value="1">Februar</option> <option value="2">März</option> <option value="3">April</option>
-            <option value="4">Mai</option> <option value="6">Juni</option> <option value="6">Juli</option> <option value="7">August</option>
+            <option value="4">Mai</option> <option value="5">Juni</option> <option value="6">Juli</option> <option value="7">August</option>
             <option value="8">September</option> <option value="9">Oktober</option> <option value="10">November</option> <option value="11">Dezember</option>
           </select>
           <select class="jahr" required id="tat_datum_jahr" name="tat_datum_jahr">
@@ -194,7 +137,7 @@
           </select>
           <select class="monat" required id="vorgang_datum_monat" name="datum_monat">
             <option value="0">Januar</option> <option value="1">Februar</option> <option value="2">März</option> <option value="3">April</option>
-            <option value="4">Mai</option> <option value="6">Juni</option> <option value="6">Juli</option> <option value="7">August</option>
+            <option value="4">Mai</option> <option value="5">Juni</option> <option value="6">Juli</option> <option value="7">August</option>
             <option value="8">September</option> <option value="9">Oktober</option> <option value="10">November</option> <option value="11">Dezember</option>
           </select>
           <select class="jahr" required id="vorgang_datum_jahr" name="datum_jahr">
@@ -204,14 +147,82 @@
 
           <p class="hint">Hinweis: Die vom Abmahner angegebenen Fristen sind meist zu knapp und können ruhig ignoriert werden. Jedoch sollte Ihre Antwort nicht grundlos mehr als 14 Tage nach Eingang der Abmahnung erfolgen.</p>
           <div class="one-button">
-            <div class="button button-green" onclick="step5_done()">Fertig</div>
+            <div class="button button-green" onclick="step3_done()">Weiter</div>
+          </div>
+        </div>
+      </div>
+      <div class="collapsable block-step4">
+        <div onclick="step3_done()" class="block-header">
+          <div class="done">&#x2713;</div>
+          <h2 id="head4">Schritt 3: Warum Sie nicht Täter sind</h2>
+        </div>
+        <div class="juice">
+          <p>Damit Sie korrekte Belege gegen den Vorwurf können, sammeln wir alle nun Informationen ein, die der abmahnenden Kanzlei verdeutlichen, warum die Abmahnung unberechtigt ist.</p>
+
+          <p>Der Anschlussinhaber wird in der Abmahnung als Täter angenommen. Dies ist meist inkorrekt. Gibt es Beweise, dass Sie nicht der Täter sind, wählen Sie das entsprechende Häkchen:</p>
+
+          <label><input id="alibi_urlaub" type="checkbox"/>Ich war nachweislich im Urlaub.</label>
+          <label><input id="alibi_ausserhalb" type="checkbox"/>Ich war nachweislich beruflich außerhalb Deutschlands.</label>
+          <label><input id="alibi_nichtzuhause" type="checkbox"/>Ich war nachweislich nicht zuhause.</label>
+          <label><input id="alibi_arbeit" type="checkbox"/>Ich war nachweislich auf Arbeit.</label>
+          <label><input id="alibi_besuch" type="checkbox"/>Ich hatte Besuch. Dieser kann bezeugen, dass ich meinen Computer nicht benutzt habe.</label>
+          <label><input id="alibi_keinendgeraet" type="checkbox"/>Ich besitze keinen internetfähigen Computer.</label>
+          <label><input id="alibi_nichtwohnhaft" type="checkbox"/>Zum angegebenen Zeitpunkt habe ich an der ermittelten Adresse nicht (mehr) gewohnt.</label>
+          <div class="one-button">
+            <div class="button button-green" onclick="step4_done()">Weiter</div>
+          </div>
+        </div>
+      </div>
+      <div class="collapsable block-step5">
+        <div onclick="step4_done()" class="block-header">
+          <div class="done">&#x2713;</div>
+          <h2 id="head5">Schritt 4: Warum Sie nicht Störer sind</h2>
+        </div>
+        <div class="juice">
+          <p>Um nicht als Störer in Haftung genommen zu werden, sind Hinweise hilfreich, aus welchem Grund auch eine Störerhaftung nicht in Betracht kommt. Bitte wählen Sie die entsprechenden Häkchen.</p>
+          <label><input id="alibi_freifunk" type="checkbox"/>Ich betreibe ein Freifunk-Netzwerk.</label>
+          <label><input id="alibi_tornode" type="checkbox"/>Ich betreibe nachweislich einen Tor-Exit-Node.</label>
+          <label><input id="alibi_offeneswifi" type="checkbox"/>Ich betreibe ein offenes Netzwerk für das Haus.</label>
+          <label><input id="alibi_familie" type="checkbox"/>Neben mir benutzen mehrere Familienmitglieder mein Netzwerk.</label>
+          <label><input id="alibi_wg" type="checkbox"/>Neben mir benutzen mehrere Mitbewohner mein Netzwerk.</label>
+          <label><input id="alibi_nachbarn" type="checkbox"/>Neben mir benutzen mehrere Nachbarn mein Netzwerk.</label>
+          <label><input id="alibi_fluechtlingshilfe" type="checkbox"/>Ich stelle mein Netzwerk einem Flüchtlingsheim zur Verfügung.</label>
+          <p></p>
+          <div class="hint">Achtung: Unrichtige Angaben zum Sachverhalt können Ihnen vor Gericht belastend ausgelegt werden. <b>Wählen Sie daher auf jeden Fall nur die Häkchen aus, die den Tatsachen entsprechen.</b></div>
+          <div class="one-button">
+            <div class="button button-green" onclick="step5_done()">Weiter</div>
           </div>
         </div>
       </div>
       <div class="collapsable block-step6">
         <div onclick="step5_done()" class="block-header">
           <div class="done">&#x2713;</div>
-          <h2 id="head6">Schritt 5: Antwortschreiben erzeugen</h2>
+          <h2 id="head6">Schritt 5: Ihre Daten</h2>
+        </div>
+        <div class="juice">
+          <p>Hier benötigen wir Ihre Informationen, um das Anschreiben mit einem Absender zu versehen. Bitte fügen Sie Namen und Adresse wie auf der Abmahnung ein.</p>
+          <ul>
+            <li><input id="abgemahnter_vorname" type="text" name="vorname" placeholder="Vorname"/></li>
+            <li><input id="abgemahnter_nachname" type="text" name="nachname" placeholder="Nachname"/></li>
+            <li><input id="abgemahnter_zusatz" type="text" name="zusatz" placeholder="Zusatz (optional)"/></li>
+            <li><input id="abgemahnter_strasse" type="text" name="strasse" placeholder="Straße und Hausnummer"/></li>
+            <li><input id="abgemahnter_plz" type="text" name="plz" placeholder="Postleitzahl"/></li>
+            <li><input id="abgemahnter_ort" type="text" name="ort" placeholder="Wohnort"/></li>
+            <li><input id="abgemahnter_land" type="text" name="land" placeholder="Land (optional)"/></li>
+          </ul>
+          <div class="hint">
+            <p>Datenschutzhinweis: Wir übertragen Ihre Daten nicht ins Internet. Das Antwortschreiben wird auf Ihrem Computer erstellt.</p>
+            <p>Wir zählen ausschließlich die Abrufe dieser Webseite und speichern keinerlei Details über die Besucher.</p>
+          </div>
+          <div class="one-button">
+            <div class="button button-green" onclick="step6_done()">Weiter</div>
+          </div>
+        </div>
+      </div>
+      <div class="collapsable block-step7">
+        <div onclick="step6_done()" class="block-header">
+          <div class="done">&#x2713;</div>
+          <h2 id="head7">Fertig!</h2>
         </div>
         <div class="juice">
           <p>Wir haben nun alle Informationen, um das Antwortschreiben erzeugen zu können:</p>
@@ -221,9 +232,9 @@
           <p class="hint">Drucken Sie das Schreiben aus und schicken Sie es per Post an die abmahnende Kanzlei. Optional können Sie zur Wahrung der Frist das Schreiben auch vorab <span id="faxempfaenger"></span>faxen.</p>
         </div>
       </div>
-      <div class="collapsable block-step7">
+      <div class="collapsable block-step8">
         <div class="block-header">
-          <h2 id="head7">Und jetzt?</h2>
+          <h2 id="head8">Und jetzt?</h2>
         </div>
         <div class="juice">
           <p>Nimmt die abmahnende Kanzlei ihre Forderung nicht innerhalb unserer Frist (14 Tage) zurück, steht Ihnen eine gerichtliche Klärung zu.</p>

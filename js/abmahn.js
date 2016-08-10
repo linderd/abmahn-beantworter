@@ -23,19 +23,19 @@ function getCheck(id) {
   return document.getElementById(id).checked;
 }
 
-function scrollTo(el) {
+function scrollTo(end) {
     if(document.querySelectorAll === void 0 || window.pageYOffset === void 0 || history.pushState === void 0) {
-     el.scrollIntoView();
-     return;
+       window.scroll(0, end);
+       return;
     }
     var duration = 500;
     var start = window.pageYOffset;
-    var end = document.getElementById(el).getBoundingClientRect().top + window.pageYOffset;
+//    var end = document.getElementById(el).getBoundingClientRect().top + window.pageYOffset;
 
     var clock = Date.now();
     var requestAnimationFrame = window.requestAnimationFrame ||
         window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame ||
-        function(fn){window.setTimeout(fn, 15);};
+        function(fn){window.setTimeout(fn, 10);};
 
     var step = function(){
         var elapsed = Date.now() - clock;
@@ -54,14 +54,27 @@ function scrollTo(el) {
     step();
 }
 
+function step0_cancel() { scrollTo(0); setClass('wrapper', 'stepcancel'); }
+function step0_done()   { scrollTo(0); setClass('wrapper', 'step1'); }
+function step1_done()   { scrollTo(103); setClass('wrapper', 'step2'); }
+function step2_done()   { scrollTo(196); setClass('wrapper', 'step3'); }
+function step3_done()   { scrollTo(289); setClass('wrapper', 'step4'); }
+function step4_done()   { scrollTo(382); setClass('wrapper', 'step5'); }
+function step5_done()   { scrollTo(475); setClass('wrapper', 'step6'); }
+function step6_done()   { scrollTo(568); setClass('wrapper', 'step7'); }
+function step7_done()   { scrollTo(661); setClass('wrapper', 'step8'); }
+
+/*
 function step0_cancel() { setClass('wrapper', 'stepcancel'); }
-function step0_done()   { setClass('wrapper', 'step1'); scrollTo('head1'); }
-function step1_done()   { setClass('wrapper', 'step2'); scrollTo('head1'); }
-function step2_done()   { setClass('wrapper', 'step3'); scrollTo('head2'); }
-function step3_done()   { setClass('wrapper', 'step4'); scrollTo('head3'); }
-function step4_done()   { setClass('wrapper', 'step5'); scrollTo('head4'); }
-function step5_done()   { setClass('wrapper', 'step6'); scrollTo('head5'); }
-function step6_done()   { setClass('wrapper', 'step7'); scrollTo('head6'); }
+function step0_done()   { scrollTo('head1'); setClass('wrapper', 'step1'); }
+function step1_done()   { scrollTo('head1'); setClass('wrapper', 'step2'); }
+function step2_done()   { scrollTo('head2'); setClass('wrapper', 'step3'); }
+function step3_done()   { scrollTo('head3'); setClass('wrapper', 'step4'); }
+function step4_done()   { scrollTo('head4'); setClass('wrapper', 'step5'); }
+function step5_done()   { scrollTo('head5'); setClass('wrapper', 'step6'); }
+function step6_done()   { scrollTo('head6'); setClass('wrapper', 'step7'); }
+function step7_done()   { scrollTo('head7'); setClass('wrapper', 'step8'); }
+*/
 
 function waldorf() {
   setText('abmahnender_kanzlei', 'Waldorf & Frommer RAe');
@@ -143,7 +156,7 @@ function ausfuellen() {
   setText('abgemahnter_plz', '10999')
   setText('abgemahnter_ort', 'Berlin');
 
-  setText('abmahnender_kanzlei', 'Waldorff & Frommer');
+  setText('abmahnender_kanzlei', 'Waldorf & Frommer');
   setText('abmahnender_bearbeiter', 'Horst Müller');
   setText('abmahnender_strasse', 'Beethovenstraße 12');
   setText('abmahnender_plz', '80336');
@@ -317,5 +330,5 @@ function abmahnbeantworter() {
   pdfMake.createPdf(docDefinition).download('Abmahnung-' + getText('vorgang_aktenzeichen') + '.pdf');
 
   // advance view
-  step6_done();
+  step7_done();
 }
