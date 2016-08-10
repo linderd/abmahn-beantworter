@@ -85,15 +85,15 @@ h2 {
 }
 
 #unsicher,
-.collapsable.block-step7 {
+.collapsable.block-step8 {
   padding: 0;
 }
 #wrapper.stepcancel #unsicher,
-#wrapper-step7 .block-step7 {
+#wrapper-step8 .block-step8 {
   padding: auto;
 }
 
-.block-step7,
+.block-step8,
 .juice,
 #wrapper.stepcancel h2 {
   overflow: hidden;
@@ -104,21 +104,18 @@ h2 {
   transition-delay: 0s;
 }
 
-.block-step1 {
+.block-step1,
+.block-step8 {
   background-color: #F1F2E3;
   color: black !important;
 }
 
-#unsicher {
-  background-color: #B77662;
-}
-
 .block-step2 {
-  background-color: #70B5A9;
+  background-color: #403040;
 }
 
 .block-step3 {
-  background-color: #7CA8D7;
+  background-color: #564073;
 }
 
 .block-step4 {
@@ -126,36 +123,23 @@ h2 {
 }
 
 .block-step5 {
-  background-color: #564073;
+  background-color: #7CA8D7;
 }
 
 .block-step6 {
-  background-color: #403040;
+  background-color: #D0B66B;
 }
 
 .block-step7 {
-  background-color: #F1F2E3;
-  color: black !important;
+  background-color: #70B5A9;
 }
 
-.greyed .block-step2 {
-  background-color: #ccc;
+.block-step9 {
+  background-color: #EAE386;
 }
 
-.greyed .block-step3 {
-  background-color: #aaa;
-}
-
-.greyed .block-step4 {
-  background-color: #888;
-}
-
-.greyed .block-step5 {
-  background-color: #666;
-}
-
-.greyed .block-step6 {
-  background-color: #444;
+#unsicher {
+  background-color: #B77662;
 }
 
 .collapsable {
@@ -167,8 +151,12 @@ h2 {
   margin-right: 0;
 }
 
-.block-step2, .block-step3, .block-step4, .block-step5, .block-step6 {
+.block-step2, .block-step3, .block-step4, .block-step5, .block-step6, .block-step7, .block-step8 {
   box-shadow: inset 0px 7px 3px -3px rgba(50, 50, 50, 0.75);
+}
+
+.footer {
+  box-shadow: -3px 0px 3px 6px rgba(50, 50, 50, 0.75);
 }
 
 .two-buttons,
@@ -273,16 +261,22 @@ ul {
 #wrapper.step5 .block-step2 .done,
 #wrapper.step6 .block-step2 .done,
 #wrapper.step7 .block-step2 .done,
+#wrapper.step8 .block-step2 .done,
 #wrapper.step4 .block-step3 .done,
 #wrapper.step5 .block-step3 .done,
 #wrapper.step6 .block-step3 .done,
 #wrapper.step7 .block-step3 .done,
+#wrapper.step8 .block-step3 .done,
 #wrapper.step5 .block-step4 .done,
 #wrapper.step6 .block-step4 .done,
 #wrapper.step7 .block-step4 .done,
+#wrapper.step8 .block-step4 .done,
 #wrapper.step6 .block-step5 .done,
 #wrapper.step7 .block-step5 .done,
-#wrapper.step7 .block-step6 .done {
+#wrapper.step8 .block-step5 .done,
+#wrapper.step7 .block-step6 .done,
+#wrapper.step8 .block-step6 .done,
+#wrapper.step8 .block-step7 .done {
   visibility: visible;
 }
 
@@ -333,31 +327,36 @@ label input {
 #wrapper.step1 .block-step1 .juice,
 #wrapper.stepcancel .block-stepcancel .juice {
   max-height: 350px;
-  transition: max-height 0.5s ease;
 }
 
 #wrapper.step2 .block-step2 .juice {
-  max-height: 1200px;
-  transition: max-height 0.5s ease;
+  max-height: 950px;
+}
+
+#wrapper.step3 .block-step3 .juice {
+  max-height: 950px;
+}
+
+#wrapper.step4 .block-step4 .juice {
+  max-height: 700px;
 }
 
 #wrapper.step5 .block-step5 .juice {
   max-height: 750px;
-  transition: max-height 0.5s ease;
 }
 
 #wrapper.step6 .block-step6 .juice {
-  max-height: 500px;
-  transition: max-height 0.5s ease;
+  max-height: 850px;
 }
 
-#wrapper.step3 .block-step3 .juice,
-#wrapper.step4 .block-step4 .juice,
-#wrapper.step7 .block-step7 .juice,
-#wrapper.step7 .block-step7
+#wrapper.step7 .block-step7 .juice {
+  max-height: 450px;
+}
+
+#wrapper.step8 .block-step8 .juice,
+#wrapper.step8 .block-step8
 {
-  max-height: 900px;
-  transition: max-height 0.5s ease;
+  max-height: 450px;
 }
 
 .credits {
