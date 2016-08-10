@@ -267,12 +267,12 @@ function abmahnbeantworter() {
     zudem = 1;
   }
   if(getCheck('alibi_freifunk')) {
-    fliesstext += zudem ? 'Zudem betreibe ich' : 'Ich betreibe';
+    fliesstext += zudem ? ' Zudem betreibe ich' : 'Ich betreibe';
     fliesstext += ' einen Freifunk-Knoten und werde von § 8 TMG n. F. haftungsprivilegiert.';
     zudem = 1;
   }
   if(getCheck('alibi_fluechtlingshilfe')) {
-    fliesstext += zudem ? 'Zudem stelle ich' : 'Ich stelle';
+    fliesstext += zudem ? ' Zudem stelle ich' : 'Ich stelle';
     fliesstext += ' meinen Anschluss Flüchtlingsheimen zur Verfügung.';
     zudem = 1;
   }
