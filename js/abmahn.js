@@ -23,6 +23,8 @@ function getCheck(id) {
   return document.getElementById(id).checked;
 }
 
+// Code is heavily inspired by
+// https://github.com/alicelieutier/smoothScroll/blob/master/smoothscroll.js
 function scrollTo(end) {
     if(document.querySelectorAll === void 0 || window.pageYOffset === void 0 || history.pushState === void 0) {
        window.scroll(0, end);
