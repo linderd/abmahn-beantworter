@@ -236,7 +236,7 @@ function abmahnbeantworter() {
   }
 
   if(getCheck('alibi_familie')) {
-    fliesstext += 'Ich teile meinen Internatanschluss mit meiner Familie, wobei jeder eigenverantwortlich das Internet nutzt. Es gab keine Hinweise darauf, dass ein Familienmitglied Rechtsverletzungen begeht.';
+    fliesstext += 'Ich teile meinen Internetanschluss mit meiner Familie, wobei jeder eigenverantwortlich das Internet nutzt. Es gab keine Hinweise darauf, dass ein Familienmitglied Rechtsverletzungen begeht.';
     zudem = 1;
   }
   if(getCheck('alibi_wg')) {
