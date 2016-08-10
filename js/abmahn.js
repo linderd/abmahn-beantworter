@@ -63,8 +63,8 @@ function step4_done()   { setClass('wrapper', 'step5'); scrollTo('head4'); }
 function step5_done()   { setClass('wrapper', 'step6'); scrollTo('head5'); }
 function step6_done()   { setClass('wrapper', 'step7'); scrollTo('head6'); }
 
-function waldorff() {
-  setText('abmahnender_kanzlei', 'Waldorff & Frommer RAe');
+function waldorf() {
+  setText('abmahnender_kanzlei', 'Waldorf & Frommer RAe');
   setText('abmahnender_bearbeiter', '');
   setText('abmahnender_strasse', 'Beethovenstraße 12');
   setText('abmahnender_plz', '80336');
