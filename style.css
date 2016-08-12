@@ -303,8 +303,9 @@ input[type="text"] {
   width: 95%;
   border: solid 1px silver;
   border-radius: 4px;
+  font-family: 'SourceSansPro', sans-serif;
   font-size: 14pt;
-  font-weight: 300;
+  font-weight: normal;
   padding: 0.3em;
   margin-bottom: 0.5em;
 }
