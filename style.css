@@ -60,19 +60,22 @@ h1 {
 h2 {
   font-size: 24pt;
   font-weight: 300;
-  line-height: 1.4em;
+  line-height: 1.1em;
   cursor: pointer;
 }
 
 .circle_num {
   float: left;
-  width: 1.4em;
-  height: 1.4em;
-  line-height: 1.4em;
+  width: 1.2em;
+  height: 1.2em;
+  line-height: 1.2em;
+  font-size: 0.8em;
   border-radius: 50%;
-  border: solid white 2px;
+  border: solid #F1F2E3 2px;
   margin: 0 1em 0 0;
   text-align: center;
+  background-color: #F1F2E3;
+  font-weight: normal;
 }
 
 .block-header, .juice {
@@ -126,20 +129,40 @@ h2 {
   background-color: #403040;
 }
 
+.block-step2 .circle_num {
+  color: #403040;
+}
+
 .block-step3 {
   background-color: #564073;
+}
+
+.block-step3 .circle_num {
+  color: #564073;
 }
 
 .block-step4 {
   background-color: #6A59A4;
 }
 
+.block-step4 .circle_num {
+  color: #6A59A4;
+}
+
 .block-step5 {
   background-color: #7CA8D7;
 }
 
+.block-step5 .circle_num {
+  color: #7CA8D7;
+}
+
 .block-step6 {
   background-color: #D0B66B;
+}
+
+.block-step6 .circle_num {
+  color: #D0B66B;
 }
 
 .block-step7 {
