@@ -370,7 +370,7 @@ select {
 }
 
 label {
-  margin-bottom: 0.4em;
+  margin-bottom: 1em;
 }
 
 input[type=checkbox]:not(old) {
@@ -381,31 +381,37 @@ input[type=checkbox]:not(old) {
 input[type=checkbox]:not(old) + label {
   display      : inline-block;
   margin-left  : 0;
-  line-height  : 1.5em;
-  text-indent  : -2.0625em; /* Make 2nd line of label align, takes border width of tickbox into account */
-  padding-left : 2.0625em;
+  line-height  : 1.7em;
+  text-indent  : -46.5px; /* Make 2nd line of label align, takes border width of tickbox into account */
+  padding-left : 46.5px;
 }
 
 input[type=checkbox]:not(old) + label > span {
   display          : inline-block;
-  width            : 1em;
-  height           : 1em;
-  margin           : 0.25em 1em 0.25em 0;
-  border           : 0.0625em solid white;
+  width            : 28px;
+  height           : 28px;
+  margin           : 2px 16px 8px 0;
+  border           : 0.5px solid white;
   border-radius    : 25%;
   vertical-align   : top;
+  transform        : rotate(360deg);
+  transition       : transform 0.3s, font-size 0.4s;
+  font-size        : 1pt;
+}
+
+input[type=checkbox]:not(old):checked + label > span {
+  transform   : rotate(0deg);
+  font-size   : 17pt;
 }
 
 input[type=checkbox]:not(old):checked + label > span:before {
   content     : '✓';
   display     : inline-block;
-  width       : 1em;
+  width       : 28px;
   color       : white;
-  font-size   : 1.4em;
-  line-height : 1em;
   text-align  : center;
   font-weight : bold;
-  margin-left : 2.1em;
+  margin-left : 71px;
 }
 
 #wrapper.step1 .block-step1 .juice,
