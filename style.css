@@ -335,13 +335,42 @@ select {
 }
 
 label {
-  display: block;
-  padding-left: 40px;
-  text-indent: -25px;
+  margin-bottom: 0.4em;
 }
 
-label input {
-  margin-right: 10px;
+input[type=checkbox]:not(old) {
+  display   : none;
+  opacity   : 0;
+}
+
+input[type=checkbox]:not(old) + label {
+  display      : inline-block;
+  margin-left  : 0;
+  line-height  : 1.5em;
+  text-indent  : -2.0625em; /* Make 2nd line of label align, takes border width of tickbox into account */
+  padding-left : 2.0625em;
+}
+
+input[type=checkbox]:not(old) + label > span {
+  display          : inline-block;
+  width            : 1em;
+  height           : 1em;
+  margin           : 0.25em 1em 0.25em 0;
+  border           : 0.0625em solid white;
+  border-radius    : 25%;
+  vertical-align   : top;
+}
+
+input[type=checkbox]:not(old):checked + label > span:before {
+  content     : '✓';
+  display     : inline-block;
+  width       : 1em;
+  color       : white;
+  font-size   : 1.4em;
+  line-height : 1em;
+  text-align  : center;
+  font-weight : bold;
+  margin-left : 2.1em;
 }
 
 #wrapper.step1 .block-step1 .juice,
