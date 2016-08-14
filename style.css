@@ -427,7 +427,7 @@ input[type=checkbox]:not(old):checked + label > span:before {
 }
 
 #wrapper.step4 .block-step4 .juice {
-  max-height: 700px;
+  max-height: 950px;
 }
 
 #wrapper.step5 .block-step5 .juice {
