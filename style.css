@@ -275,7 +275,8 @@ ul {
 .footer {
   background-color: #4A5D67;
   color: #8E99A0;
-  font-size: 11pt;
+  font-size: 13pt;
+  font-weight: 300;
   margin-left: 0;
   margin-right: 0;
   padding: 0.2em 0 0 0;
