@@ -383,8 +383,8 @@ input[type=checkbox]:not(old) + label {
   display      : inline-block;
   margin-left  : 0;
   line-height  : 1.7em;
-  text-indent  : -58.5px; /* Make 2nd line of label align, takes border width of tickbox into account */
-  padding-left : 58.5px;
+  text-indent  : -59px; /* Make 2nd line of label align, takes border width of tickbox into account */
+  padding-left : 59px;
 }
 
 input[type=checkbox]:not(old) + label > span {
@@ -392,7 +392,7 @@ input[type=checkbox]:not(old) + label > span {
   width            : 28px;
   height           : 28px;
   margin           : 2px 28px 8px 1px;
-  border           : 0.5px solid white;
+  border           : 1px solid white;
   border-radius    : 25%;
   vertical-align   : top;
   transition       : font-size 0.4s;
