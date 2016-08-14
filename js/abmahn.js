@@ -64,19 +64,6 @@ function step3_done()   { scrollTo(289); setClass('wrapper', 'step4'); }
 function step4_done()   { scrollTo(382); setClass('wrapper', 'step5'); }
 function step5_done()   { scrollTo(475); setClass('wrapper', 'step6'); }
 function step6_done()   { scrollTo(568); setClass('wrapper', 'step7'); }
-function step7_done()   { scrollTo(661); setClass('wrapper', 'step8'); }
-
-/*
-function step0_cancel() { setClass('wrapper', 'stepcancel'); }
-function step0_done()   { scrollTo('head1'); setClass('wrapper', 'step1'); }
-function step1_done()   { scrollTo('head1'); setClass('wrapper', 'step2'); }
-function step2_done()   { scrollTo('head2'); setClass('wrapper', 'step3'); }
-function step3_done()   { scrollTo('head3'); setClass('wrapper', 'step4'); }
-function step4_done()   { scrollTo('head4'); setClass('wrapper', 'step5'); }
-function step5_done()   { scrollTo('head5'); setClass('wrapper', 'step6'); }
-function step6_done()   { scrollTo('head6'); setClass('wrapper', 'step7'); }
-function step7_done()   { scrollTo('head7'); setClass('wrapper', 'step8'); }
-*/
 
 function waldorf() {
   setText('abmahnender_kanzlei', 'Waldorf & Frommer RAe');
@@ -337,7 +324,4 @@ function abmahnbeantworter() {
     }
   }
   pdfMake.createPdf(docDefinition).download('Abmahnung-' + getText('vorgang_aktenzeichen') + '.pdf');
-
-  // advance view
-  step7_done();
 }

@@ -101,16 +101,13 @@ h2 {
   font-weight: 300;
 }
 
-#unsicher,
-.collapsable.block-step8 {
+#unsicher {
   padding: 0;
 }
-#wrapper.stepcancel #unsicher,
-#wrapper-step8 .block-step8 {
+#wrapper.stepcancel #unsicher {
   padding: auto;
 }
 
-.block-step8,
 .juice,
 #wrapper.stepcancel h2 {
   overflow: hidden;
@@ -121,8 +118,7 @@ h2 {
   transition-delay: 0s;
 }
 
-.block-step1,
-.block-step8 , .block-step8 h2 {
+.block-step1 {
   background-color: #F1F2E3;
   color: black !important;
 }
@@ -188,7 +184,7 @@ h2 {
   margin-right: 0;
 }
 
-.block-step2, .block-step3, .block-step4, .block-step5, .block-step6, .block-step7, .block-step8 {
+.block-step2, .block-step3, .block-step4, .block-step5, .block-step6, .block-step7 {
   box-shadow: inset 0px 7px 3px -3px rgba(50, 50, 50, 0.75);
 }
 
@@ -316,22 +312,16 @@ ul {
 #wrapper.step5 .block-step2 .done,
 #wrapper.step6 .block-step2 .done,
 #wrapper.step7 .block-step2 .done,
-#wrapper.step8 .block-step2 .done,
 #wrapper.step4 .block-step3 .done,
 #wrapper.step5 .block-step3 .done,
 #wrapper.step6 .block-step3 .done,
 #wrapper.step7 .block-step3 .done,
-#wrapper.step8 .block-step3 .done,
 #wrapper.step5 .block-step4 .done,
 #wrapper.step6 .block-step4 .done,
 #wrapper.step7 .block-step4 .done,
-#wrapper.step8 .block-step4 .done,
 #wrapper.step6 .block-step5 .done,
 #wrapper.step7 .block-step5 .done,
-#wrapper.step8 .block-step5 .done,
-#wrapper.step7 .block-step6 .done,
-#wrapper.step8 .block-step6 .done,
-#wrapper.step8 .block-step7 .done {
+#wrapper.step7 .block-step6 .done {
   visibility: visible;
 }
 
@@ -443,12 +433,6 @@ input[type=checkbox]:not(old):checked + label > span:before {
   max-height: 450px;
 }
 
-#wrapper.step8 .block-step8 .juice,
-#wrapper.step8 .block-step8
-{
-  max-height: 450px;
-}
-
 /* On older phones our blocks need to accomodate
    for zoomed fonts */
 @media only screen and (max-device-width: 480px) {
@@ -480,13 +464,6 @@ input[type=checkbox]:not(old):checked + label > span:before {
 #wrapper.step7 .block-step7 .juice {
   max-height: 450px;
 }
-
-#wrapper.step8 .block-step8 .juice,
-#wrapper.step8 .block-step8
-{
-  max-height: 450px;
-}
-
 
 }
 
