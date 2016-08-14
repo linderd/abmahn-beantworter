@@ -383,16 +383,17 @@ input[type=checkbox]:not(old) + label {
   display      : inline-block;
   margin-left  : 0;
   line-height  : 1.7em;
-  text-indent  : -59px; /* Make 2nd line of label align, takes border width of tickbox into account */
-  padding-left : 59px;
+  text-indent  : -60px; /* Make 2nd line of label align, takes border width of tickbox into account */
+  padding-left : 60px;
 }
 
 input[type=checkbox]:not(old) + label > span {
   display          : inline-block;
-  width            : 28px;
-  height           : 28px;
-  margin           : 2px 28px 8px 1px;
-  border           : 1px solid white;
+  width            : 30px;
+  height           : 30px;
+  background-color : rgba(255, 255, 255, 0.30);
+  margin           : 2px 28px 8px 2px;
+  border           : 0px solid rgba(255, 255, 255, 0.30);
   border-radius    : 25%;
   vertical-align   : top;
   transition       : font-size 0.4s;
@@ -410,7 +411,7 @@ input[type=checkbox]:not(old):checked + label > span:before {
   color       : white;
   text-align  : left;
   font-weight : bold;
-  margin-left : 124px;
+  margin-left : 127px;
 }
 
 #wrapper.stepcancel .block-stepcancel .juice,
