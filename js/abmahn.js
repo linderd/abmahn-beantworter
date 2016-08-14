@@ -209,40 +209,40 @@ function abmahnbeantworter() {
 
   fliesstext += 'vielen Dank für den außergerichtlichen Hinweis vom ' + vorgang.toLocaleDateString('de-DE') + ', dass mir eine urheberrechtliche Rechtsverletzung vorgeworfen wird.\n\n';
 
-  fliesstext += 'Nach Prüfung des Sachverhaltes kann ich Ihnen jedoch erleichtert mitteilen, dass ich die angebliche Urheberrechtsverletzung vom ' + tatzeit.toLocaleDateString('de-DE') + ' nicht begangen habe. In diesem von Ihnen geschilderten Zusammenhang komme ich weder als Täter noch als Störer in Betracht.\n\n'
+  fliesstext += 'Nach Prüfung des Sachverhaltes kann ich Ihnen jedoch erleichtert versichern, dass ich die angebliche Urheberrechtsverletzung vom ' + tatzeit.toLocaleDateString('de-DE') + ' nicht begangen habe und auch sonst nicht für die vermeintliche Rechtsverletzung einzustehen habe, denn in dem von Ihnen geschilderten Zusammenhang komme ich weder als Täter noch als Störer in Betracht.\n\n'
 
   var zudem = 0;
   if(getCheck('alibi_urlaub')) {
-    fliesstext += 'Ich befand mich zum angeblichen Tatzeitpunkt am ' + tatzeit.toLocaleDateString('de-DE') + ' um ' + tatzeit.toLocaleTimeString('de-DE') + ' nachweislich im Urlaub.';
+    fliesstext += 'Ich befand mich zum angeblichen Tatzeitpunkt am ' + tatzeit.toLocaleDateString('de-DE') + ' um ' + tatzeit.toLocaleTimeString('de-DE') + ' nachweislich im Urlaub. ';
     zudem = 1;
   }
   if(getCheck('alibi_ausserhalb')) {
-    fliesstext += zudem ? ' Zudem befand ich' : 'Ich befand';
-    fliesstext += ' mich zum angeblichen Tatzeitpunkt am ' + tatzeit.toLocaleDateString('de-DE') + ' um ' + tatzeit.toLocaleTimeString('de-DE') + ' beruflich im Ausland.';
+    fliesstext += zudem ? 'Zudem befand ich ' : 'Ich befand ';
+    fliesstext += 'mich zum angeblichen Tatzeitpunkt am ' + tatzeit.toLocaleDateString('de-DE') + ' um ' + tatzeit.toLocaleTimeString('de-DE') + ' beruflich im Ausland. ';
     zudem = 1;
   }
   if(getCheck('alibi_arbeit')) {
-    fliesstext += zudem ? ' Zudem befand ich' : 'Ich befand';
-    fliesstext += ' mich zum angeblichen Tatzeitpunkt am ' + tatzeit.toLocaleDateString('de-DE') + ' um ' + tatzeit.toLocaleTimeString('de-DE') + ' nachweislich an meinem Arbeitsplatz, dies kann durch meine Kollegen bezeugt werden.';
+    fliesstext += zudem ? 'Zudem befand ich ' : 'Ich befand ';
+    fliesstext += 'mich zum angeblichen Tatzeitpunkt am ' + tatzeit.toLocaleDateString('de-DE') + ' um ' + tatzeit.toLocaleTimeString('de-DE') + ' nachweislich an meinem Arbeitsplatz, dies kann durch meine Kollegen bezeugt werden. ';
     zudem = 1;
   }
   if(getCheck('alibi_besuch')) {
-    fliesstext += zudem ? ' Zudem hatte ich' : 'Ich hatte';
-    fliesstext += ' zum angegebenen Tatzeitpunkt am ' + tatzeit.toLocaleDateString('de-DE') + ' um ' + tatzeit.toLocaleTimeString('de-DE') + ' nachweislich Besuch und dieser kann bezeugen, dass ich zu diesem Zeitpunkt meinen Rechner nicht benutzte.';
+    fliesstext += zudem ? 'Zudem hatte ich ' : 'Ich hatte ';
+    fliesstext += 'zum angegebenen Tatzeitpunkt am ' + tatzeit.toLocaleDateString('de-DE') + ' um ' + tatzeit.toLocaleTimeString('de-DE') + ' nachweislich Besuch und dieser kann bezeugen, dass ich zu diesem Zeitpunkt meinen Rechner nicht benutzte. ';
     zudem = 1;
   }
   if(getCheck('alibi_nichtzuhause')) {
-    fliesstext += zudem ? ' Zudem befand ich' : 'Ich befand';
-    fliesstext += ' mich zum angeblichen Tatzeitpunkt am ' + tatzeit.toLocaleDateString('de-DE') + ' um ' + tatzeit.toLocaleTimeString('de-DE') + ' nachweislich nicht zuhause. Dafür gibt es Zeugen.';
+    fliesstext += zudem ? 'Zudem befand ich ' : 'Ich befand ';
+    fliesstext += 'mich zum angeblichen Tatzeitpunkt am ' + tatzeit.toLocaleDateString('de-DE') + ' um ' + tatzeit.toLocaleTimeString('de-DE') + ' nachweislich nicht zuhause. Dafür gibt es Zeugen. ';
     zudem = 1;
   }
   if(getCheck('alibi_keinendgeraet')) {
-    fliesstext += zudem ? ' Zudem bin ich nicht in Besitz eines internetfähigen Computers.' : 'Ich besitze keinen internetfähigen Computer.';
+    fliesstext += zudem ? 'Zudem bin ich nicht in Besitz eines internetfähigen Computers. ' : 'Ich besitze keinen internetfähigen Computer. ';
     zudem = 1;
   }
   if(getCheck('alibi_nichtwohnhaft')) {
-    fliesstext += zudem ? ' Zudem habe ich' : 'Ich habe';
-    fliesstext += ' zum angeblichen Tatzeitpunkt am ' + tatzeit.toLocaleDateString('de-DE') + ' nicht an der angegebenen Adresse gewohnt.';
+    fliesstext += zudem ? 'Zudem habe ich ' : 'Ich habe ';
+    fliesstext += 'zum angeblichen Tatzeitpunkt am ' + tatzeit.toLocaleDateString('de-DE') + ' nicht an der angegebenen Adresse gewohnt. ';
     zudem = 1;
   }
   if(zudem) {
@@ -251,31 +251,32 @@ function abmahnbeantworter() {
   }
 
   if(getCheck('alibi_familie')) {
-    fliesstext += 'Ich teile meinen Internetanschluss mit meiner Familie, wobei jeder eigenverantwortlich das Internet nutzt. Es gab keine Hinweise darauf, dass ein Familienmitglied Rechtsverletzungen begeht.';
+    fliesstext += 'Ich teile meinen Internetanschluss mit meiner Familie, wobei jeder eigenverantwortlich das Internet nutzt. Meine Familienmitglieder sind alle darauf aufmerksam gemacht worden, dass sie keine Urheberrechtsverletzungen begehen dürfen. Es gab auch keine Hinweise darauf, dass ein Familienmitglied Rechtsverletzungen begeht. Für die Handlungen meiner Familienmitglieder bin ich daher nicht verantwortlich. ';
     zudem = 1;
   }
   if(getCheck('alibi_wg')) {
-    fliesstext += zudem ? ' Zudem teile ich' : 'Ich teile';
-    fliesstext += ' meinen Internetanschluss mit meiner Wohngemeinschaft, wobei jeder Mitbewohner das Internet eigenverantwortlich nutzt.';
+    fliesstext += zudem ? 'Zudem teile ich ' : 'Ich teile ';
+    fliesstext += 'meinen Internetanschluss mit meiner Wohngemeinschaft. Jeder meine Mitbewohner nutzt das Internet eigenverantwortlich. Alle Mitbewohner sind alle darauf aufmerksam gemacht worden, dass sie keine Urheberrechtsverletzungen begehen dürfen. Es gab auch keine Hinweise darauf, dass ein Mitbewohner Rechtsverletzungen begeht. Für die Handlungen meiner Mitbewohner bin ich daher nicht verantwortlich. ';
     zudem = 1;
   }
   if(getCheck('alibi_offeneswifi')) {
-    fliesstext += zudem ? ' Zudem betreibe ich' : 'Ich betreibe';
-    fliesstext += ' ein offenes W-LAN für das gesamte Haus, in dem ich lebe. Daraus folgt, dass ich unter die Haftungsprivilegierung des § 8 TMG n. F. falle.';    zudem = 1;
+    fliesstext += zudem ? 'Zudem betreibe ich ' : 'Ich betreibe ';
+    fliesstext += 'ein offenes WLAN, das von jedermann in der näheren Umgebung genutzt werden kann. Daraus folgt, dass ich unter die Haftungsprivilegierung des § 8 TMG n. F. falle, also für etwaige Urheberrechtsverletzungen auch nicht als Störer auf Unterlassung in Anspruch genommen werden kann. ';
+    zudem = 1;
   }
   if(getCheck('alibi_tornode')) {
-    fliesstext += zudem ? ' Zudem betrieb ich' : 'Ich betrieb';
-    fliesstext += ' zum angeblichen Tatzeitpunkt am ' + tatzeit.toLocaleDateString('de-DE') + ' um ' + tatzeit.toLocaleTimeString('de-DE') + ' nachweislich einen Tor-Exit-Node. Demzufolge falle ich unter die Haftungsprivilegierung des § 8 TMG n. F.';
+    fliesstext += zudem ? 'Zudem betrieb ich ' : 'Ich betrieb ';
+    fliesstext += 'zum angeblichen Tatzeitpunkt am ' + tatzeit.toLocaleDateString('de-DE') + ' um ' + tatzeit.toLocaleTimeString('de-DE') + ' nachweislich einen Tor-Exit-Node. Das bedeutet, dass eine Software auf meinen Systemen den Internet-Verkehr von Menschen, die mir namentlich nicht bekannt sind und die sich überall auf der Welt aufhalten können, lediglich automatisch in das Internet weiterleitet. Demzufolge falle ich unter die Haftungsprivilegierung des § 8 TMG n. F., der die Haftung für die reine Durchleitung von Internet-Verkehr ausschließt, auch soweit es um Unterlassungsansprüche geht. ';
     zudem = 1;
   }
   if(getCheck('alibi_freifunk')) {
-    fliesstext += zudem ? ' Zudem betreibe ich' : 'Ich betreibe';
-    fliesstext += ' einen Freifunk-Knoten und werde von § 8 TMG n. F. haftungsprivilegiert.';
+    fliesstext += zudem ? 'Zudem betreibe ich ' : 'Ich betreibe ';
+    fliesstext += 'einen Freifunk-Knoten (offenes WLAN). Daraus folgt, dass ich unter die Haftungsprivilegierung des § 8 TMG n. F. falle, also für etwaige Urheberrechtsverletzungen auch nicht als Störer auf Unterlassung in Anspruch genommen werden kann. ';
     zudem = 1;
   }
   if(getCheck('alibi_fluechtlingshilfe')) {
-    fliesstext += zudem ? ' Zudem stelle ich' : 'Ich stelle';
-    fliesstext += ' meinen Anschluss Flüchtlingsheimen zur Verfügung.';
+    fliesstext += zudem ? 'Zudem stelle ich ' : 'Ich stelle ';
+    fliesstext += 'meinen Anschluss Flüchtlingsheimen zur Verfügung. Das bedeutet, dass ich Internet-Verkehr von Menschen, die mir namentlich nicht bekannt sind und die ich angesichts des täglich wechselnden Personenkreises in den Unterkünften und des diversen kulturellen Hintergrundes auch nicht wirksam über das deutsche Urheberrecht informieren kann, lediglich in das Internet weiterleite. Demzufolge falle ich unter die Haftungsprivilegierung des § 8 TMG n. F., der die Haftung für reine Durchleitung ausschließt, auch soweit es um Unterlassungsansprüche geht. ';
     zudem = 1;
   }
   if(zudem) {
@@ -283,9 +284,11 @@ function abmahnbeantworter() {
   }
 
   var frist = new Date(today.getTime() + 1209600000);
-  fliesstext += 'Aufgrund des von mir nun dargelegten Sachverhaltes müssen Sie erkennen, dass die Abmahnung vom ' + vorgang.toLocaleDateString('de-DE') + ' gegen mich unrechtmäßig ergangen ist. Ich fordere Sie deshalb auf, bis zum ' + frist.toLocaleDateString('de-DE') + ' die geltend gemachten Forderungen zurückzunehmen. Sollten Sie diese Frist fruchtlos verstreichen lassen, behalte ich mir ausdrücklich vor, Hilfe eines Rechtsanwaltes in Anspruch zu nehmen und Ihnen die dadurch entstandenen Kosten aufzuerlegen oder/und eine negative Feststellungsklage bei Gericht einzureichen, mit dem Ziel, die Unrechtmäßigkeit der Abmahnung feststellen zu lassen.\n\n';
+  fliesstext += 'Aufgrund des von mir nun dargelegten Sachverhaltes müssen Sie erkennen, dass die Abmahnung vom ' + vorgang.toLocaleDateString('de-DE') + ' gegen mich unrechtmäßig ergangen ist.\n\n';
+  var forderung  = 'Ich fordere Sie deshalb auf, bis zum ' + frist.toLocaleDateString('de-DE') + ' die geltend gemachten Forderungen mir gegenüber schriftlich zurückzunehmen.\n\n';
+  var sanktionen = 'Sollten Sie diese Frist fruchtlos verstreichen lassen, behalte ich mir ausdrücklich vor, die Hilfe eines Rechtsanwaltes in Anspruch zu nehmen und Ihnen die dadurch entstandenen Kosten aufzuerlegen oder/und eine negative Feststellungsklage bei Gericht einzureichen, mit dem Ziel, die Unrechtmäßigkeit der Abmahnung feststellen zu lassen. Durch die unterlassene ausdrückliche schriftliche Rücknahme Ihrer Abmahnung hätten Sie zu einer entsprechenden Klageerhebung auch Anlass gegeben.\n\n';
 
-  fliesstext += 'Mit freundlichen Grüßen';
+  var abschluss = 'Mit freundlichen Grüßen';
   var signatur = getText('abgemahnter_nachname');
 
   pdfMake.fonts = {
@@ -319,11 +322,15 @@ function abmahnbeantworter() {
              { text: absender, fontSize: 7, absolutePosition: { x: 62.3622, y: 153.071 } },
              { text: empfaenger, fontSize: 11, absolutePosition: { x: 62.3622, y: 181.417 } },
              { text: zeichen, bold: true, absolutePosition: { x: 62.3622, y: 270+40 } },
-             { text: datums_feld, alignment: 'right', margin: [ 62.3622 - 40.0, 270, 62.3622, 0 ] },
-             { text: fliesstext, margin: [ 62.3622 - 40.0, 30, 62.3622, 0 ] },
+             { text: datums_feld, alignment: 'right', margin: [ 0, 270, 0, 0 ] },
+             { text: fliesstext, margin: [ 0, 30, 0, 0 ] },
+             { text: forderung, bold: true, margin: [ 0, 10, 0, 0 ] },
+             { text: sanktionen, margin: [ 0, 10, 0, 0 ] },
+             { text: abschluss, margin: [ 0, 0, 0, 0 ] },
              { text: signatur, margin: [ 40, 27, 0, 0 ] },
     ],
     pageSize: 'A4',
+    pageMargins: [ 62.3622, 60, 62.3622, 60 ],
     defaultStyle: {
       font: 'Gentium Book Basic',
       fontSize: 11,
