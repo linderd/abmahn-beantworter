@@ -83,6 +83,7 @@ h2 {
   min-width: 480px;
   width: 50%;
   max-width: 640px;
+
   margin: 0.5em auto 0 auto;
 }
 
@@ -121,7 +122,7 @@ h2 {
 }
 
 .block-step1,
-.block-step8 {
+.block-step8 , .block-step8 h2 {
   background-color: #F1F2E3;
   color: black !important;
 }
@@ -414,8 +415,8 @@ input[type=checkbox]:not(old):checked + label > span:before {
   margin-left : 90px;
 }
 
-#wrapper.step1 .block-step1 .juice,
-#wrapper.stepcancel .block-stepcancel .juice {
+#wrapper.stepcancel .block-stepcancel .juice,
+#wrapper.step1 .block-step1 .juice {
   max-height: 350px;
 }
 
@@ -447,6 +448,47 @@ input[type=checkbox]:not(old):checked + label > span:before {
 #wrapper.step8 .block-step8
 {
   max-height: 450px;
+}
+
+/* On older phones our blocks need to accomodate
+   for zoomed fonts */
+@media only screen and (max-device-width: 480px) {
+#wrapper.stepcancel .block-stepcancel .juice,
+#wrapper.step1 .block-step1 .juice {
+  max-height: 450px !important;
+}
+
+#wrapper.step2 .block-step2 .juice {
+  max-height: 950px;
+}
+
+#wrapper.step3 .block-step3 .juice {
+  max-height: 950px;
+}
+
+#wrapper.step4 .block-step4 .juice {
+  max-height: 1050px;
+}
+
+#wrapper.step5 .block-step5 .juice {
+  max-height: 1050px;
+}
+
+#wrapper.step6 .block-step6 .juice {
+  max-height: 850px;
+}
+
+#wrapper.step7 .block-step7 .juice {
+  max-height: 450px;
+}
+
+#wrapper.step8 .block-step8 .juice,
+#wrapper.step8 .block-step8
+{
+  max-height: 450px;
+}
+
+
 }
 
 .credits {
