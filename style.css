@@ -395,13 +395,11 @@ input[type=checkbox]:not(old) + label > span {
   border           : 0.5px solid white;
   border-radius    : 25%;
   vertical-align   : top;
-  transform        : rotate(360deg);
-  transition       : transform 0.3s, font-size 0.4s;
+  transition       : font-size 0.4s;
   font-size        : 1pt;
 }
 
 input[type=checkbox]:not(old):checked + label > span {
-  transform   : rotate(0deg);
   font-size   : 17pt;
 }
 
