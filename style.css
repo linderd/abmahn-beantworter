@@ -323,28 +323,23 @@ ul {
   width: 100%;
 }
 
-.done {
-  float: right;
-  font-size: 24pt;
-  visibility: hidden;
-}
-
-#wrapper.step3 .block-step2 .done,
-#wrapper.step4 .block-step2 .done,
-#wrapper.step5 .block-step2 .done,
-#wrapper.step6 .block-step2 .done,
-#wrapper.step7 .block-step2 .done,
-#wrapper.step4 .block-step3 .done,
-#wrapper.step5 .block-step3 .done,
-#wrapper.step6 .block-step3 .done,
-#wrapper.step7 .block-step3 .done,
-#wrapper.step5 .block-step4 .done,
-#wrapper.step6 .block-step4 .done,
-#wrapper.step7 .block-step4 .done,
-#wrapper.step6 .block-step5 .done,
-#wrapper.step7 .block-step5 .done,
-#wrapper.step7 .block-step6 .done {
-  visibility: visible;
+#wrapper.step3 .block-step2 .circle_num,
+#wrapper.step4 .block-step2 .circle_num,
+#wrapper.step5 .block-step2 .circle_num,
+#wrapper.step6 .block-step2 .circle_num,
+#wrapper.step7 .block-step2 .circle_num,
+#wrapper.step4 .block-step3 .circle_num,
+#wrapper.step5 .block-step3 .circle_num,
+#wrapper.step6 .block-step3 .circle_num,
+#wrapper.step7 .block-step3 .circle_num,
+#wrapper.step5 .block-step4 .circle_num,
+#wrapper.step6 .block-step4 .circle_num,
+#wrapper.step7 .block-step4 .circle_num,
+#wrapper.step6 .block-step5 .circle_num,
+#wrapper.step7 .block-step5 .circle_num,
+#wrapper.step7 .block-step6 .circle_num {
+  border-radius: 1px !important;
+  transition: border-radius, 2s;
 }
 
 input[type="text"] {
