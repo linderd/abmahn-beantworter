@@ -538,6 +538,10 @@ input[type=checkbox]:not(old):checked + label > span:before {
   margin-right: 3%;
 }
 
+.partner.freifunk img, .partner.gff img{
+  padding-bottom: 6px;
+}
+
 .partner.ccc img {
   vertical-align: top;
 }
