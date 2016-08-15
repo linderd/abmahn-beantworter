@@ -32,7 +32,7 @@
 
 body {
   font-family: 'SourceSansPro', sans-serif;
-  background-color: #F1F2E3;
+  background-color: black;
 }
 
 html, body {
@@ -99,14 +99,8 @@ h2 {
   font-weight: 300;
 }
 
-#unsicher {
-  padding: 0;
-}
-#wrapper.stepcancel #unsicher {
-  padding: auto;
-}
-
 .juice,
+#unsicher,
 #wrapper.stepcancel h2 {
   overflow: hidden;
   max-height: 0px;
@@ -179,6 +173,7 @@ h2 {
 
 #unsicher {
   background-color: #B77662;
+  padding: 0;
 }
 
 .collapsable {
@@ -190,7 +185,7 @@ h2 {
   margin-right: 0;
 }
 
-.block-step2, .block-step3, .block-step4, .block-step5, .block-step6, .block-step7 {
+.block-step2, .block-step3, .block-step4, .block-step5, .block-step6, .block-step7, #unsicher {
   box-shadow: inset 0px 8px 6px -5px rgba(0, 0, 0, 0.5);
 }
 
@@ -410,6 +405,7 @@ input[type=checkbox]:not(old):checked + label > span:before {
 }
 
 #wrapper.stepcancel .block-stepcancel .juice,
+#wrapper.stepcancel #unsicher,
 #wrapper.step1 .block-step1 .juice {
   max-height: 450px;
 }
@@ -435,7 +431,7 @@ input[type=checkbox]:not(old):checked + label > span:before {
 }
 
 #wrapper.step7 .block-step7 .juice {
-  max-height: 450px;
+  max-height: 650px;
 }
 
 /* On older phones our blocks need to accomodate
@@ -467,7 +463,7 @@ input[type=checkbox]:not(old):checked + label > span:before {
 }
 
 #wrapper.step7 .block-step7 .juice {
-  max-height: 450px;
+  max-height: 650px;
 }
 
 }
