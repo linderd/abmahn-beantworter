@@ -30,24 +30,42 @@
     font-weight: 300;
 }
 
-body {
-  font-family: 'SourceSansPro', sans-serif;
-  background-color: black;
-}
+/* There's another global layout option in the footer
+   section, that pushes the main #wrapper down */
 
 html, body {
   height: 100%;
+  margin: 0px !important;
+
+  font-family: 'SourceSansPro', sans-serif;
+  font-size: 14pt;
+  font-weight: 300;
+
+  background-color: black;
+  color: white;
 }
 
 html {
   overflow-y: scroll;
 }
 
-#wrapper {
-  min-height: 100%;
-  height: auto !important;
-  height: 100%;
-  margin: 0 auto -200px;
+/* These describe our vertical hierarchy elementes */
+.collapsable {
+  width: 100%;
+  padding: 0.4em 0 0.4em 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* This defindes our content width */
+.block-header, .juice {
+  width: 480px;
+  margin: 0.5em auto 0 auto;
+}
+
+ul {
+  list-style-type: none;
+  padding-left:0;
 }
 
 h1 {
@@ -60,302 +78,46 @@ h1 {
 h2 {
   font-size: 24pt;
   font-weight: 300;
-  line-height: 1.1em;
-  cursor: pointer;
-  color: #F1F2E3;
-}
-
-.circle_num {
-  float: left;
-  width: 40px;
-  height: 40px;
-  line-height: 1.2em;
-  font-size: 23pt;
-  border-radius: 50%;
-  transition: border-radius, 2s;
-  border: 0px;
-  margin: 0 28px 0 0;
-  text-align: center;
-  background-color: #F1F2E3;
-  font-weight: normal;
-}
-
-.block-header, .juice {
-  width: 480px;
-  margin: 0.5em auto 0 auto;
-}
-
-.juice {
-  font-size: 14pt;
-  font-weight: 300;
-}
-
-#wrapper.step1 .block-header {
-  pointer-events: none;
-}
-
-.hint {
-  font-style: italic;
-  font-weight: 300;
-}
-
-.juice,
-#unsicher,
-#wrapper.stepcancel h2 {
-  overflow: hidden;
-  max-height: 0px;
-  transition: max-height, height;
-  transition-timing-function: ease;
-  transition-duration: 0.5s;
-  transition-delay: 0s;
-}
-
-.block-step1 {
-  background-color: #F1F2E3;
-  color: black !important;
-}
-
-.block-step1 .circle_num {
-  background-color: black;
-  color: #F1F2E3;
-  margin: 4px 28px 0 0;
-  line-height: 1.3em;
-}
-
-.block-step2 {
-  background-color: #047e7c;
-}
-
-.block-step2 .circle_num {
-  color: #047e7c;
-}
-
-.block-step3 {
-  background-color: #0c6d74;
-}
-
-.block-step3 .circle_num {
-  color: #0c6d74;
-}
-
-.block-step4 {
-  background-color: #145c6c;
-}
-
-.block-step4 .circle_num {
-  color: #145c6c;
-}
-
-.block-step5 {
-  background-color: #1c4b64;
-}
-
-.block-step5 .circle_num {
-  color: #1c4b64;
-}
-
-.block-step6 {
-  background-color: #243a5c;
-}
-
-.block-step6 .circle_num {
-  color: #243a5c;
-}
-
-.block-step7 {
-  background-color: #2c2954;
-}
-
-.block-step7 .circle_num {
-  color: #2c2954;
-
-}
-
-#unsicher {
-  background-color: #B77662;
-  padding: 0;
-}
-
-.collapsable {
-  width: 100%;
-  min-width: 480px;
-  color: white;
-  padding: 0.4em 0 0.4em 0;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.block-step2, .block-step3, .block-step4, .block-step5, .block-step6, .block-step7, #unsicher {
-  box-shadow: inset 0px 8px 6px -5px rgba(0, 0, 0, 0.5);
-}
-
-.two-buttons,
-.one-button {
-  height: 4em;
-  margin: 2.5em 0 1.5em 0;
-}
-
-.button {
-  width: 45%;
-  height: 2em;
-  padding-top: 0.7em;
-  padding-bottom: 0;
-  color: white;
-  font-weight: bold;
-  text-align: center;
-  border-radius: 10px;
-  text-transform: uppercase;
-  transition-duration: 0.2s;
   cursor: pointer;
 }
 
-.button-small {
-  background-color: white;
-  color: #222;
-  font-weight: normal;
-  font-size: 13pt;
-  display: inline-block;
-  border-radius: 4px;
-  padding: 0.2em 0.4em 0.2em 0.4em;
-  margin: 0 0.4em 1em 0;
-  cursor: pointer;
-  transition-duration: 0.2s;
-}
-
-.one-button a:link,
-.one-button a:visited,
-.one-button a {
+/* Never show links with underlines, if we need to, we make
+   dotted bottom borders */
+a:link,
+a:visited {
   text-decoration: none;
-}
-
-.button-red {
-  float: right;
-  background-color: #E65946;
-}
-
-.button-green {
-  background-color: #8ECA63;
-}
-
-.button-green:hover {
-  background-color: #96E65C;
-}
-
-.button-red:hover {
-  background-color: #FF1E00;
-}
-
-.button-small:hover {
-  /* background-color: #F1F2E3; */
-  background-color: #D0B66B;
-}
-
-.one-button .button-green {
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.two-buttons .button-green {
-  float: left;
-}
-
-body {
-  margin: 0px !important;
-}
-
-ul {
-  list-style-type: none;
-  padding-left:0;
-}
-
-.footer {
-  background-color: #F1F2E3;
-  box-shadow: inset 0px 12px 6px -6px rgba(0, 0, 0, 0.5);
-  color: #8E99A0;
-  font-size: 13pt;
-  font-weight: 300;
-  margin: 0;
-  padding: 72px 0 0 0;
-  text-align: center;
-  width: 100%;
-}
-
-.footer, .push {
-  height: 200px;
-}
-
-.footer p {
-  margin-bottom: 0px;
-  margin-top: 0px;
-}
-
-p a:link,
-p a:visited {
-  text-decoration: none;
-  border-bottom: dotted 1px rgba(0,0,0,0.25);
-}
-
-.footer a:link,
-.footer a:visited {
-  color: #8E99A0;
-}
-
-.juice a:link,
-.juice a:visited {
   color: black;
 }
 
-#wrapper.step3 .block-step2 .circle_num,
-#wrapper.step4 .block-step2 .circle_num,
-#wrapper.step5 .block-step2 .circle_num,
-#wrapper.step6 .block-step2 .circle_num,
-#wrapper.step7 .block-step2 .circle_num,
-#wrapper.step4 .block-step3 .circle_num,
-#wrapper.step5 .block-step3 .circle_num,
-#wrapper.step6 .block-step3 .circle_num,
-#wrapper.step7 .block-step3 .circle_num,
-#wrapper.step5 .block-step4 .circle_num,
-#wrapper.step6 .block-step4 .circle_num,
-#wrapper.step7 .block-step4 .circle_num,
-#wrapper.step6 .block-step5 .circle_num,
-#wrapper.step7 .block-step5 .circle_num,
-#wrapper.step7 .block-step6 .circle_num {
-  border-radius: 1px !important;
-  transition: border-radius, 2s;
-}
-
+/* ******** Style text input boxes ******** */
 input[type="text"] {
   width: 95%;
-  background-color : rgba(255, 255, 255, 0.30);
+  padding: 0.4em 0.6em 0.4em 0.6em;
+  margin-bottom: 0.7em;
+
   border: 0px solid rgba(255, 255, 255, 0.30);
   border-radius: 6px;
+
   font-family: 'SourceSansPro', sans-serif;
   font-size: 13pt;
   font-weight: normal;
+
+  background-color : rgba(255, 255, 255, 0.30);
   color: white;
-  padding: 0.4em 0.6em 0.4em 0.6em;
-  margin-bottom: 0.7em;
 }
 
+/* Remove blue focus hint */
 input:focus {
   outline: none !important;
 }
 
-input:focus::placeholder {
-  opacity: 0;
-}
-
+/* Style place holder text (and repeat for each browser namespace :( */
 ::placeholder {
   color: white;
   opacity: 0.5;
   font-variant: small-caps;
   font-weight: normal;
   letter-spacing: 0.15em;
-}
-
-
-:focus::-moz-placeholder {
-  opacity: 0
 }
 
 ::-moz-placeholder {
@@ -374,9 +136,6 @@ input:focus::placeholder {
   letter-spacing: 0.15em;
 }
 
-:focus::-webkit-input-placeholder {
-  opacity: 0;
-}
 ::-webkit-input-placeholder {
   color: white;
   opacity: 0.5;
@@ -385,33 +144,21 @@ input:focus::placeholder {
   letter-spacing: 0.15em;
 }
 
-select.tag {
-  width: 15%;
-  margin-right: 3%;
-}
-select.monat {
-  width: 25%;
-  margin-right: 3%;
-}
-select.jahr {
-  width: 15%;
-  margin-right: 3%;
-}
-select.zeit {
-  min-width: 20%;
-  width: 25%;
-}
+/* Placeholder text should disappear when giving input the focus */
+input:focus::placeholder { opacity: 0; }
+:focus::-moz-placeholder { opacity: 0; }
+:focus::-ms-placeholder { opacity: 0; }
+:focus::-webkit-input-placeholder { opacity: 0; }
 
+/* ********* Style select boxes ******** */
 select {
   height: 2em;
+
+  border-radius: 4px;
+
   font-family: 'SourceSansPro', sans-serif;
   font-size: 13pt;
   font-weight: 300;
-  border-radius: 4px;
-}
-
-label {
-  margin-bottom: 1em;
 }
 
 input[type=checkbox]:not(old) {
@@ -454,75 +201,279 @@ input[type=checkbox]:not(old):checked + label > span:before {
   margin-left : 144px;
 }
 
+label {
+  margin-bottom: 1em;
+}
+
+/* Global element definitions done.
+   Now for basic color scheme */
+#unsicher    { background-color: #6276B7; }
+.footer      { background-color: #F1F2E3; }
+.block-step1 { background-color: #F1F2E3; }
+.block-step2 { background-color: #047E7C; }
+.block-step3 { background-color: #0C6D74; }
+.block-step4 { background-color: #145C6C; }
+.block-step5 { background-color: #1C4B64; }
+.block-step6 { background-color: #243A5C; }
+.block-step7 { background-color: #2C2954; }
+
+/* Those background definitions must match font colors of circles
+   with numbers to appear as cut-outs */
+.block-step1 .circle_num { color: #F1F2E3; }
+.block-step2 .circle_num { color: #047E7C; }
+.block-step3 .circle_num { color: #0C6D74; }
+.block-step4 .circle_num { color: #145C6C; }
+.block-step5 .circle_num { color: #1C4B64; }
+.block-step6 .circle_num { color: #243A5C; }
+.block-step7 .circle_num { color: #2C2954; }
+
+/* Block 1 needs black font and circles for contrast */
+.block-step1 {
+  color: black !important;
+}
+.block-step1 .circle_num {
+  background-color: black;
+}
+
+.footer {
+  color: #8E99A0;
+}
+
+/* Shadows between sections give the user a sense of depth between
+   stacked cards */
+.block-step2, .block-step3, .block-step4,
+.block-step5, .block-step6, .block-step7, #unsicher {
+  box-shadow: inset 0px 8px 6px -5px rgba(0, 0, 0, 0.5);
+}
+
+/* Footer shadow is inverted an marks end of stacked cards */
+.footer {
+  box-shadow: inset 0px 12px 6px -6px rgba(0, 0, 0, 0.5);
+}
+
+/* Circles in headings guide the user through the 5 step process */
+.circle_num {
+  float: left;
+  margin: 0 28px 0 0;
+
+  width: 40px;
+  height: 40px;
+
+  border-radius: 50%;
+  border: 0px;
+
+  line-height: 1.2em;
+  font-size: 23pt;
+  text-align: center;
+
+  background-color: #F1F2E3;
+  font-weight: normal;
+}
+
+/* step1 has a h1 and the circle needs more finetuning to fit headline */
+.block-step1 .circle_num {
+  margin: 4px 28px 0 0;
+  line-height: 1.3em;
+}
+
+/* Define rest of font styles */
+.hint {
+  font-style: italic;
+  font-weight: 300;
+}
+
+
+/* Our intra-step animations rely on the section's max-height being
+   transitioned from 0 to the original height.
+   Initially hide all sections and only unhide them depending on the
+   global state (as set with a class on the wrapper element)
+*/
+.juice,
+#unsicher,
+#wrapper.stepcancel h2 {
+  overflow: hidden;
+  max-height: 0px;
+  transition: max-height, height;
+  transition-timing-function: ease;
+  transition-duration: 0.5s;
+  transition-delay: 0s;
+}
+
+/* These are the heights of the expanded sections, only shown if the
+   wrapper has the appropriate class */
+
+#wrapper.step1 .block-step1 .juice { max-height: 450px; }
+#wrapper.step2 .block-step2 .juice { max-height: 950px; }
+#wrapper.step3 .block-step3 .juice { max-height: 950px; }
+#wrapper.step4 .block-step4 .juice { max-height: 1050px; }
+#wrapper.step5 .block-step5 .juice { max-height: 1200px; }
+#wrapper.step6 .block-step6 .juice { max-height: 850px; }
+#wrapper.step7 .block-step7 .juice { max-height: 650px; }
+
+/* The unsicher section does not have a headline initially visible,
+   so the sections padding must be hidden and everything must be unhidden together */
+#unsicher {
+  padding: 0;
+}
 #wrapper.stepcancel .block-stepcancel .juice,
-#wrapper.stepcancel #unsicher,
-#wrapper.step1 .block-step1 .juice {
+#wrapper.stepcancel #unsicher {
   max-height: 450px;
 }
 
-#wrapper.step2 .block-step2 .juice {
-  max-height: 950px;
+/* If the user did not yet confirm that he's sure, disallow expanding blocks */
+#wrapper.not-confirmed .block-header {
+  pointer-events: none;
 }
 
-#wrapper.step3 .block-step3 .juice {
-  max-height: 950px;
+
+/* Our navigational buttons have a consistent height defined by its wrapper box */
+.two-buttons,
+.one-button {
+  height: 4em;
+  margin: 2.5em 0 1.5em 0;
 }
 
-#wrapper.step4 .block-step4 .juice {
-  max-height: 1200px;
+/* Style our buttons */
+.button {
+  width: 45%;
+  height: 2em;
+
+  padding-top: 0.7em;
+  padding-bottom: 0;
+
+  border-radius: 10px;
+
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+
+  transition-duration: 0.2s;
+
+  cursor: pointer;
 }
 
-#wrapper.step5 .block-step5 .juice {
-  max-height: 1200px;
+.button-green       { background-color: #8ECA63; }
+.button-green:hover { background-color: #96E65C; }
+.button-red         { background-color: #E65946; }
+.button-red:hover   { background-color: #FF1E00; }
+.one-button .button-green {
+
+/* Place buttons, single green is centered, two buttons float */
+  margin-right: auto;
+  margin-left: auto;
 }
 
-#wrapper.step6 .block-step6 .juice {
-  max-height: 850px;
+.two-buttons .button-green {
+  float: left;
 }
 
-#wrapper.step7 .block-step7 .juice {
-  max-height: 650px;
+.button-red {
+  float: right;
 }
 
-/* On older phones our blocks need to accomodate
-   for zoomed fonts */
-@media only screen and (max-device-width: 480px) {
-#wrapper.stepcancel .block-stepcancel .juice,
-#wrapper.step1 .block-step1 .juice {
-  max-height: 450px !important;
+/* Smaller buttons are for non-navigational purposes */
+.button-small {
+  display: inline-block;
+  padding: 0.2em 0.4em 0.2em 0.4em;
+  margin: 0 0.4em 1em 0;
+
+  border-radius: 4px;
+
+  background-color: white;
+  color: #222;
+
+  font-weight: normal;
+  font-size: 13pt;
+
+  cursor: pointer;
+  transition-duration: 0.2s;
 }
 
-#wrapper.step2 .block-step2 .juice {
-  max-height: 950px;
+.button-small:hover {
+  background-color: #D0B66B;
 }
 
-#wrapper.step3 .block-step3 .juice {
-  max-height: 950px;
+/* Style things that depend on the progress.
+   Example: circles turn squares when a step is finished */
+#wrapper.step3 .block-step2 .circle_num,
+#wrapper.step4 .block-step2 .circle_num,
+#wrapper.step5 .block-step2 .circle_num,
+#wrapper.step6 .block-step2 .circle_num,
+#wrapper.step7 .block-step2 .circle_num,
+#wrapper.step4 .block-step3 .circle_num,
+#wrapper.step5 .block-step3 .circle_num,
+#wrapper.step6 .block-step3 .circle_num,
+#wrapper.step7 .block-step3 .circle_num,
+#wrapper.step5 .block-step4 .circle_num,
+#wrapper.step6 .block-step4 .circle_num,
+#wrapper.step7 .block-step4 .circle_num,
+#wrapper.step6 .block-step5 .circle_num,
+#wrapper.step7 .block-step5 .circle_num,
+#wrapper.step7 .block-step6 .circle_num {
+  border-radius: 1px !important;
+  transition: border-radius, 2s;
 }
 
-#wrapper.step4 .block-step4 .juice {
-  max-height: 1050px;
+/* Make shift date selector */
+select.tag {
+  width: 15%;
+  margin-right: 3%;
+}
+select.monat {
+  width: 25%;
+  margin-right: 3%;
+}
+select.jahr {
+  width: 15%;
+  margin-right: 3%;
+}
+select.zeit {
+  min-width: 20%;
+  width: 25%;
 }
 
-#wrapper.step5 .block-step5 .juice {
-  max-height: 1200px;
+/* ******** FOOTER ******** */
+
+/* This ensures there's always enough space to push
+   footer to the bottom of the screen */
+#wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -200px;
 }
 
-#wrapper.step6 .block-step6 .juice {
-  max-height: 850px;
+.footer, .push {
+  height: 200px;
 }
 
-#wrapper.step7 .block-step7 .juice {
-  max-height: 650px;
+.footer {
+  width: 100%;
+  margin: 0;
+  padding: 72px 0 0 0;
+
+  font-size: 12pt;
+  font-weight: 300;
+
+  text-align: center;
 }
 
+.footer-left a:link, .footer-left a:visited,
+.footer-right a:link, .footer-right a:visited,
+p a:link, p a:visited {
+  border-bottom: dotted 1px rgba(0,0,0,0.25);
 }
 
+.footer a:link,
+.footer a:visited {
+  color: #8E99A0;
+}
 .credits {
   min-width: 480px;
   width: 50%;
   max-width: 640px;
-  margin: 0 auto 72px auto;
+  margin: 0 auto 0 auto;
 }
 
 .partner img {
@@ -544,4 +495,22 @@ input[type=checkbox]:not(old):checked + label > span:before {
 
 .partner.ccc img {
   vertical-align: top;
+}
+
+.footer-left {
+  float: left;
+  text-align: right;
+  width: 48%;
+  margin: 0;
+  padding-right: 10px;
+  border: none;
+}
+
+.footer-right {
+  float: right;
+  text-align: left;
+  width: 48%;
+  margin: 0;
+  padding-left: 10px;
+  border: none;
 }
