@@ -67,23 +67,21 @@ h2 {
 
 .circle_num {
   float: left;
-  width: 1.2em;
-  height: 1.2em;
+  width: 40px;
+  height: 40px;
   line-height: 1.2em;
-  font-size: 0.8em;
+  font-size: 23pt;
   border-radius: 50%;
-  border: solid #F1F2E3 2px;
-  margin: 0 1em 0 0;
+  transition: border-radius, 2s;
+  border: 0px;
+  margin: 0 28px 0 0;
   text-align: center;
   background-color: #F1F2E3;
   font-weight: normal;
 }
 
 .block-header, .juice {
-  min-width: 480px;
-  width: 50%;
-  max-width: 640px;
-
+  width: 480px;
   margin: 0.5em auto 0 auto;
 }
 
@@ -125,61 +123,57 @@ h2 {
 
 .block-step1 .circle_num {
   background-color: #403040;
-  width: 40px;
-  height: 40px;
   color: #F1F2E3;
-  font-size: 21pt;
-  margin-top: 0.2em;
-  line-height: 1.5em;
+  margin: 4px 28px 0 0;
+  line-height: 1.3em;
 }
 
-
 .block-step2 {
-  background-color: #403040;
+  background-color: #047e7c;
 }
 
 .block-step2 .circle_num {
-  color: #403040;
+  color: #047e7c;
 }
 
 .block-step3 {
-  background-color: #564073;
+  background-color: #0c6d74;
 }
 
 .block-step3 .circle_num {
-  color: #564073;
+  color: #0c6d74;
 }
 
 .block-step4 {
-  background-color: #6A59A4;
+  background-color: #145c6c;
 }
 
 .block-step4 .circle_num {
-  color: #6A59A4;
+  color: #145c6c;
 }
 
 .block-step5 {
-  background-color: #7CA8D7;
+  background-color: #1c4b64;
 }
 
 .block-step5 .circle_num {
-  color: #7CA8D7;
+  color: #1c4b64;
 }
 
 .block-step6 {
-  background-color: #D0B66B;
+  background-color: #243a5c;
 }
 
 .block-step6 .circle_num {
-  color: #D0B66B;
+  color: #243a5c;
 }
 
 .block-step7 {
-  background-color: #70B5A9;
+  background-color: #2c2954;
 }
 
 .block-step7 .circle_num {
-  color: #70B5A9;
+  color: #2c2954;
 
 }
 
@@ -197,13 +191,13 @@ h2 {
 }
 
 .block-step2, .block-step3, .block-step4, .block-step5, .block-step6, .block-step7 {
-  box-shadow: inset 0px 7px 3px -3px rgba(50, 50, 50, 0.75);
+  box-shadow: inset 0px 8px 6px -5px rgba(0, 0, 0, 0.5);
 }
 
 .two-buttons,
 .one-button {
   height: 4em;
-  margin: 3em 0 0.5em 0;
+  margin: 2.5em 0 0 0;
 }
 
 .button {
@@ -222,12 +216,12 @@ h2 {
 
 .button-small {
   background-color: white;
-  color: black;
+  color: #222;
   font-weight: normal;
   font-size: 13pt;
   display: inline-block;
   border-radius: 4px;
-  padding: 0.1em 0.3em 0.1em 0.3em;
+  padding: 0.2em 0.4em 0.2em 0.4em;
   margin: 0 0.4em 1em 0;
   cursor: pointer;
   transition-duration: 0.2s;
@@ -280,7 +274,9 @@ ul {
 }
 
 .footer {
-  background-color: #4A5D67;
+ /* background-color: #42425A; */
+  background-color: #F1F2E3;
+  box-shadow: inset 0px 12px 6px -6px rgba(0, 0, 0, 0.5);
   color: #8E99A0;
   font-size: 13pt;
   font-weight: 300;
@@ -347,10 +343,10 @@ input[type="text"] {
   border: solid 1px silver;
   border-radius: 4px;
   font-family: 'SourceSansPro', sans-serif;
-  font-size: 14pt;
+  font-size: 13pt;
   font-weight: normal;
-  padding: 0.3em;
-  margin-bottom: 0.5em;
+  padding: 0.4em 0.6em 0.4em 0.6em;
+  margin-bottom: 0.7em;
 }
 
 select.tag {
@@ -372,6 +368,7 @@ select.zeit {
 
 select {
   height: 2em;
+  font-family: 'SourceSansPro', sans-serif;
   font-size: 13pt;
   font-weight: 300;
   border-radius: 4px;
@@ -390,8 +387,8 @@ input[type=checkbox]:not(old) + label {
   display      : inline-block;
   margin-left  : 0;
   line-height  : 1.7em;
-  text-indent  : -60px; /* Make 2nd line of label align, takes border width of tickbox into account */
-  padding-left : 60px;
+  text-indent  : -68px; /* Make 2nd line of label align, takes border width of tickbox into account */
+  padding-left : 68px;
 }
 
 input[type=checkbox]:not(old) + label > span {
@@ -399,7 +396,7 @@ input[type=checkbox]:not(old) + label > span {
   width            : 30px;
   height           : 30px;
   background-color : rgba(255, 255, 255, 0.30);
-  margin           : 2px 28px 8px 2px;
+  margin           : 2px 36px 8px 2px;
   border           : 0px solid rgba(255, 255, 255, 0.30);
   border-radius    : 25%;
   vertical-align   : top;
@@ -418,7 +415,7 @@ input[type=checkbox]:not(old):checked + label > span:before {
   color       : white;
   text-align  : left;
   font-weight : bold;
-  margin-left : 127px;
+  margin-left : 144px;
 }
 
 #wrapper.stepcancel .block-stepcancel .juice,
@@ -435,11 +432,11 @@ input[type=checkbox]:not(old):checked + label > span:before {
 }
 
 #wrapper.step4 .block-step4 .juice {
-  max-height: 950px;
+  max-height: 1200px;
 }
 
 #wrapper.step5 .block-step5 .juice {
-  max-height: 800px;
+  max-height: 1200px;
 }
 
 #wrapper.step6 .block-step6 .juice {
@@ -471,7 +468,7 @@ input[type=checkbox]:not(old):checked + label > span:before {
 }
 
 #wrapper.step5 .block-step5 .juice {
-  max-height: 1050px;
+  max-height: 1200px;
 }
 
 #wrapper.step6 .block-step6 .juice {
