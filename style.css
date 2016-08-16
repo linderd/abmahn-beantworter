@@ -207,7 +207,7 @@ label {
 
 /* Global element definitions done.
    Now for basic color scheme */
-#unsicher    { background-color: #6276B7; }
+#unsicher    { background-color: #840020; }
 .footer      { background-color: #F1F2E3; }
 .block-step1 { background-color: #F1F2E3; }
 .block-step2 { background-color: #047E7C; }
@@ -441,76 +441,114 @@ select.zeit {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  margin: 0 auto -200px;
+  margin: 0 auto -260px;
 }
 
 .footer, .push {
-  height: 200px;
+  height: 260px;
 }
 
 .footer {
   width: 100%;
+  min-width: 540px;
   margin: 0;
   padding: 72px 0 0 0;
 
   font-size: 12pt;
   font-weight: 300;
 
+  overflow: hidden;
   text-align: center;
-}
-
-.footer-left a:link, .footer-left a:visited,
-.footer-right a:link, .footer-right a:visited,
-p a:link, p a:visited {
-  border-bottom: dotted 1px rgba(0,0,0,0.25);
 }
 
 .footer a:link,
 .footer a:visited {
   color: #8E99A0;
 }
-.credits {
-  min-width: 480px;
-  width: 50%;
-  max-width: 640px;
-  margin: 0 auto 0 auto;
+
+.footer .partner a:link,
+.footer .implementor a:link,
+.footer .imprint a:link,
+.footer .partner a:visited,
+.footer .implementor a:visited,
+.footer .imprint a:visited {
+  border-bottom: dotted 1px rgba(0,0,0,0.25);
 }
 
-.partner img {
-  opacity: 0.5;
+.credit {
+  display: inline-block;
+  vertical-align: top;
+  width: 210px;
+  margin: 0 0 0 0 !important;
+  padding: 15px 0 0 0;
+
+  height: 35px;
+}
+
+.credit.imprint,
+.credit.implementor {
+  text-align: left;
 }
 
 .partner {
-  display: inline-block;
-  font-size: 10pt;
-}
-
-.partner.ccc, .partner.freifunk {
-  margin-right: 3%;
-}
-
-.partner.freifunk img, .partner.gff img{
-  padding-bottom: 6px;
-}
-
-.partner.ccc img {
-  vertical-align: top;
-}
-
-.footer-left {
-  float: left;
   text-align: right;
-  width: 48%;
-  margin: 0;
-  padding-right: 10px;
-  border: none;
 }
 
-.footer-right {
-  float: right;
-  text-align: left;
-  width: 48%;
-  margin: 0;
-  padding-left: 10px;
-  border: none;
+.credit > img {
+  opacity: 0.5;
+}
+
+.creditline {
+  height: 50px;
+}
+
+.creditline.small {
+  height: 35px;
+}
+
+.creditline.small > .credit {
+  vertical-align: middle;
+  padding-top: 6px;
+  height: 29px;
+}
+
+.credit.noimg {
+  padding-top: 0;
+  height: 35px;
+  width: 100px;
+}
+
+.credit.freifunk, .credit.ccc, .credit.gff {
+  padding-top: 0;
+  height: 50px;
+  width: 100px;
+}
+
+.impressum {
+  width: 100%;
+  float: left;
+  display: inline;
+  position: relative;
+  transition: left 2s;
+  top: 0;
+  left: 100%;
+}
+
+.footer.show-imprint .impressum {
+  left: 0%;
+}
+
+.credits {
+  width: 100%;
+  float: left;
+  display: inline;
+  position: relative;
+  left: 0;
+  transition: max-width 2s, left 2s, width 2s;
+}
+
+.footer.show-imprint .credits {
+  left: -100%;
+  width: 0;
+  max-width: 0;
 }

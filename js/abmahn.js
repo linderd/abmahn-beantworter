@@ -56,7 +56,7 @@ function scrollTo(end) {
     step();
 }
 
-function step0_cancel() { scrollTo(0); setClass('wrapper', 'stepcancel'); }
+function step0_cancel() { scrollTo(0); setClass('wrapper', 'not-confirmed stepcancel'); }
 function step0_done()   { scrollTo(0); setClass('wrapper', 'step1'); }
 function step1_done()   { scrollTo(0); setClass('wrapper', 'step2'); }
 function step2_done()   { scrollTo(103); setClass('wrapper', 'step3'); }
@@ -64,6 +64,8 @@ function step3_done()   { scrollTo(196); setClass('wrapper', 'step4'); }
 function step4_done()   { scrollTo(289); setClass('wrapper', 'step5'); }
 function step5_done()   { scrollTo(382); setClass('wrapper', 'step6'); }
 function step6_done()   { scrollTo(475); setClass('wrapper', 'step7'); }
+
+function show_impressum() { setClass('footer', 'footer show-imprint'); }
 
 function waldorf() {
   setText('abmahnender_kanzlei', 'Waldorf & Frommer RAe');
