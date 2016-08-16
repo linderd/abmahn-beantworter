@@ -536,7 +536,7 @@ select.zeit {
   width: 50%;
   height: 260px;
   position: relative;
-  transition: left 2s;
+  transition: left 1s;
   top: 0;
   left: 0%;
 }
@@ -556,7 +556,7 @@ select.zeit {
   position: relative;
   overflow: hidden;
   left: 0;
-  transition: max-width 2s, left 2s, width 2s;
+  transition: left 1s;
 }
 
 .footer.show-imprint .credits {
@@ -576,7 +576,6 @@ select.zeit {
   display: inline-block;
   float: none;
   color: #F1F2E3;
-  line-height: 1.4em;
   width: 40px;
   height: 40px;
   cursor: pointer;
