@@ -468,11 +468,14 @@ select.zeit {
 
 .footer .partner a:link,
 .footer .implementor a:link,
-.footer .imprint a:link,
 .footer .partner a:visited,
 .footer .implementor a:visited,
-.footer .imprint a:visited {
+.footer .imprint span {
   border-bottom: dotted 1px rgba(0,0,0,0.25);
+}
+
+.footer .imprint {
+  cursor: pointer;
 }
 
 .credit {
@@ -524,31 +527,62 @@ select.zeit {
   width: 100px;
 }
 
+.scrollcontainer {
+  width: 200%;
+}
+
 .impressum {
-  width: 100%;
-  float: left;
-  display: inline;
+  float: right;
+  width: 50%;
+  height: 260px;
   position: relative;
   transition: left 2s;
   top: 0;
-  left: 100%;
-}
-
-.footer.show-imprint .impressum {
   left: 0%;
 }
 
+.impressum p {
+  margin: 0 0 .1em 0;
+}
+
+.footer.show-imprint .impressum {
+  left: -50%;
+  top: 0;
+}
+
 .credits {
-  width: 100%;
+  width: 50%;
   float: left;
-  display: inline;
   position: relative;
+  overflow: hidden;
   left: 0;
   transition: max-width 2s, left 2s, width 2s;
 }
 
 .footer.show-imprint .credits {
-  left: -100%;
-  width: 0;
-  max-width: 0;
+  left: -50%;
+}
+
+.visdp,
+.datenschutz {
+  vertical-align: top;
+  display: inline-block;
+  width: 250px;
+  margin-top: 2em;
+}
+
+.back {
+  background-color: #8E99A0;
+  display: inline-block;
+  float: none;
+  color: #F1F2E3;
+  line-height: 1.4em;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  margin-top: 65px;
+}
+
+.back:hover {
+  background-color: black;
 }

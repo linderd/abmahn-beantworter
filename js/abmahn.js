@@ -65,6 +65,7 @@ function step4_done()   { scrollTo(289); setClass('wrapper', 'step5'); }
 function step5_done()   { scrollTo(382); setClass('wrapper', 'step6'); }
 function step6_done()   { scrollTo(475); setClass('wrapper', 'step7'); }
 
+function hide_impressum() { setClass('footer', 'footer'); }
 function show_impressum() { setClass('footer', 'footer show-imprint'); }
 
 function waldorf() {
