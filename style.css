@@ -282,6 +282,10 @@ label {
   font-weight: 300;
 }
 
+.block-step1 a:link,
+.block-step1 a:visited {
+  border-bottom: dotted 1px rgba(0,0,0,0.25);
+}
 
 /* Our intra-step animations rely on the section's max-height being
    transitioned from 0 to the original height.
