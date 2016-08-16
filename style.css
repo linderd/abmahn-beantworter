@@ -36,6 +36,7 @@
 html, body {
   height: 100%;
   margin: 0px !important;
+  min-width: 480px;
 
   font-family: 'SourceSansPro', sans-serif;
   font-size: 14pt;
@@ -459,26 +460,27 @@ select.zeit {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  margin: 0 auto -260px;
+  margin: 0 auto -300px;
 }
 
 .footer, .push {
-  height: 260px;
+  height: 300px;
 }
 
 .footer {
   width: 100%;
   min-width: 540px;
   margin: 0;
-  padding: 72px 0 0 0;
+  padding: 50px 0 0 0;
 
-  font-size: 12pt;
+  font-size: 11pt;
   font-weight: 300;
 
   overflow: hidden;
   text-align: center;
 }
 
+/* Footer links have a softer color than in block 1 */
 .footer a:link,
 .footer a:visited {
   color: #8E99A0;
@@ -494,56 +496,45 @@ select.zeit {
 
 .footer .imprint {
   cursor: pointer;
+  margin-bottom: 1em;
 }
 
-.credit {
-  display: inline-block;
-  vertical-align: top;
-  width: 210px;
-  margin: 0 0 0 0 !important;
-  padding: 15px 0 0 0;
-
-  height: 35px;
-}
-
-.credit.imprint,
-.credit.implementor {
-  text-align: left;
+.partners {
+  width: 480px;
+  padding: 0;
+  margin: 0 auto 24px auto;
+  border: none;
 }
 
 .partner {
-  text-align: right;
+  display: inline-block;
+  vertical-align: bottom;
+  width: 160px;
+  height: 120px;
+  margin: 0px 0px 0px 0px;
 }
 
-.credit > img {
+.partner > img {
   opacity: 0.5;
+  padding: 0 0 0 10px;
+  margin-bottom: 10px;
 }
 
-.creditline {
-  height: 50px;
+.partner#ccc > img {
+  padding: 10px 0 0 0;
+  margin: 0;
 }
 
-.creditline.small {
-  height: 35px;
+.implementor {
+  margin-bottom: 0.3em;
 }
 
-.creditline.small > .credit {
-  vertical-align: middle;
-  padding-top: 6px;
-  height: 29px;
+.credits hr {
+  width: 60px;
+  margin-bottom: 1em;
 }
 
-.credit.noimg {
-  padding-top: 0;
-  height: 35px;
-  width: 100px;
-}
-
-.credit.freifunk, .credit.ccc, .credit.gff {
-  padding-top: 0;
-  height: 50px;
-  width: 100px;
-}
+/* ******** Horizontal footer slide magic ******** */
 
 .scrollcontainer {
   width: 200%;
@@ -572,7 +563,6 @@ select.zeit {
   width: 50%;
   float: left;
   position: relative;
-  overflow: hidden;
   left: 0;
   transition: left 1s;
 }
@@ -585,8 +575,10 @@ select.zeit {
 .datenschutz {
   vertical-align: top;
   display: inline-block;
-  width: 250px;
-  margin-top: 2em;
+  width: 188px;
+  margin: 2em 0 0 32px;
+  text-align: left;
+  padding: 0 0 0 0;
 }
 
 .back {
@@ -597,7 +589,7 @@ select.zeit {
   width: 40px;
   height: 40px;
   cursor: pointer;
-  margin-top: 65px;
+  margin: 65px 0 0 0;
 }
 
 .back:hover {

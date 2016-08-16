@@ -247,47 +247,42 @@
     <div id="footer" class="footer">
       <div class="scrollcontainer">
         <div class="credits">
-          <div class="creditline">
-            <div class="credit partner"><a href="https://ccc.de/">Chaos Computer Club</a></div>
-            <a href="https://www.ccc.de/"><div class="credit ccc"><img src="img/ccc.svg" height="50px" alt="Logo des Chaos Computer Clubs"/></div></a>
-            <div class="credit imprint" onclick="show_impressum()"><span>Impressum + Datenschutz<span></div>
+          <div class="partners">
+            <a href="https://www.ccc.de/"><div id="ccc" class="partner">
+              <img src="img/ccc.svg" height="50px" alt="Logo des Chaos Computer Clubs"/>
+              <div>Chaos Computer Club Ultras</div>
+            </div></a><!-- this comment is important as white spaces leave gaps between divs
+         --><a href="https://freifunk.net/"><div id="freifunk" class="partner">
+              <img src="img/freifunk.svg" height="50px" alt="Logo des Freifunk e. V.s"/>
+              <div>Förderverein Freie Netzwerke</div>
+            </div></a><!-- this comment is important as white spaces leave gaps between divs
+         --><a href="https://freiheitsrechte.org/"><div id="gff" class="partner">
+              <img src="img/gff.svg" height=50px" alt="Logo des Gesellschaft für Freiheitsrechte e. V."/>
+              <div>Gesellschaft für Freiheitsrechte</div>
+            </div></a>
           </div>
-          <div class="creditline small">
-            <div class="credit empty"></div>
-            <div class="credit noimg empty"></div>
-            <div class="credit implementor"><a href="http://elektrowecker.de/">Pepo</a> – UX</div>
-          </div>
-          <div class="creditline">
-            <div class="credit partner"><a href="https://freifunk.net/">Förderverein Freie Netzwerke</a></div>
-            <a href="https://freifunk.net/"><div class="credit freifunk"><img src="img/freifunk.svg" height="50px" alt="Logo des Freifunk e. V.s"/></div></a>
-            <div class="credit implementor"><a href="http://www.schlicht-und-ergreifend.de">Malik Aziz</a> – Design</div>
-          </div>
-          <div class="creditline small">
-            <div class="credit empty"></div>
-            <div class="credit noimg empty"></div>
-            <div class="credit implementor"><a href="https://erdgeist.org/">erdgeist</a> – Konzept &amp; Umsetzung</div>
-          </div>
-          <div class="creditline">
-            <div class="credit partner"><a href="https://freiheitsrechte.org/">Gesellschaft für Freiheitsrechte</a></div>
-            <a href="https://freiheitsrechte.org/"><div class="credit gff"><img src="img/gff.svg" height=50px" alt="Logo des Gesellschaft für Freiheitsrechte e. V."/></div></a>
-            <div class="credit implementor"><a href="https://kanzlei-hubrig.de/">Beata Hubrig</a> – Rechtliches</div>
-          </div>
+          <div class="credit imprint" onclick="show_impressum()"><span>Impressum + Datenschutz<span></div>
+          <hr/>
+          <div class="credit implementor"><a href="https://erdgeist.org/">erdgeist</a> (Konzept + Umsetzung)</div>
+          <div class="credit implementor"><a href="https://kanzlei-hubrig.de/">Beata Hubrig</a> (Rechtliches)</div>
+          <div class="credit implementor"><a href="http://www.schlicht-und-ergreifend.de">Malik Aziz</a> (Design) ∙ <a href="http://elektrowecker.de/">Pepo</a> (UX)</div>
         </div>
         <div class="impressum">
-          <p>Der Abmahnbeantworter ist ein Projekt des Chaos Computer Club e. V.,</p>
-          <p>des Fördervereins Freie Netzwerke e. V. und der Gesellschaft für Freiheitsrechte e. V.</p>
-          <div class="back circle_num" onclick="hide_impressum()">⇦</div>
-          <div class="visdp">
-            <p><strong>V.i.S.d.P.</strong>
-            <p>Dirk Engling</p>
-            <p>c/o Chaos Computer Club</p>
-            <p>Zeiseweg 9</p>
-            <p>22765 Hamburg</p>
-            <p><a href="mailto:erdgeist@ccc.de">E-Mail: erdgeist@ccc.de</a></p>
-          </div>
-          <div class="datenschutz">
-            <p><strong>Datenschutzerklärung</strong></p>
-            <p>Eine Erhebung von personenbezogenen Daten der Nutzer dieser Website findet nicht statt. Auch der Webserver speichert keine IP-Adressen der Nutzer.</p>
+          <div class="partners">
+            <p>Der Abmahnbeantworter ist ein Projekt des Chaos Computer Club e. V., des Fördervereins Freie Netzwerke e. V. und der Gesellschaft für Freiheitsrechte e. V.</p>
+            <div class="back circle_num" onclick="hide_impressum()">⇦</div><!--
+         --><div class="visdp">
+              <p><strong>V.i.S.d.P.</strong>
+              <p>Dirk Engling</p>
+              <p>c/o Chaos Computer Club</p>
+              <p>Zeiseweg 9</p>
+              <p>22765 Hamburg</p>
+              <p><a href="mailto:erdgeist@ccc.de">E-Mail: erdgeist@ccc.de</a></p>
+            </div><!--
+         --><div class="datenschutz">
+              <p><strong>Datenschutzerklärung</strong></p>
+              <p>Eine Erhebung von personenbezogenen Daten der Nutzer dieser Website findet nicht statt. Auch der Webserver speichert keine IP-Adressen der Nutzer.</p>
+            </div>
           </div>
         </div>
       </div>
