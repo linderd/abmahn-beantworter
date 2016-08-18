@@ -220,6 +220,10 @@ label {
   margin-bottom: 1em;
 }
 
+label:first-line {
+  vertical-align: middle;
+}
+
 /* Global element definitions done.
    Now for basic color scheme */
 #unsicher    { background-color: #840020; }
@@ -447,6 +451,8 @@ label {
   visibility: hidden;
   transition: transform 0.5s, visibility 0.5s;
   transform: rotate3d(45, 45, 1, 90deg);
+  background-color: green;
+  color: white;
 }
 
 #wrapper.step3 .block-step2 .circle_num.done,
