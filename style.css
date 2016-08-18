@@ -285,6 +285,11 @@ label {
   font-weight: normal;
 }
 
+.circle_num.undone {
+  transform: rotate3d(0, 0, 0, 0deg);
+  transition: transform 0.5s 0.5s, visibility 0.5s 0.5s;
+}
+
 /* step1 has a h1 and the circle needs more finetuning to fit headline */
 .block-step1 .circle_num {
   margin: 4px 28px 0 0;
@@ -302,7 +307,7 @@ label {
   border-bottom: dotted 1px rgba(0,0,0,0.25);
 }
 
-/* Our intra-step animations rely on the section's max-height being
+/* Our inter-step animations rely on the section's max-height being
    transitioned from 0 to the original height.
    Initially hide all sections and only unhide them depending on the
    global state (as set with a class on the wrapper element)
@@ -415,23 +420,53 @@ label {
 
 /* Style things that depend on the progress.
    Example: circles turn squares when a step is finished */
-#wrapper.step3 .block-step2 .circle_num,
-#wrapper.step4 .block-step2 .circle_num,
-#wrapper.step5 .block-step2 .circle_num,
-#wrapper.step6 .block-step2 .circle_num,
-#wrapper.step7 .block-step2 .circle_num,
-#wrapper.step4 .block-step3 .circle_num,
-#wrapper.step5 .block-step3 .circle_num,
-#wrapper.step6 .block-step3 .circle_num,
-#wrapper.step7 .block-step3 .circle_num,
-#wrapper.step5 .block-step4 .circle_num,
-#wrapper.step6 .block-step4 .circle_num,
-#wrapper.step7 .block-step4 .circle_num,
-#wrapper.step6 .block-step5 .circle_num,
-#wrapper.step7 .block-step5 .circle_num,
-#wrapper.step7 .block-step6 .circle_num {
-  border-radius: 1px !important;
-  transition: border-radius, 2s;
+#wrapper.step3 .block-step2 .circle_num.undone,
+#wrapper.step4 .block-step2 .circle_num.undone,
+#wrapper.step5 .block-step2 .circle_num.undone,
+#wrapper.step6 .block-step2 .circle_num.undone,
+#wrapper.step7 .block-step2 .circle_num.undone,
+#wrapper.step4 .block-step3 .circle_num.undone,
+#wrapper.step5 .block-step3 .circle_num.undone,
+#wrapper.step6 .block-step3 .circle_num.undone,
+#wrapper.step7 .block-step3 .circle_num.undone,
+#wrapper.step5 .block-step4 .circle_num.undone,
+#wrapper.step6 .block-step4 .circle_num.undone,
+#wrapper.step7 .block-step4 .circle_num.undone,
+#wrapper.step6 .block-step5 .circle_num.undone,
+#wrapper.step7 .block-step5 .circle_num.undone,
+#wrapper.step7 .block-step6 .circle_num.undone {
+  transform: rotate3d(45, 45, 1, 90deg);
+  transition: transform 0.5s, visibility 0.5s;
+  visibility: hidden;
+}
+
+.circle_num.done {
+  position: relative;
+  margin-right: -68px;
+  left: -68px;
+  visibility: hidden;
+  transition: transform 0.5s, visibility 0.5s;
+  transform: rotate3d(45, 45, 1, 90deg);
+}
+
+#wrapper.step3 .block-step2 .circle_num.done,
+#wrapper.step4 .block-step2 .circle_num.done,
+#wrapper.step5 .block-step2 .circle_num.done,
+#wrapper.step6 .block-step2 .circle_num.done,
+#wrapper.step7 .block-step2 .circle_num.done,
+#wrapper.step4 .block-step3 .circle_num.done,
+#wrapper.step5 .block-step3 .circle_num.done,
+#wrapper.step6 .block-step3 .circle_num.done,
+#wrapper.step7 .block-step3 .circle_num.done,
+#wrapper.step5 .block-step4 .circle_num.done,
+#wrapper.step6 .block-step4 .circle_num.done,
+#wrapper.step7 .block-step4 .circle_num.done,
+#wrapper.step6 .block-step5 .circle_num.done,
+#wrapper.step7 .block-step5 .circle_num.done,
+#wrapper.step7 .block-step6 .circle_num.done {
+  visibility: visible;
+  transform: rotate3d(0,0,0,0deg);
+  transition: transform 0.5s 0.5s, visibility 0.5s 0.5s;
 }
 
 /* Make shift date selector */
@@ -533,14 +568,6 @@ select.zeit {
 
 .implementor {
   margin-bottom: 0.3em;
-}
-
-.credits hr {
-  height: 1px;
-  width: 90px;
-  margin-bottom: 1em;
-  border: 0;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
 
 /* ******** Horizontal footer slide magic ******** */

@@ -51,7 +51,7 @@
       </div>
       <div class="collapsable block-step2">
         <div onclick="step1_done()" class="block-header">
-          <h2 id="head2"><div class="circle_num">1</div> Wer mahnt ab?</h2>
+          <h2 id="head2"><div class="circle_num undone">1</div><div class="circle_num done">✓</div> Wer mahnt ab?</h2>
         </div>
         <div class="juice">
           <div><a href="javascript:ausfuellen()" class="button">Debug: pre-fill</a></div>
@@ -81,7 +81,7 @@
       </div>
       <div class="collapsable block-step3">
         <div onclick="step2_done()" class="block-header">
-          <h2 id="head3"><div class="circle_num">2</div> Wie lautet das Aktenzeichen?</h2>
+          <h2 id="head3"><div class="circle_num undone">2</div><div class="circle_num done">✓</div> Wie lautet das Aktenzeichen?</h2>
         </div>
         <div class="juice">
           <p>Der Abmahner hat Ihnen ein Aktenzeichen zugeordnet. Dies muss im Schreiben auftauchen, damit die Kanzlei Ihre Antwort der Abmahnung zuordnen zu kann.</p>
@@ -164,7 +164,7 @@
       </div>
       <div class="collapsable block-step4">
         <div onclick="step3_done()" class="block-header">
-          <h2 id="head4"><div class="circle_num">3</div> Warum sind Sie nicht Täter?</h2>
+          <h2 id="head4"><div class="circle_num undone">3</div><div class="circle_num done">✓</div> Warum sind Sie nicht Täter?</h2>
         </div>
         <div class="juice">
           <p>Damit Sie korrekte Belege gegen den Vorwurf anführen können, sammeln wir alle nun Informationen ein, die der abmahnenden Kanzlei verdeutlichen, warum die Abmahnung unberechtigt ist.</p>
@@ -185,7 +185,7 @@
       </div>
       <div class="collapsable block-step5">
         <div onclick="step4_done()" class="block-header">
-          <h2 id="head5"><div class="circle_num">4</div> Warum sind Sie kein Störer?</h2>
+          <h2 id="head5"><div class="circle_num undone">4</div><div class="circle_num done">✓</div> Warum sind Sie kein Störer?</h2>
         </div>
         <div class="juice">
           <p>Um nicht als Störer in Haftung genommen zu werden, sind Hinweise hilfreich, aus welchem Grund auch eine Störerhaftung nicht in Betracht kommt. Bitte wählen Sie die entsprechenden Häkchen.</p>
@@ -197,7 +197,7 @@
           <div><input id="alibi_nachbarn" type="checkbox"/><label for="alibi_nachbarn"><span></span>Neben mir benutzen mehrere Nachbarn mein Netzwerk.</label></div>
           <div><input id="alibi_fluechtlingshilfe" type="checkbox"/><label for="alibi_fluechtlingshilfe"><span></span>Ich stelle mein Netzwerk einem Flüchtlingsheim zur Verfügung.</label></div>
           <p></p>
-          <div class="hint">Achtung: Unrichtige Angaben zum Sachverhalt können Ihnen vor Gericht belastend ausgelegt werden. <b>Wählen Sie daher auf jeden Fall nur die Häkchen aus, die den Tatsachen entsprechen.</b></div>
+          <div class="hint">Achtung: Unrichtige Angaben zum Sachverhalt können Ihnen vor Gericht belastend ausgelegt werden. Wählen Sie daher auf jeden Fall nur die Häkchen aus, die den Tatsachen entsprechen.</div>
           <div class="one-button">
             <div class="button button-green" onclick="step5_done()">Weiter</div>
           </div>
@@ -205,7 +205,7 @@
       </div>
       <div class="collapsable block-step6">
         <div onclick="step5_done()" class="block-header">
-          <h2 id="head6"><div class="circle_num">5</div> Wer wird abgemahnt?</h2>
+          <h2 id="head6"><div class="circle_num undone">5</div><div class="circle_num done">✓</div> Wer wird abgemahnt?</h2>
         </div>
         <div class="juice">
           <p>Hier benötigen wir Ihre Informationen, um das Anschreiben mit einem Absender zu versehen. Bitte fügen Sie Namen und Adresse wie auf der Abmahnung ein.</p>
@@ -262,7 +262,6 @@
             </div></a>
           </div>
           <div class="credit imprint" onclick="show_impressum()"><span>Impressum + Datenschutz<span></div>
-          <hr/>
           <div class="credit implementor"><a href="https://erdgeist.org/">erdgeist</a> (Konzept + Umsetzung)</div>
           <div class="credit implementor"><a href="https://kanzlei-hubrig.de/">Beata Hubrig</a> (Rechtliches)</div>
           <div class="credit implementor"><a href="http://www.schlicht-und-ergreifend.de">Malik Aziz</a> (Design) ∙ <a href="http://elektrowecker.de/">Pepo</a> (UX)</div>
