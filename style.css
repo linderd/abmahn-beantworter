@@ -451,7 +451,7 @@ label:first-line {
   visibility: hidden;
   transition: transform 0.5s, visibility 0.5s;
   transform: rotate3d(45, 45, 1, 90deg);
-  background-color: green;
+  background-color: #8ECA63;;
   color: white;
 }
 
