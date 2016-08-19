@@ -198,11 +198,11 @@ input[type=checkbox]:not(old) + label > span {
   border           : 0px solid rgba(255, 255, 255, 0.30);
   border-radius    : 6px;
   vertical-align   : top;
-  transition       : font-size 0.4s;
   font-size        : 1pt;
 }
 
 input[type=checkbox]:not(old):checked + label > span {
+  transition       : font-size 0.4s;
   font-size   : 17pt;
 }
 
@@ -306,6 +306,14 @@ label:first-line {
   font-weight: 300;
 }
 
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin: 0;
+}
+
 .block-step1 a:link,
 .block-step1 a:visited {
   border-bottom: dotted 1px rgba(0,0,0,0.25);
@@ -318,6 +326,7 @@ label:first-line {
 */
 .juice,
 #unsicher,
+.moreinfo,
 #wrapper.stepcancel h2 {
   overflow: hidden;
   max-height: 0px;
@@ -326,6 +335,18 @@ label:first-line {
   transition-duration: 0.5s;
   transition-delay: 0s;
 }
+
+.show-lessinfo,
+.show-moreinfo {
+  display: inline-block;
+  border-bottom: dotted 1px rgba(0,0,0,0.25);
+  margin-bottom: 1em;;
+  cursor: pointer;
+}
+
+.show-lessinfo { display: none; }
+#step1hook.moreinfoshown .show-lessinfo { display: inline-block; }
+#step1hook.moreinfoshown .show-moreinfo { display: none; }
 
 /* These are the heights of the expanded sections, only shown if the
    wrapper has the appropriate class */
@@ -337,6 +358,8 @@ label:first-line {
 #wrapper.step5 .block-step5 .juice { max-height: 1200px; }
 #wrapper.step6 .block-step6 .juice { max-height: 850px; }
 #wrapper.step7 .block-step7 .juice { max-height: 650px; }
+#step1hook.moreinfoshown .moreinfo { max-height: 3500px; }
+#wrapper.step1 .block-step1 #step1hook.moreinfoshown.juice    { max-height: 3800px;}
 
 /* The unsicher section does not have a headline initially visible,
    so the sections padding must be hidden and everything must be unhidden together */
@@ -419,7 +442,8 @@ label:first-line {
 }
 
 .button-small:hover {
-  background-color: #D0B66B;
+  background-color : rgba(255, 255, 255, 0.30);
+  color: white;
 }
 
 /* Style things that depend on the progress.

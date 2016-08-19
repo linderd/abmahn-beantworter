@@ -68,6 +68,9 @@ function step6_done()   { scrollTo(475); setClass('wrapper', 'step7'); }
 function hide_impressum() { setClass('footer', 'footer'); }
 function show_impressum() { setClass('footer', 'footer show-imprint'); }
 
+function show_moreinfo() { setClass('step1hook', 'juice moreinfoshown'); }
+function show_lessinfo() { scrollTo(0); setClass('step1hook', 'juice'); }
+
 function waldorf() {
   setText('abmahnender_kanzlei', 'Waldorf & Frommer RAe');
   setText('abmahnender_bearbeiter', '');
