@@ -36,7 +36,7 @@
 html, body {
   height: 100%;
   margin: 0px !important;
-  min-width: 480px;
+  min-width: 540px;
 
   font-family: 'SourceSansPro', sans-serif;
   font-size: 14pt;
@@ -53,14 +53,15 @@ html {
 /* These describe our vertical hierarchy elementes */
 .collapsable {
   width: 100%;
-  padding: 0.4em 0 0.4em 0;
+  padding: 0.4em 20px 0.4em 20px;
   margin-left: 0;
   margin-right: 0;
 }
 
 /* This defindes our content width */
 .block-header, .juice {
-  width: 480px;
+  overflow: hidden;
+  width: 540px;
   margin: 0.5em auto 0 auto;
 }
 
@@ -75,7 +76,7 @@ h1 {
   text-transform: uppercase;
   cursor: pointer;
   vertical-align: top;
-  padding-top: 0px;
+  padding: 0px 0px 0px 20px;
 }
 
 h1 svg {
@@ -351,20 +352,21 @@ dd {
 /* These are the heights of the expanded sections, only shown if the
    wrapper has the appropriate class */
 
-#wrapper.step-1 .block-step1 .juice { max-height: 450px; }
+#wrapper.step-1 .block-step1 .juice { max-height: 550px; }
 #wrapper.step-2 .block-step2 .juice { max-height: 950px; }
 #wrapper.step-3 .block-step3 .juice { max-height: 950px; }
 #wrapper.step-4 .block-step4 .juice { max-height: 1050px; }
 #wrapper.step-5 .block-step5 .juice { max-height: 1200px; }
 #wrapper.step-6 .block-step6 .juice { max-height: 850px; }
 #wrapper.step-7 .block-step7 .juice { max-height: 650px; }
-#wrapper.moreinfo-shown .block-moreinfo   { max-height: 3500px; }
-#wrapper.step-1.moreinfo-shown .block-step1 .juice { max-height: 3800px;}
+#wrapper.moreinfo-shown .block-moreinfo   { max-height: 3700px; }
+#wrapper.step-1.moreinfo-shown .block-step1 .juice { max-height: 4500px;}
 
 /* The unsicher section does not have a headline initially visible,
    so the sections padding must be hidden and everything must be unhidden together */
 #unsicher {
-  padding: 0;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 #wrapper.step-0 .block-step0 .juice,
 #wrapper.step-0 #unsicher {
@@ -514,13 +516,14 @@ select.zeit {
 
 #footer, .push {
   height: 300px;
+  border: none;
 }
 
 #footer {
   width: 100%;
-  min-width: 540px;
+  min-width: 520px;
   margin: 0;
-  padding: 50px 0 0 0;
+  padding: 50px 20px 0 20px;
 
   font-size: 11pt;
   font-weight: 300;
@@ -615,6 +618,7 @@ select.zeit {
   position: relative;
   left: 0;
   transition: left 1s;
+  margin: 0;
 }
 
 #footer.impressum-shown .block-credits {
