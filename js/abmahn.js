@@ -15,6 +15,21 @@ function setClass(id, classes) {
   document.getElementById(id).className = classes;
 }
 
+function hasClass(id, classes) {
+  return (" " + document.getElementById(id).className + " ").replace(/[\n\t]/g, " ").indexOf(" " + classes + " ") > -1;
+}
+
+function addClass(id, classes) {
+  if (hasClass(id, classes)) { return; }
+  document.getElementById(id).className += ' ' + classes;
+}
+
+function setExclusiveClass(id,value,clearpattern) {
+  var reg = new RegExp('(\\s|^)' + clearpattern + '-[^\\s]+(\\s|$)');
+  var elem = document.getElementById(id);
+  elem.className = elem.className.replace(reg, ' ') + ' ' + clearpattern + '-' + value;
+}
+
 function setSelection(id, selection) {
   document.getElementById(id).value = selection;
 }
@@ -56,21 +71,64 @@ function scrollTo(end) {
     step();
 }
 
-function step0_cancel() { scrollTo(0); setClass('wrapper', 'not-confirmed stepcancel'); }
-function step0_done()   { scrollTo(0); setClass('wrapper', 'step1'); }
-function step1_done()   { scrollTo(0); setClass('wrapper', 'step2'); }
-function step2_done()   { scrollTo(103); setClass('wrapper', 'step3'); }
-function step3_done()   { scrollTo(196); setClass('wrapper', 'step4'); }
-function step4_done()   { scrollTo(289); setClass('wrapper', 'step5'); }
-function step5_done()   { scrollTo(382); setClass('wrapper', 'step6'); }
-function step6_done()   { scrollTo(475); setClass('wrapper', 'step7'); }
+/* Handle all visual transitions first */
+function hide_impressum() { setExclusiveClass('footer', 'hidden', 'impressum'); }
+function show_impressum() { setExclusiveClass('footer', 'shown', 'impressum'); }
 
-function hide_impressum() { setClass('footer', 'footer'); }
-function show_impressum() { setClass('footer', 'footer show-imprint'); }
+function show_moreinfo() {              setExclusiveClass('wrapper', 'shown', 'moreinfo'); }
+function hide_moreinfo() { scrollTo(0); setExclusiveClass('wrapper', 'hidden', 'moreinfo'); }
 
-function show_moreinfo() { setClass('step1hook', 'juice moreinfoshown'); }
-function show_lessinfo() { scrollTo(0); setClass('step1hook', 'juice'); }
+function head_n_click(step, scroll_val) {
+  if(!hasClass('wrapper', 'stepdone-' + (step - 1).toString() )) { return; }
+  scrollTo(scroll_val);
+  setExclusiveClass('wrapper', step.toString(), 'step');
+  setExclusiveClass('wrapper', 'hidden', 'moreinfo');
+}
 
+function head_1_click() { head_n_click(1, 0); }
+function head_2_click() { head_n_click(2, 0); }
+function head_3_click() { head_n_click(3, 103); }
+function head_4_click() { head_n_click(4, 196); }
+function head_5_click() { head_n_click(5, 289); }
+function head_6_click() { head_n_click(6, 382); }
+function head_7_click() { head_n_click(7, 475); }
+
+/* Handle functional step transitions now */
+function step_0_cancel() { scrollTo(0);   setClass('wrapper', 'not-confirmed step-0'); }
+
+function step_1_done() {
+  addClass('wrapper', 'stepdone-1');
+  head_2_click();
+}
+
+function step_2_done() {
+  addClass('wrapper', 'stepdone-2');
+  head_3_click();
+}
+
+function step_3_done() {
+  addClass('wrapper', 'stepdone-3');
+  head_4_click();
+}
+
+function step_4_done() {
+  addClass('wrapper', 'stepdone-4');
+  head_5_click();
+}
+
+function step_5_done() {
+  addClass('wrapper', 'stepdone-5');
+  head_6_click();
+}
+
+function step_6_done() {
+  addClass('wrapper', 'stepdone-6');
+  head_7_click();
+}
+
+
+
+/* Handle presets for known kanzleien */
 function waldorf() {
   setText('abmahnender_kanzlei', 'Waldorf & Frommer RAe');
   setText('abmahnender_bearbeiter', '');

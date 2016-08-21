@@ -85,7 +85,7 @@ h1 svg {
   transition: transform 0.5s;
 }
 
-#wrapper.step1 h1 svg {
+#wrapper.step-1 h1 svg {
   transform: scale(1.35) translate(0px, 4px) rotate(360deg);
 }
 
@@ -227,7 +227,7 @@ label:first-line {
 /* Global element definitions done.
    Now for basic color scheme */
 #unsicher    { background-color: #840020; }
-.footer      { background-color: #F1F2E3; }
+#footer      { background-color: #F1F2E3; }
 .block-step1 { background-color: #F1F2E3; }
 .block-step2 { background-color: #047E7C; }
 .block-step3 { background-color: #0C6D74; }
@@ -254,7 +254,7 @@ label:first-line {
   background-color: black;
 }
 
-.footer {
+#footer {
   color: #8E99A0;
 }
 
@@ -266,7 +266,7 @@ label:first-line {
 }
 
 /* Footer shadow is inverted an marks end of stacked cards */
-.footer {
+#footer {
   box-shadow: inset 0px 12px 6px -6px rgba(0, 0, 0, 0.5);
 }
 
@@ -325,9 +325,9 @@ dd {
    global state (as set with a class on the wrapper element)
 */
 .juice,
+.block-moreinfo,
 #unsicher,
-.moreinfo,
-#wrapper.stepcancel h2 {
+#wrapper.step-0 h2 {
   overflow: hidden;
   max-height: 0px;
   transition: max-height, height;
@@ -336,46 +336,50 @@ dd {
   transition-delay: 0s;
 }
 
-.show-lessinfo,
+.hide-moreinfo,
 .show-moreinfo {
   display: inline-block;
   border-bottom: dotted 1px rgba(0,0,0,0.25);
-  margin-bottom: 1em;;
+  margin-bottom: 1em;
   cursor: pointer;
 }
 
-.show-lessinfo { display: none; }
-#step1hook.moreinfoshown .show-lessinfo { display: inline-block; }
-#step1hook.moreinfoshown .show-moreinfo { display: none; }
+.hide-moreinfo { display: none; }
+#wrapper.moreinfo-shown .hide-moreinfo { display: inline-block; }
+#wrapper.moreinfo-shown .show-moreinfo { display: none; }
 
 /* These are the heights of the expanded sections, only shown if the
    wrapper has the appropriate class */
 
-#wrapper.step1 .block-step1 .juice { max-height: 450px; }
-#wrapper.step2 .block-step2 .juice { max-height: 950px; }
-#wrapper.step3 .block-step3 .juice { max-height: 950px; }
-#wrapper.step4 .block-step4 .juice { max-height: 1050px; }
-#wrapper.step5 .block-step5 .juice { max-height: 1200px; }
-#wrapper.step6 .block-step6 .juice { max-height: 850px; }
-#wrapper.step7 .block-step7 .juice { max-height: 650px; }
-#step1hook.moreinfoshown .moreinfo { max-height: 3500px; }
-#wrapper.step1 .block-step1 #step1hook.moreinfoshown.juice    { max-height: 3800px;}
+#wrapper.step-1 .block-step1 .juice { max-height: 450px; }
+#wrapper.step-2 .block-step2 .juice { max-height: 950px; }
+#wrapper.step-3 .block-step3 .juice { max-height: 950px; }
+#wrapper.step-4 .block-step4 .juice { max-height: 1050px; }
+#wrapper.step-5 .block-step5 .juice { max-height: 1200px; }
+#wrapper.step-6 .block-step6 .juice { max-height: 850px; }
+#wrapper.step-7 .block-step7 .juice { max-height: 650px; }
+#wrapper.moreinfo-shown .block-moreinfo   { max-height: 3500px; }
+#wrapper.step-1.moreinfo-shown .block-step1 .juice { max-height: 3800px;}
 
 /* The unsicher section does not have a headline initially visible,
    so the sections padding must be hidden and everything must be unhidden together */
 #unsicher {
   padding: 0;
 }
-#wrapper.stepcancel .block-stepcancel .juice,
-#wrapper.stepcancel #unsicher {
+#wrapper.step-0 .block-step0 .juice,
+#wrapper.step-0 #unsicher {
   max-height: 450px;
 }
 
 /* If the user did not yet confirm that he's sure, disallow expanding blocks */
-#wrapper.not-confirmed .block-header {
-  pointer-events: none;
-}
-
+.block-header { pointer-events: none; }
+#wrapper.stepdone-0 #head1 { pointer-events: auto; }
+#wrapper.stepdone-1 #head2 { pointer-events: auto; }
+#wrapper.stepdone-2 #head3 { pointer-events: auto; }
+#wrapper.stepdone-3 #head4 { pointer-events: auto; }
+#wrapper.stepdone-4 #head5 { pointer-events: auto; }
+#wrapper.stepdone-5 #head6 { pointer-events: auto; }
+#wrapper.stepdone-6 #head7 { pointer-events: auto; }
 
 /* Our navigational buttons have a consistent height defined by its wrapper box */
 .two-buttons,
@@ -448,26 +452,6 @@ dd {
 
 /* Style things that depend on the progress.
    Example: circles turn squares when a step is finished */
-#wrapper.step3 .block-step2 .circle_num.undone,
-#wrapper.step4 .block-step2 .circle_num.undone,
-#wrapper.step5 .block-step2 .circle_num.undone,
-#wrapper.step6 .block-step2 .circle_num.undone,
-#wrapper.step7 .block-step2 .circle_num.undone,
-#wrapper.step4 .block-step3 .circle_num.undone,
-#wrapper.step5 .block-step3 .circle_num.undone,
-#wrapper.step6 .block-step3 .circle_num.undone,
-#wrapper.step7 .block-step3 .circle_num.undone,
-#wrapper.step5 .block-step4 .circle_num.undone,
-#wrapper.step6 .block-step4 .circle_num.undone,
-#wrapper.step7 .block-step4 .circle_num.undone,
-#wrapper.step6 .block-step5 .circle_num.undone,
-#wrapper.step7 .block-step5 .circle_num.undone,
-#wrapper.step7 .block-step6 .circle_num.undone {
-  transform: rotate3d(45, 45, 1, 90deg);
-  transition: transform 0.5s, visibility 0.5s;
-  visibility: hidden;
-}
-
 .circle_num.done {
   position: relative;
   margin-right: -68px;
@@ -479,21 +463,21 @@ dd {
   color: white;
 }
 
-#wrapper.step3 .block-step2 .circle_num.done,
-#wrapper.step4 .block-step2 .circle_num.done,
-#wrapper.step5 .block-step2 .circle_num.done,
-#wrapper.step6 .block-step2 .circle_num.done,
-#wrapper.step7 .block-step2 .circle_num.done,
-#wrapper.step4 .block-step3 .circle_num.done,
-#wrapper.step5 .block-step3 .circle_num.done,
-#wrapper.step6 .block-step3 .circle_num.done,
-#wrapper.step7 .block-step3 .circle_num.done,
-#wrapper.step5 .block-step4 .circle_num.done,
-#wrapper.step6 .block-step4 .circle_num.done,
-#wrapper.step7 .block-step4 .circle_num.done,
-#wrapper.step6 .block-step5 .circle_num.done,
-#wrapper.step7 .block-step5 .circle_num.done,
-#wrapper.step7 .block-step6 .circle_num.done {
+#wrapper.stepdone-2 .block-step2 .circle_num.undone,
+#wrapper.stepdone-3 .block-step3 .circle_num.undone,
+#wrapper.stepdone-4 .block-step4 .circle_num.undone,
+#wrapper.stepdone-5 .block-step5 .circle_num.undone,
+#wrapper.stepdone-6 .block-step6 .circle_num.undone {
+  transform: rotate3d(45, 45, 1, 90deg);
+  transition: transform 0.5s, visibility 0.5s;
+  visibility: hidden;
+}
+
+#wrapper.stepdone-2 .block-step2 .circle_num.done,
+#wrapper.stepdone-3 .block-step3 .circle_num.done,
+#wrapper.stepdone-4 .block-step4 .circle_num.done,
+#wrapper.stepdone-5 .block-step5 .circle_num.done,
+#wrapper.stepdone-6 .block-step6 .circle_num.done {
   visibility: visible;
   transform: rotate3d(0,0,0,0deg);
   transition: transform 0.5s 0.5s, visibility 0.5s 0.5s;
@@ -528,11 +512,11 @@ select.zeit {
   margin: 0 auto -300px;
 }
 
-.footer, .push {
+#footer, .push {
   height: 300px;
 }
 
-.footer {
+#footer {
   width: 100%;
   min-width: 540px;
   margin: 0;
@@ -546,20 +530,20 @@ select.zeit {
 }
 
 /* Footer links have a softer color than in block 1 */
-.footer a:link,
-.footer a:visited {
+#footer a:link,
+#footer a:visited {
   color: #8E99A0;
 }
 
-.footer .partner a:link,
-.footer .implementor a:link,
-.footer .partner a:visited,
-.footer .implementor a:visited,
-.footer .imprint span {
+#footer .partner a:link,
+#footer .implementor a:link,
+#footer .partner a:visited,
+#footer .implementor a:visited,
+#footer .show-impressum span {
   border-bottom: dotted 1px rgba(0,0,0,0.25);
 }
 
-.footer .imprint {
+#footer .show-impressum {
   cursor: pointer;
   margin-bottom: 1em;
 }
@@ -587,7 +571,7 @@ select.zeit {
   transition: transform 1s;
 }
 
-.footer.show-imprint .partner > img {
+#footer.impressum-shown .partner > img {
   transform: rotate(720deg);
 }
 
@@ -606,7 +590,7 @@ select.zeit {
   width: 200%;
 }
 
-.impressum {
+.block-impressum {
   float: right;
   width: 50%;
   height: 260px;
@@ -616,16 +600,16 @@ select.zeit {
   left: 0%;
 }
 
-.impressum p {
+.block-impressum p {
   margin: 0 0 .1em 0;
 }
 
-.footer.show-imprint .impressum {
+#footer.impressum-shown .block-impressum {
   left: -50%;
   top: 0;
 }
 
-.credits {
+.block-credits {
   width: 50%;
   float: left;
   position: relative;
@@ -633,7 +617,7 @@ select.zeit {
   transition: left 1s;
 }
 
-.footer.show-imprint .credits {
+#footer.impressum-shown .block-credits {
   left: -50%;
 }
 
