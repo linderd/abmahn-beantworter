@@ -36,7 +36,7 @@
 html, body {
   height: 100%;
   margin: 0px !important;
-  min-width: 540px;
+  min-width: 520px;
 
   font-family: 'SourceSansPro', sans-serif;
   font-size: 14pt;
@@ -53,7 +53,7 @@ html {
 /* These describe our vertical hierarchy elementes */
 .collapsable {
   width: 100%;
-  padding: 0.4em 20px 0.4em 20px;
+  padding: 0.4em 0 0.4em 0px;
   margin-left: 0;
   margin-right: 0;
 }
@@ -61,8 +61,9 @@ html {
 /* This defindes our content width */
 .block-header, .juice {
   overflow: hidden;
-  width: 540px;
+  width: 480px;
   margin: 0.5em auto 0 auto;
+  padding: 0;
 }
 
 ul {
@@ -76,7 +77,7 @@ h1 {
   text-transform: uppercase;
   cursor: pointer;
   vertical-align: top;
-  padding: 0px 0px 0px 20px;
+  padding: 0px 0px 0px 10px;
 }
 
 h1 svg {
@@ -508,6 +509,7 @@ select.zeit {
 /* This ensures there's always enough space to push
    footer to the bottom of the screen */
 #wrapper {
+  width: 100%;
   min-height: 100%;
   height: auto !important;
   height: 100%;
@@ -523,7 +525,7 @@ select.zeit {
   width: 100%;
   min-width: 520px;
   margin: 0;
-  padding: 50px 20px 0 20px;
+  padding: 50px 0px 0 0px;
 
   font-size: 11pt;
   font-weight: 300;
