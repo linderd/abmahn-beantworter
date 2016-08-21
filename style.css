@@ -42,7 +42,7 @@ html, body {
   font-size: 14pt;
   font-weight: 300;
 
-  background-color: black;
+  background-color: #F1F2E3;
   color: white;
 }
 
@@ -358,8 +358,7 @@ dd {
 .hidden {
   overflow: hidden;
   max-height: 0px;
-  transition: max-height, height;
-  transition-timing-function: ease;
+  transition: max-height, height, background-color;
   transition-duration: 0.5s;
 }
 
@@ -371,6 +370,8 @@ dd {
   text-align: center;
   color: white;
   padding: 0.4em 0.6em 0.4em 0.6em;
+  transition: max-height, height, background-color;
+  transition-duration: 0.5s;
 }
 
 /* These are the heights of the expanded sections, only shown if the
@@ -378,7 +379,7 @@ dd {
 
 #wrapper.step-1 .block-step1 .juice { max-height: 550px; }
 #wrapper.step-2 .block-step2 .juice { max-height: 950px; }
-#wrapper.step-3 .block-step3 .juice { max-height: 950px; }
+#wrapper.step-3 .block-step3 .juice { max-height: 1050px; }
 #wrapper.step-4 .block-step4 .juice { max-height: 1050px; }
 #wrapper.step-5 .block-step5 .juice { max-height: 1200px; }
 #wrapper.step-6 .block-step6 .juice { max-height: 850px; }
