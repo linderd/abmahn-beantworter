@@ -119,8 +119,13 @@ input[type="text"] {
   font-size: 13pt;
   font-weight: normal;
 
-  background-color : rgba(255, 255, 255, 0.30);
+  transition: background-color 1s;
+  background-color: rgba(255, 255, 255, 0.30);
   color: white;
+}
+
+input[type="text"].missing {
+  background-color: rgba(255, 127, 127, 0.60);
 }
 
 /* Remove blue focus hint */
@@ -128,7 +133,7 @@ input:focus {
   outline: none !important;
 }
 
-/* Style place holder text (and repeat for each browser namespace :( */
+/* Style place holder text (and repeat for each browser namespace:( */
 ::placeholder {
   color: white;
   opacity: 0.5;
@@ -179,43 +184,43 @@ select {
 }
 
 input[type=checkbox]:not(old) {
-  display   : none;
-  opacity   : 0;
+  display: none;
+  opacity: 0;
 }
 
 input[type=checkbox]:not(old) + label {
-  display      : inline-block;
-  margin-left  : 0;
-  line-height  : 1.7em;
-  text-indent  : -68px; /* Make 2nd line of label align, takes border width of tickbox into account */
-  padding-left : 68px;
+  display: inline-block;
+  margin-left: 0;
+  line-height: 1.7em;
+  text-indent: -68px; /* Make 2nd line of label align, takes border width of tickbox into account */
+  padding-left: 68px;
 }
 
 input[type=checkbox]:not(old) + label > span {
-  display          : inline-block;
-  width            : 30px;
-  height           : 30px;
-  background-color : rgba(255, 255, 255, 0.30);
-  margin           : 2px 36px 8px 2px;
-  border           : 0px solid rgba(255, 255, 255, 0.30);
-  border-radius    : 6px;
-  vertical-align   : top;
-  font-size        : 1pt;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(255, 255, 255, 0.30);
+  margin: 2px 36px 8px 2px;
+  border: 0px solid rgba(255, 255, 255, 0.30);
+  border-radius: 6px;
+  vertical-align: top;
+  font-size: 1pt;
 }
 
 input[type=checkbox]:not(old):checked + label > span {
-  transition       : font-size 0.4s;
-  font-size   : 17pt;
+  transition: font-size 0.4s;
+  font-size: 17pt;
 }
 
 input[type=checkbox]:not(old):checked + label > span:before {
-  content     : '✓';
-  display     : inline-block;
-  width       : 28px;
-  color       : white;
-  text-align  : left;
-  font-weight : bold;
-  margin-left : 144px;
+  content: '✓';
+  display: inline-block;
+  width: 28px;
+  color: white;
+  text-align: left;
+  font-weight: bold;
+  margin-left: 144px;
 }
 
 label {
@@ -350,6 +355,24 @@ dd {
 #wrapper.moreinfo-shown .hide-moreinfo { display: inline-block; }
 #wrapper.moreinfo-shown .show-moreinfo { display: none; }
 
+.hidden {
+  overflow: hidden;
+  max-height: 0px;
+  transition: max-height, height;
+  transition-timing-function: ease;
+  transition-duration: 0.5s;
+}
+
+.warnmiss {
+  width: 95%;
+  max-height: 5em;
+  background-color: #E65946;
+  border-radius: 6px;
+  text-align: center;
+  color: white;
+  padding: 0.4em 0.6em 0.4em 0.6em;
+}
+
 /* These are the heights of the expanded sections, only shown if the
    wrapper has the appropriate class */
 
@@ -449,7 +472,7 @@ dd {
 }
 
 .button-small:hover {
-  background-color : rgba(255, 255, 255, 0.30);
+  background-color: rgba(255, 255, 255, 0.30);
   color: white;
 }
 

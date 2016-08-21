@@ -123,6 +123,9 @@
             <li><input id="abmahnender_ort" type="text" name="ort" placeholder="ort"/></li>
             <li><input id="abmahnender_fax" type="text" name="fax" placeholder="fax"/></li>
           </ul>
+          <div id="step2-missing" class="hidden">
+            Wir benötigen mindestens die Adresse der abmahnenden Kanzlei.
+          </div>
           <div class="one-button">
             <div class="button button-green" onclick="step_2_done()">Weiter</div>
           </div>
@@ -134,10 +137,7 @@
         </div>
         <div class="juice">
           <p>Der Abmahner hat Ihnen ein Aktenzeichen zugeordnet. Dies muss im Schreiben auftauchen, damit die Kanzlei Ihre Antwort der Abmahnung zuordnen zu kann.</p>
-          <ul>
-            <li><input id="vorgang_aktenzeichen" type="text" name="aktenzeichen" placeholder="(akten)-zeichen"/></li>
-            <li><input id="vorgang_detail" type="text" name="detail" placeholder="beschreibung (optional)"/></li>
-          </ul>
+          <input id="vorgang_aktenzeichen" type="text" name="aktenzeichen" placeholder="(akten)-zeichen"/>
 
           <p>Datum und Uhrzeit des angeblichen Verstoßes anzugeben zeigt dem Abmahner, dass Sie sich Gedanken gemacht haben, warum Sie ausschließen können, der Täter zu sein. Bitte entnehmen Sie Datum und Uhrzeit dem Abmahnschreiben.</p>
           <select class="tag" required id="tat_datum_tag" name="tat_datum_tag">
@@ -206,6 +206,9 @@
           </select>
 
           <p class="hint">Hinweis: Die vom Abmahner angegebenen Fristen sind meist zu knapp und können ruhig ignoriert werden. Jedoch sollte Ihre Antwort nicht grundlos mehr als 14 Tage nach Eingang der Abmahnung erfolgen.</p>
+          <div id="step3-missing" class="hidden">
+            Das Aktenzeichen ist bei der Beantwortung unerlässlich.
+          </div>
           <div class="one-button">
             <div class="button button-green" onclick="step_3_done()">Weiter</div>
           </div>

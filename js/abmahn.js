@@ -38,6 +38,23 @@ function getCheck(id) {
   return document.getElementById(id).checked;
 }
 
+function ensureContent() {
+  var missing = 0;
+  for(var i = 0;i<arguments.length; i++){
+    var elem = document.getElementById(arguments[i]);
+    if(elem.value=='') {
+      elem.className='missing';
+      elem.onkeypress=function(){
+        this.className='';
+        delete elem.onkeypress;
+      }
+      ++missing;
+    } else
+      elem.className='';
+  }
+  return missing;
+}
+
 // Code is heavily inspired by
 // https://github.com/alicelieutier/smoothScroll/blob/master/smoothscroll.js
 function scrollTo(end) {
@@ -102,13 +119,23 @@ function step_1_done() {
 }
 
 function step_2_done() {
-  addClass('wrapper', 'stepdone-2');
-  head_3_click();
+  if (ensureContent('abmahnender_kanzlei', 'abmahnender_strasse', 'abmahnender_plz', 'abmahnender_ort'))
+    setClass('step2-missing', 'warnmiss');
+  else {
+    setClass('step2-missing', 'hidden');
+    addClass('wrapper', 'stepdone-2');
+    head_3_click();
+  }
 }
 
 function step_3_done() {
-  addClass('wrapper', 'stepdone-3');
-  head_4_click();
+  if (ensureContent('vorgang_aktenzeichen'))
+    setClass('step3-missing', 'warnmiss');
+  else {
+    setClass('step3-missing', 'hidden');
+    addClass('wrapper', 'stepdone-3');
+    head_4_click();
+  }
 }
 
 function step_4_done() {
