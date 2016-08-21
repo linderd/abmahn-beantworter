@@ -149,8 +149,13 @@ function step_5_done() {
 }
 
 function step_6_done() {
-  addClass('wrapper', 'stepdone-6');
-  head_7_click();
+  if (ensureContent('abgemahnter_nachname', 'abgemahnter_strasse', 'abgemahnter_plz', 'abgemahnter_ort'))
+    setClass('step6-missing', 'warnmiss');
+  else {
+    setClass('step6-missing', 'hidden');
+    addClass('wrapper', 'stepdone-6');
+    head_7_click();
+  }
 }
 
 function to_german_date(datum) {
@@ -170,6 +175,8 @@ function waldorf() {
   setText('abmahnender_plz', '80336');
   setText('abmahnender_ort', 'München');
   setText('abmahnender_fax', '089/52 05 72 30');
+  ensureContent('abmahnender_kanzlei', 'abmahnender_strasse', 'abmahnender_plz', 'abmahnender_ort');
+  setClass('step2-missing', 'hidden');
 }
 
 function sasse() {
@@ -179,6 +186,8 @@ function sasse() {
   setText('abmahnender_plz', '22763');
   setText('abmahnender_ort', 'Hamburg');
   setText('abmahnender_fax', '040/8222699 11');
+  ensureContent('abmahnender_kanzlei', 'abmahnender_strasse', 'abmahnender_plz', 'abmahnender_ort');
+  setClass('step2-missing', 'hidden');
 }
 
 function fareds() {
@@ -188,6 +197,8 @@ function fareds() {
   setText('abmahnender_plz', '20354');
   setText('abmahnender_ort', 'Hamburg');
   setText('abmahnender_fax', '040 / 43 20 84 710');
+  ensureContent('abmahnender_kanzlei', 'abmahnender_strasse', 'abmahnender_plz', 'abmahnender_ort');
+  setClass('step2-missing', 'hidden');
 }
 
 function rasch() {
@@ -197,6 +208,8 @@ function rasch() {
   setText('abmahnender_plz', '20099');
   setText('abmahnender_ort', 'Hamburg');
   setText('abmahnender_fax', '040/244 297-20');
+  ensureContent('abmahnender_kanzlei', 'abmahnender_strasse', 'abmahnender_plz', 'abmahnender_ort');
+  setClass('step2-missing', 'hidden');
 }
 
 function wesave() {
@@ -206,6 +219,8 @@ function wesave() {
   setText('abmahnender_plz', '60594');
   setText('abmahnender_ort', 'Frankfurt am Main');
   setText('abmahnender_fax', '069/663 68 41 - 222');
+  ensureContent('abmahnender_kanzlei', 'abmahnender_strasse', 'abmahnender_plz', 'abmahnender_ort');
+  setClass('step2-missing', 'hidden');
 }
 
 function schutt() {
@@ -215,6 +230,8 @@ function schutt() {
   setText('abmahnender_plz', '76133');
   setText('abmahnender_ort', 'Karlsruhe');
   setText('abmahnender_fax', '0721/12 05 05');
+  ensureContent('abmahnender_kanzlei', 'abmahnender_strasse', 'abmahnender_plz', 'abmahnender_ort');
+  setClass('step2-missing', 'hidden');
 }
 
 function schulenberg() {
@@ -224,6 +241,8 @@ function schulenberg() {
   setText('abmahnender_plz', '20149');
   setText('abmahnender_ort', 'Hamburg');
   setText('abmahnender_fax', '040/73440860');
+  ensureContent('abmahnender_kanzlei', 'abmahnender_strasse', 'abmahnender_plz', 'abmahnender_ort');
+  setClass('step2-missing', 'hidden');
 }
 
 function sebastian() {
@@ -233,12 +252,13 @@ function sebastian() {
   setText('abmahnender_plz', '10407');
   setText('abmahnender_ort', 'Berlin');
   setText('abmahnender_fax', '030/88 92 20 21');
+  ensureContent('abmahnender_kanzlei', 'abmahnender_strasse', 'abmahnender_plz', 'abmahnender_ort');
+  setClass('step2-missing', 'hidden');
 }
 
 function ausfuellen() {
   setText('abgemahnter_vorname', 'Max');
   setText('abgemahnter_nachname', 'Mustermann');
-  setText('abgemahnter_zusatz', 'c/o beim Nachbarn');
   setText('abgemahnter_strasse', 'Lange Straße 126');
   setText('abgemahnter_plz', '10999')
   setText('abgemahnter_ort', 'Berlin');
