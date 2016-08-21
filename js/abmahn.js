@@ -350,6 +350,8 @@ function abmahnbeantworter() {
   var abschluss = 'Mit freundlichen Grüßen';
   var signatur = getText('abgemahnter_nachname');
 
+  var disclaimer = 'Wir haben den Text des Antwortschreibens gemeinsam mit einer Reihe von Juristinnen entworfen, bitten aber um Verständnis, dass wir keinerlei Gewähr für den Inhalt übernehmen können.\n\nDer Dienst "Abmahnbeantworter" stellt außerdem keine Rechtsberatung dar. Die Verwendung des vorgeschlagenen Antwortschreibens erfolgt auf eigene Gefahr.\n\nWir freuen uns über Hinweise auf gerichtliche Entscheidungen, die uns dabei helfen können, den Text des Antwortschreibens zu verbessern.\n\n  Die Abmahnbeantworter';
+
   pdfMake.fonts = {
     'Gentium Book Basic': {
       normal: 'GenBkBasR.ttf',
@@ -378,6 +380,8 @@ function abmahnbeantworter() {
               ]
             },
     content: [
+             { text: 'Haftungsausschluss', color: 'blue', fontSize: 24, margin: [0,0,0,24] },
+             { text: disclaimer, fontSize: 18, pageBreak: 'after' },
              { text: absender, fontSize: 7, absolutePosition: { x: 62.3622, y: 153.071 } },
              { text: empfaenger, fontSize: 11, absolutePosition: { x: 62.3622, y: 181.417 } },
              { text: zeichen, bold: true, absolutePosition: { x: 62.3622, y: 270+40 } },
