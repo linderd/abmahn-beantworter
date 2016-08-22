@@ -343,16 +343,19 @@ dd {
   transition-delay: 0s;
 }
 
+.link-faq,
 .hide-moreinfo,
 .show-moreinfo {
   display: inline-block;
   border-bottom: dotted 1px rgba(0,0,0,0.25);
-  margin-bottom: 1em;
+  margin: auto 1em 1em auto;
   cursor: pointer;
 }
 
+.link-faq { display: none; }
 .hide-moreinfo { display: none; }
 #wrapper.moreinfo-shown .hide-moreinfo { display: inline-block; }
+#wrapper.moreinfo-shown .link-faq { display: inline-block; }
 #wrapper.moreinfo-shown .show-moreinfo { display: none; }
 
 .hidden {
