@@ -262,7 +262,7 @@ label:first-line {
 }
 
 #footer {
-  color: #8E99A0;
+  color: #787970;
 }
 
 /* Shadows between sections give the user a sense of depth between
@@ -561,7 +561,7 @@ select.zeit {
 /* Footer links have a softer color than in block 1 */
 #footer a:link,
 #footer a:visited {
-  color: #8E99A0;
+  color: #787970;
 }
 
 #footer .partner a:link,
