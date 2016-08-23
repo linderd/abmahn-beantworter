@@ -669,16 +669,12 @@ select.zeit {
 }
 
 .back {
-  background-color: #8E99A0;
   display: inline-block;
-  float: none;
-  color: #F1F2E3;
-  width: 40px;
-  height: 40px;
   cursor: pointer;
   margin: 65px 0 0 0;
+  fill: #787970;
 }
 
 .back:hover {
-  background-color: black;
+  fill: black;
 }
