@@ -159,8 +159,10 @@ function step_4_done() {
 }
 
 function step_5_done() {
+  if (getText('alibi_eigenes_teilen_details')=='')
+    document.getElementById('alibi_eigenes_teilen').checked = false;
   if (ensureCheckbox('alibi_freifunk', 'alibi_tornode', 'alibi_offeneswifi', 'alibi_familie', 'alibi_wg',
-                     'alibi_nachbarn', 'alibi_fluechtlingshilfe')==0) {
+                     'alibi_nachbarn', 'alibi_fluechtlingshilfe', 'alibi_eigenes_teilen')==0) {
     setClass('step5-missing', 'warnmiss');
   } else {
     setClass('step5-missing', 'hidden');
@@ -418,6 +420,11 @@ function abmahnbeantworter() {
     fliesstext += zudem ? 'Zudem stelle ich ' : 'Ich stelle ';
     fliesstext += 'meinen Anschluss Flüchtlingsheimen zur Verfügung. Das bedeutet, dass ich Internet-Verkehr von Menschen, die mir namentlich nicht bekannt sind und die ich angesichts des täglich wechselnden Personenkreises in den Unterkünften und des diversen kulturellen Hintergrundes auch nicht wirksam über das deutsche Urheberrecht informieren kann, lediglich in das Internet weiterleite. Demzufolge falle ich unter die Haftungsprivilegierung des § 8 TMG n. F., der die Haftung für reine Durchleitung ausschließt, auch soweit es um Unterlassungsansprüche geht. ';
     zudem = 1;
+  }
+  if(getCheck('alibi_eigenes_teilen')) {
+     fliesstext += zudem ? 'Zudem teile ich ' : 'Ich teile ';
+     fliesstext += 'meinen Anschluss mit ' + getText('alibi_eigenes_teilen_details') +'. Daraus folgt, dass ich unter die Haftungsprivilegierung des § 8 TMG n. F. falle, also für etwaige Urheberrechtsverletzungen auch nicht als Störer auf Unterlassung in Anspruch genommen werden kann. ';
+     zudem = 1;
   }
   if(zudem) {
     fliesstext += '\n\n';
