@@ -285,9 +285,22 @@ function ausfuellen() {
 function abmahnbeantworter() {
   // collect all date Time info
   var today = new Date();
-  var vorgang = new Date(getValue('vorgang_datum_jahr'), getValue('vorgang_datum_monat'), getValue('vorgang_datum_tag'));
-  var t = getValue('tat_uhrzeit').split(':');
-  var tatzeit = new Date(getValue('tat_datum_jahr'), getValue('tat_datum_monat'), getValue('tat_datum_tag'), t[0], t[1] );
+
+  var vorgang_vom = '';
+  if ( getValue('vorgang_datum_monat') != '' && getValue('vorgang_datum_tag'))
+    vorgang_vom = ' vom ' + to_german_date(new Date(getValue('vorgang_datum_jahr'), getValue('vorgang_datum_monat'), getValue('vorgang_datum_tag')));
+
+  var tatzeit_vom = '';
+  var tatzeit_am = '';
+  var tatzeit_am_um = '';
+  if ( getValue('tat_datum_monat') != '' && getValue('tat_datum_tag') != '') {
+    var tatzeit = new Date(getValue('tat_datum_jahr'), getValue('tat_datum_monat'), getValue('tat_datum_tag'));
+    tatzeit_am_um = tatzeit_am = ' am ' + to_german_date(tatzeit);
+    tatzeit_vom = ' vom ' + to_german_date(tatzeit);;
+
+    if ( getValue('tat_uhrzeit') != '' )
+      tatzeit_am_um = tatzeit_am + ' um ' + getValue('tat_uhrzeit') + ' Uhr';
+  }
 
   var absender = getText('abgemahnter_vorname') + ' ' + getText('abgemahnter_nachname') + ', ' + getText('abgemahnter_strasse') + ' in ' + getText('abgemahnter_plz') + ' ' + getText('abgemahnter_ort');
   var land = getText('abgemahnter_land');
@@ -313,33 +326,33 @@ function abmahnbeantworter() {
 
   var fliesstext = 'Sehr geehrte Damen und Herren,\n\n';
 
-  fliesstext += 'vielen Dank für den außergerichtlichen Hinweis vom ' + to_german_date(vorgang) + ', dass mir eine urheberrechtliche Rechtsverletzung vorgeworfen wird.\n\n';
+  fliesstext += 'vielen Dank für den außergerichtlichen Hinweis' + vorgang_vom + ', dass mir eine urheberrechtliche Rechtsverletzung vorgeworfen wird.\n\n';
 
-  fliesstext += 'Nach Prüfung des Sachverhaltes kann ich Ihnen jedoch erleichtert versichern, dass ich die angebliche Urheberrechtsverletzung vom ' + to_german_date(tatzeit) + ' nicht begangen habe und auch sonst nicht für die vermeintliche Rechtsverletzung einzustehen habe, denn in dem von Ihnen geschilderten Zusammenhang komme ich weder als Täter noch als Störer in Betracht.\n\n'
+  fliesstext += 'Nach Prüfung des Sachverhaltes kann ich Ihnen jedoch erleichtert versichern, dass ich die angebliche Urheberrechtsverletzung' + tatzeit_vom + ' nicht begangen habe und auch sonst nicht für die vermeintliche Rechtsverletzung einzustehen habe, denn in dem von Ihnen geschilderten Zusammenhang komme ich weder als Täter noch als Störer in Betracht.\n\n'
 
   var zudem = 0;
   if(getCheck('alibi_urlaub')) {
-    fliesstext += 'Ich befand mich zum angeblichen Tatzeitpunkt am ' + to_german_date(tatzeit) + ' um ' + to_german_time(tatzeit) + ' nachweislich im Urlaub. ';
+    fliesstext += 'Ich befand mich zum angeblichen Tatzeitpunkt' + tatzeit_am_um + ' nachweislich im Urlaub. ';
     zudem = 1;
   }
   if(getCheck('alibi_ausserhalb')) {
     fliesstext += zudem ? 'Zudem befand ich ' : 'Ich befand ';
-    fliesstext += 'mich zum angeblichen Tatzeitpunkt am ' + to_german_date(tatzeit) + ' um ' + to_german_time(tatzeit) + ' beruflich im Ausland. ';
+    fliesstext += 'mich zum angeblichen Tatzeitpunkt' + tatzeit_am_um + ' beruflich im Ausland. ';
     zudem = 1;
   }
   if(getCheck('alibi_arbeit')) {
     fliesstext += zudem ? 'Zudem befand ich ' : 'Ich befand ';
-    fliesstext += 'mich zum angeblichen Tatzeitpunkt am ' + to_german_date(tatzeit) + ' um ' + to_german_time(tatzeit) + ' nachweislich an meinem Arbeitsplatz, dies kann durch meine Kollegen bezeugt werden. ';
+    fliesstext += 'mich zum angeblichen Tatzeitpunkt' + tatzeit_am_um + ' nachweislich an meinem Arbeitsplatz, dies kann durch meine Kollegen bezeugt werden. ';
     zudem = 1;
   }
   if(getCheck('alibi_besuch')) {
     fliesstext += zudem ? 'Zudem hatte ich ' : 'Ich hatte ';
-    fliesstext += 'zum angegebenen Tatzeitpunkt am ' + to_german_date(tatzeit) + ' um ' + to_german_time(tatzeit) + ' nachweislich Besuch und dieser kann bezeugen, dass ich zu diesem Zeitpunkt meinen Rechner nicht benutzte. ';
+    fliesstext += 'zum angegebenen Tatzeitpunkt' + tatzeit_am_um + ' nachweislich Besuch und dieser kann bezeugen, dass ich zu diesem Zeitpunkt meinen Rechner nicht benutzte. ';
     zudem = 1;
   }
   if(getCheck('alibi_nichtzuhause')) {
     fliesstext += zudem ? 'Zudem befand ich ' : 'Ich befand ';
-    fliesstext += 'mich zum angeblichen Tatzeitpunkt am ' + to_german_date(tatzeit) + ' um ' + to_german_time(tatzeit) + ' nachweislich nicht zuhause. Dafür gibt es Zeugen. ';
+    fliesstext += 'mich zum angeblichen Tatzeitpunkt' + tatzeit_am_um + ' nachweislich nicht zuhause. Dafür gibt es Zeugen. ';
     zudem = 1;
   }
   if(getCheck('alibi_keinendgeraet')) {
@@ -348,7 +361,7 @@ function abmahnbeantworter() {
   }
   if(getCheck('alibi_nichtwohnhaft')) {
     fliesstext += zudem ? 'Zudem habe ich ' : 'Ich habe ';
-    fliesstext += 'zum angeblichen Tatzeitpunkt am ' + to_german_date(tatzeit) + ' nicht an der angegebenen Adresse gewohnt. ';
+    fliesstext += 'zum angeblichen Tatzeitpunkt' + tatzeit_am + ' nicht an der angegebenen Adresse gewohnt. ';
     zudem = 1;
   }
   if(zudem) {
@@ -372,7 +385,7 @@ function abmahnbeantworter() {
   }
   if(getCheck('alibi_tornode')) {
     fliesstext += zudem ? 'Zudem betrieb ich ' : 'Ich betrieb ';
-    fliesstext += 'zum angeblichen Tatzeitpunkt am ' + to_german_date(tatzeit) + ' um ' + to_german_time(tatzeit) + ' nachweislich einen Tor-Exit-Node. Das bedeutet, dass eine Software auf meinen Systemen den Internet-Verkehr von Menschen, die mir namentlich nicht bekannt sind und die sich überall auf der Welt aufhalten können, lediglich automatisch in das Internet weiterleitet. Demzufolge falle ich unter die Haftungsprivilegierung des § 8 TMG n. F., der die Haftung für die reine Durchleitung von Internet-Verkehr ausschließt, auch soweit es um Unterlassungsansprüche geht. ';
+    fliesstext += 'zum angeblichen Tatzeitpunkt' + tatzeit_am_um + ' nachweislich einen Tor-Exit-Node. Das bedeutet, dass eine Software auf meinen Systemen den Internet-Verkehr von Menschen, die mir namentlich nicht bekannt sind und die sich überall auf der Welt aufhalten können, lediglich automatisch in das Internet weiterleitet. Demzufolge falle ich unter die Haftungsprivilegierung des § 8 TMG n. F., der die Haftung für die reine Durchleitung von Internet-Verkehr ausschließt, auch soweit es um Unterlassungsansprüche geht. ';
     zudem = 1;
   }
   if(getCheck('alibi_freifunk')) {
@@ -390,7 +403,7 @@ function abmahnbeantworter() {
   }
 
   var frist = new Date(today.getTime() + 1209600000);
-  fliesstext += 'Aufgrund des von mir nun dargelegten Sachverhaltes müssen Sie erkennen, dass die Abmahnung vom ' + to_german_date(vorgang) + ' gegen mich unrechtmäßig ergangen ist.\n\n';
+  fliesstext += 'Aufgrund des von mir nun dargelegten Sachverhaltes müssen Sie erkennen, dass Ihre Abmahnung' + vorgang_vom + ' gegen mich unrechtmäßig ergangen ist.\n\n';
   var forderung  = 'Ich fordere Sie deshalb auf, bis zum ' + to_german_date(frist) + ' die geltend gemachten Forderungen mir gegenüber schriftlich zurückzunehmen.\n\n';
   var sanktionen = 'Sollten Sie diese Frist fruchtlos verstreichen lassen, behalte ich mir ausdrücklich vor, die Hilfe eines Rechtsanwaltes in Anspruch zu nehmen und Ihnen die dadurch entstandenen Kosten aufzuerlegen oder/und eine negative Feststellungsklage bei Gericht einzureichen, mit dem Ziel, die Unrechtmäßigkeit der Abmahnung feststellen zu lassen. Durch die unterlassene ausdrückliche schriftliche Rücknahme Ihrer Abmahnung hätten Sie zu einer entsprechenden Klageerhebung auch Anlass gegeben.\n\n';
 
