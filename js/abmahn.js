@@ -55,6 +55,15 @@ function ensureContent() {
   return missing;
 }
 
+function ensureCheckbox() {
+  var checked = 0;
+  for(var i = 0;i<arguments.length; i++)
+    if (getCheck(arguments[i]))
+      ++checked;
+  return checked;
+}
+
+
 // Code is heavily inspired by
 // https://github.com/alicelieutier/smoothScroll/blob/master/smoothscroll.js
 function scrollTo(end) {
@@ -139,13 +148,25 @@ function step_3_done() {
 }
 
 function step_4_done() {
-  addClass('wrapper', 'stepdone-4');
-  head_5_click();
+  if (ensureCheckbox('alibi_urlaub', 'alibi_ausserhalb', 'alibi_nichtzuhause', 'alibi_arbeit', 'alibi_besuch',
+                     'alibi_keinendgeraet', 'alibi_nichtwohnhaft')==0) {
+    setClass('step4-missing', 'warnmiss');
+  } else {
+    setClass('step4-missing', 'hidden');
+    addClass('wrapper', 'stepdone-4');
+    head_5_click();
+  }
 }
 
 function step_5_done() {
-  addClass('wrapper', 'stepdone-5');
-  head_6_click();
+  if (ensureCheckbox('alibi_freifunk', 'alibi_tornode', 'alibi_offeneswifi', 'alibi_familie', 'alibi_wg',
+                     'alibi_nachbarn', 'alibi_fluechtlingshilfe')==0) {
+    setClass('step5-missing', 'warnmiss');
+  } else {
+    setClass('step5-missing', 'hidden');
+    addClass('wrapper', 'stepdone-5');
+    head_6_click();
+  }
 }
 
 function step_6_done() {

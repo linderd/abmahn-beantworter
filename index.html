@@ -236,6 +236,9 @@
           <div><input id="alibi_besuch" type="checkbox"/><label for="alibi_besuch"><span></span>Ich hatte Besuch. Dieser kann bezeugen, dass ich meinen Computer nicht benutzt habe.</label></div>
           <div><input id="alibi_keinendgeraet" type="checkbox"/><label for="alibi_keinendgeraet"><span></span>Ich besitze keinen internetfähigen Computer.</label></div>
           <div><input id="alibi_nichtwohnhaft" type="checkbox"/><label for="alibi_nichtwohnhaft"><span></span>Zum angegebenen Zeitpunkt habe ich an der ermittelten Adresse nicht (mehr) gewohnt.</label></div>
+          <div id="step4-missing" class="hidden">
+            Sie müssen dem Abmahner mitteilen, warum Sie als Täter nicht in Frage kommen. Bitte wählen Sie eine Box aus.
+          </div>
           <div class="one-button">
             <div class="button button-green" onclick="step_4_done()">Weiter</div>
           </div>
@@ -254,7 +257,9 @@
           <div><input id="alibi_wg" type="checkbox"/><label for="alibi_wg"><span></span>Neben mir benutzen mehrere Mitbewohner mein Netzwerk.</label></div>
           <div><input id="alibi_nachbarn" type="checkbox"/><label for="alibi_nachbarn"><span></span>Neben mir benutzen mehrere Nachbarn mein Netzwerk.</label></div>
           <div><input id="alibi_fluechtlingshilfe" type="checkbox"/><label for="alibi_fluechtlingshilfe"><span></span>Ich stelle mein Netzwerk einem Flüchtlingsheim zur Verfügung.</label></div>
-          <p></p>
+          <div id="step5-missing" class="hidden">
+            Sie müssen dem Abmahner mitteilen, warum Sie als Störer nicht in Frage kommen. Bitte wählen Sie eine Box aus.
+          </div>
           <div class="hint">Achtung: Unrichtige Angaben zum Sachverhalt können Ihnen vor Gericht belastend ausgelegt werden. Wählen Sie daher auf jeden Fall nur die Häkchen aus, die den Tatsachen entsprechen.</div>
           <div class="one-button">
             <div class="button button-green" onclick="step_5_done()">Weiter</div>
