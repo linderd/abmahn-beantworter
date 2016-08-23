@@ -431,7 +431,7 @@ function abmahnbeantworter() {
   var abschluss = 'Mit freundlichen Grüßen';
   var signatur = getText('abgemahnter_nachname');
 
-  var disclaimer = 'Wir haben den Text des Antwortschreibens gemeinsam mit einer Reihe von Juristinnen entworfen, bitten aber um Verständnis, dass wir keinerlei Gewähr für den Inhalt übernehmen können.\n\nDer Dienst "Abmahnbeantworter" stellt außerdem keine Rechtsberatung dar. Die Verwendung des vorgeschlagenen Antwortschreibens erfolgt auf eigene Gefahr.\n\nWir freuen uns über Hinweise auf gerichtliche Entscheidungen, die uns dabei helfen können, den Text des Antwortschreibens zu verbessern.\n\n  Die Abmahnbeantworter';
+  var disclaimer = 'Wir haben den Text des Antwortschreibens gemeinsam mit einer Reihe von Juristinnen entworfen, bitten aber um Verständnis, dass wir keinerlei Gewähr für den Inhalt übernehmen können.\n\nDer Dienst "Abmahnbeantworter" stellt außerdem keine Rechtsberatung dar. Die Verwendung des vorgeschlagenen Antwortschreibens erfolgt auf eigene Gefahr.\n\nWir freuen uns über Hinweise auf gerichtliche Entscheidungen, die uns dabei helfen können, den Text des Antwortschreibens zu verbessern.\n\nDenken Sie daran, die Nummer des Einschreibens bzw. den Fax-Beleg aufzuheben, damit Sie später nachweisen können, dass Ihre Antwort auch angekommen ist.\n\n  Die Abmahnbeantworter';
 
   pdfMake.fonts = {
     'Gentium Book Basic': {
