@@ -191,13 +191,13 @@ function to_german_time(uhrzeit) {
 }
 
 /* Handle presets for known kanzleien */
-function waldorf() {
-  setText('abmahnender_kanzlei', 'Waldorf & Frommer RAe');
+function frommer() {
+  setText('abmahnender_kanzlei', 'Frommer Legal');
   setText('abmahnender_bearbeiter', '');
   setText('abmahnender_strasse', 'Beethovenstraße 12');
   setText('abmahnender_plz', '80336');
   setText('abmahnender_ort', 'München');
-  setText('abmahnender_fax', '089/52 05 72 30');
+  setText('abmahnender_fax', '089 / 248 899 711');
   ensureContent('abmahnender_kanzlei', 'abmahnender_strasse', 'abmahnender_plz', 'abmahnender_ort');
   setClass('step2-missing', 'hidden');
 }
@@ -286,7 +286,7 @@ function ausfuellen() {
   setText('abgemahnter_plz', '10999')
   setText('abgemahnter_ort', 'Berlin');
 
-  setText('abmahnender_kanzlei', 'Waldorf & Frommer');
+  setText('abmahnender_kanzlei', 'Frommer Legal');
   setText('abmahnender_bearbeiter', 'Horst Müller');
   setText('abmahnender_strasse', 'Beethovenstraße 12');
   setText('abmahnender_plz', '80336');
