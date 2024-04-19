@@ -398,7 +398,7 @@ function abmahnbeantworter() {
   }
   if(getCheck('alibi_wg')) {
     fliesstext += zudem ? 'Zudem teile ich ' : 'Ich teile ';
-    fliesstext += 'meinen Internetanschluss mit meiner Wohngemeinschaft. Jeder meine Mitbewohner nutzt das Internet eigenverantwortlich. Alle Mitbewohner sind alle darauf aufmerksam gemacht worden, dass sie keine Urheberrechtsverletzungen begehen dürfen. Es gab auch keine Hinweise darauf, dass ein Mitbewohner Rechtsverletzungen begeht. Für die Handlungen meiner Mitbewohner bin ich daher nicht verantwortlich. ';
+    fliesstext += 'meinen Internetanschluss mit meiner Wohngemeinschaft. Jeder meine Mitbewohner nutzt das Internet eigenverantwortlich. Alle Mitbewohner sind darauf aufmerksam gemacht worden, dass sie keine Urheberrechtsverletzungen begehen dürfen. Es gab auch keine Hinweise darauf, dass ein Mitbewohner Rechtsverletzungen begeht. Für die Handlungen meiner Mitbewohner bin ich daher nicht verantwortlich. ';
     zudem = 1;
   }
   if(getCheck('alibi_offeneswifi')) {
